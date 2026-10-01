@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home 2.0 · The Living Wave by Urbanrise</title>
+<meta name="description" content="Home 2.0 — The Future Home Standard. The Living Wave, Gattahalli, Bengaluru. 3 & 4 BHK homes by Urbanrise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0C100F; --ink2:#161D1B; --ink3:#1F2826; --line:rgba(243,242,236,.12);
+  --paper:#F3F2EC; --paper2:#FBFAF6; --muted:#A7B0AC; --muted-dk:#4A524F;
+  --green:#3BD98E; --green-dk:#0B7A4B; --amber:#F2B872;
+  --display:'Space Grotesk',Arial,sans-serif; --body:'DM Sans',Arial,sans-serif; --mono:'IBM Plex Mono','Courier New',monospace;
+  --r:20px; --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--green)}
+button{font:inherit;cursor:pointer}
+img{max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+.eyebrow{font-family:var(--mono);font-size:14px;letter-spacing:.14em;color:var(--green);text-transform:uppercase}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(36px,5vw,64px);line-height:1.05}
+h3{font-size:24px;line-height:1.2}
+p{margin:0}
+section{padding:112px 0}
+.light{background:var(--paper);color:var(--ink)}
+.light .eyebrow{color:var(--green-dk)}
+.light .sub{color:var(--muted-dk)}
+.sub{color:var(--muted);font-size:20px;max-width:720px}
+.head{display:flex;flex-direction:column;gap:16px;margin-bottom:56px}
+.btn{display:inline-flex;align-items:center;gap:10px;border:0;border-radius:999px;padding:15px 26px;font-weight:700;font-size:17px;text-decoration:none;transition:transform .15s ease, background .2s}
+.btn:active{transform:scale(.97)}
+.btn-green{background:var(--green);color:var(--ink)}
+.btn-green:hover{background:#6BE6AC}
+.btn-ghost{background:transparent;color:var(--paper);border:1px solid rgba(243,242,236,.35);font-weight:500}
+.btn-ghost:hover{border-color:var(--paper)}
+.btn-dark{background:var(--ink);color:var(--paper)}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- Intro update dialog ---------- */
+#intro{position:fixed;inset:0;z-index:100;background:#0E1412;display:flex;align-items:center;justify-content:center;padding:24px;transition:opacity .6s ease}
+#intro.gone{opacity:0;pointer-events:none}
+.dialog{width:min(640px,100%);background:var(--paper);color:var(--ink);border-radius:24px;padding:36px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.dialog .row{display:flex;gap:22px;align-items:flex-start}
+.appicon{width:64px;height:64px;flex-shrink:0;border-radius:16px;background:var(--ink);display:flex;align-items:center;justify-content:center}
+.dialog h1{font-size:clamp(26px,4vw,36px);line-height:1.1}
+.dialog p{color:var(--muted-dk);margin-top:10px}
+.dialog .actions{display:flex;justify-content:flex-end;gap:12px;margin-top:28px;flex-wrap:wrap}
+.dbtn{border:0;border-radius:12px;padding:14px 24px;font-size:17px;font-weight:500}
+.dbtn.later{background:#E2E1DA;color:var(--ink)}
+.dbtn.update{background:var(--green-dk);color:#fff;font-weight:700;padding:14px 34px}
+.shake{animation:shake .4s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.progress{height:12px;border-radius:6px;background:#E2E1DA;overflow:hidden;margin-top:24px}
+.progress span{display:block;height:100%;width:0;background:var(--green-dk);border-radius:6px;transition:width .25s linear}
+.pstep{font-family:var(--mono);font-size:14px;color:var(--muted-dk);margin-top:12px;min-height:22px}
+.skip{position:absolute;top:20px;right:24px;background:none;border:0;color:var(--muted);font-family:var(--mono);font-size:14px;text-decoration:underline}
+.toast{position:fixed;left:50%;bottom:32px;transform:translate(-50%,40px);opacity:0;background:var(--ink2);color:var(--paper);border:1px solid var(--line);border-radius:999px;padding:14px 24px;font-size:16px;z-index:200;transition:all .35s ease;display:flex;gap:10px;align-items:center;max-width:calc(100% - 32px)}
+.toast.show{transform:translate(-50%,0);opacity:1}
+.toast .dot{width:22px;height:22px;border-radius:50%;background:var(--green);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+
+/* ---------- Nav ---------- */
+nav{position:sticky;top:0;z-index:50;background:rgba(12,16,15,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.brand{display:flex;align-items:baseline;gap:14px;text-decoration:none;color:var(--paper)}
+.brand b{font-family:var(--display);font-size:18px;letter-spacing:.24em}
+.brand span{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.navlinks{display:flex;gap:28px;font-size:15px}
+.navlinks a{color:var(--muted);text-decoration:none}
+.navlinks a:hover{color:var(--paper)}
+nav .btn{padding:11px 20px;font-size:15px}
+
+/* ---------- Hero ---------- */
+.hero{padding:96px 0 72px;min-height:calc(100vh - 72px);display:flex;align-items:center}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .9fr;gap:56px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:14px;color:var(--muted);border:1px solid rgba(243,242,236,.2);border-radius:999px;padding:8px 16px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.hero h1{font-size:clamp(72px,12vw,168px);line-height:.88;letter-spacing:-.045em;margin:28px 0 18px}
+.hero .tag{font-family:var(--display);font-weight:500;font-size:clamp(26px,3vw,40px)}
+.hero p.lead{color:var(--muted);font-size:20px;max-width:560px;margin-top:20px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+.wave{display:flex;flex-direction:column;gap:9px;padding:20px 0}
+.wave div{height:14px;width:78%;border-radius:7px;background:var(--green);animation:sway 5s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:translateX(0)}50%{transform:translateX(18%)}}
+.wavecap{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:14px}
+.ticker{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:64px;padding-top:20px;font-family:var(--mono);font-size:14px;color:var(--muted)}
+
+/* ---------- Insight ---------- */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:var(--ink2);border-radius:var(--r);padding:30px;display:flex;flex-direction:column;gap:10px}
+.light .card{background:var(--paper2);border:1px solid #DDDBD2}
+.card .k{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.card.alert{border:2px solid var(--amber)}
+.card.alert .k{color:var(--amber)}
+.bigline{font-family:var(--display);font-weight:700;font-size:clamp(30px,4vw,52px);line-height:1.1;margin-top:64px;max-width:1000px}
+.bigline em{font-style:normal;color:var(--green)}
+
+/* ---------- Release notes tabs ---------- */
+.rn{display:grid;grid-template-columns:340px 1fr;gap:28px}
+.tabs{display:flex;flex-direction:column;gap:10px}
+.tab{display:flex;align-items:center;gap:16px;text-align:left;border:1px solid #DDDBD2;background:var(--paper2);color:var(--ink);border-radius:16px;padding:18px 20px;transition:background .2s}
+.tab .n{font-family:var(--mono);font-size:14px;color:var(--green-dk)}
+.tab strong{font-family:var(--display);font-size:22px;display:block}
+.tab small{color:var(--muted-dk);font-size:14px}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tab[aria-selected="true"] .n{color:var(--green)}
+.tab[aria-selected="true"] small{color:var(--muted)}
+.panel{background:var(--ink);color:var(--paper);border-radius:24px;padding:48px;display:flex;flex-direction:column;gap:22px}
+.panel h3{font-size:clamp(34px,4.4vw,60px);line-height:1}
+.panel .sub{color:#C9CFCC}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+.step{background:var(--ink2);border-radius:16px;padding:22px}
+.step .mono{font-size:13px;color:var(--green)}
+.step b{display:block;font-family:var(--display);font-size:20px;margin:6px 0}
+.step p{color:#C9CFCC;font-size:16px}
+.compare{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px}
+.compare span{border-radius:999px;padding:10px 18px;font-size:15px}
+.compare .old{border:1px solid var(--line);color:var(--muted)}
+.compare .new{background:var(--green);color:var(--ink);font-weight:700}
+.panel.swap{animation:swap .35s ease}
+@keyframes swap{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- Benchmarks toggle ---------- */
+.switchrow{display:flex;align-items:center;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+.switch{position:relative;width:76px;height:40px;border-radius:999px;background:var(--ink3);border:1px solid var(--line)}
+.switch::after{content:"";position:absolute;top:4px;left:4px;width:30px;height:30px;border-radius:50%;background:var(--muted);transition:all .3s}
+.switch[aria-checked="true"]{background:var(--green-dk)}
+.switch[aria-checked="true"]::after{left:40px;background:var(--paper)}
+.verlabel{font-family:var(--display);font-weight:700;font-size:28px}
+.bench{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.bcell{background:var(--ink2);border-radius:16px;padding:24px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;transition:background .4s}
+.bcell .k{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.bcell .v{font-family:var(--display);font-weight:700;font-size:26px;line-height:1.15}
+.bench.v2 .bcell{background:#123326}
+.bench.v2 .bcell .v{color:var(--green)}
+
+/* ---------- Version check ---------- */
+.quiz{background:var(--paper2);border:1px solid #DDDBD2;border-radius:24px;padding:44px;max-width:860px}
+.qmeta{display:flex;justify-content:space-between;font-family:var(--mono);font-size:14px;color:var(--muted-dk)}
+.qbar{height:8px;border-radius:4px;background:#E2E1DA;margin:14px 0 30px;overflow:hidden}
+.qbar span{display:block;height:100%;background:var(--green-dk);width:0;transition:width .3s}
+.qtext{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.2vw,38px);line-height:1.15}
+.opts{display:grid;gap:12px;margin-top:28px}
+.opt{text-align:left;border:1px solid #CFCDC4;background:#fff;color:var(--ink);border-radius:14px;padding:18px 22px;font-size:18px;transition:border-color .15s, background .15s}
+.opt:hover{border-color:var(--green-dk);background:#F1FBF6}
+.qback{margin-top:22px;background:none;border:0;color:var(--muted-dk);text-decoration:underline;font-size:15px;padding:0}
+.result{background:var(--ink);color:var(--paper);border-radius:24px;padding:44px;max-width:860px}
+.result .ver{font-family:var(--display);font-weight:700;font-size:clamp(64px,9vw,120px);line-height:.9;letter-spacing:-.04em}
+.result .meta{font-family:var(--mono);color:var(--muted);margin-top:14px}
+.issues{display:grid;gap:10px;margin:28px 0}
+.issue{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding:12px 0}
+.issue span:last-child{font-family:var(--mono);font-size:13px;color:var(--amber);white-space:nowrap}
+
+/* ---------- Lineup ---------- */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.model{text-align:left;border:1px solid #DDDBD2;background:var(--paper2);color:var(--ink);border-radius:var(--r);padding:34px;display:flex;flex-direction:column;gap:10px;transition:transform .2s, border-color .2s}
+.model:hover{transform:translateY(-4px)}
+.model .name{font-family:var(--display);font-weight:700;font-size:34px;letter-spacing:-.02em}
+.model .cfg{font-size:20px}
+.model .sz{font-family:var(--mono);font-size:15px;color:var(--muted-dk)}
+.model .pick{margin-top:14px;font-weight:700;color:var(--green-dk)}
+.model[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.model[aria-pressed="true"] .sz{color:var(--muted)}
+.model[aria-pressed="true"] .pick{color:var(--green)}
+
+/* ---------- Project facts ---------- */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.fact{border-top:1px solid var(--line);padding-top:18px}
+.fact .num{font-family:var(--display);font-weight:700;font-size:clamp(34px,4vw,52px);letter-spacing:-.02em}
+.fact .lbl{color:var(--muted);font-size:16px}
+
+/* ---------- Brand / EI ---------- */
+.ei{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.quote{font-family:var(--display);font-weight:700;font-size:clamp(34px,4.6vw,60px);line-height:1.05}
+.eilist{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.eilist span{border:1px solid #CFCDC4;border-radius:999px;padding:9px 16px;font-size:15px;background:#fff}
+.targets{display:grid;gap:14px}
+.target{background:var(--paper2);border:1px solid #DDDBD2;border-radius:16px;padding:24px}
+.target .num{font-family:var(--display);font-weight:700;font-size:38px;color:var(--green-dk)}
+.awards{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.awards span{font-family:var(--mono);font-size:13px;border:1px solid #CFCDC4;border-radius:8px;padding:8px 12px;color:var(--muted-dk)}
+
+/* ---------- Form ---------- */
+.formwrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+form{background:var(--ink2);border-radius:24px;padding:40px;display:grid;gap:18px}
+label{font-size:15px;color:var(--muted);display:grid;gap:8px}
+input,select{font:inherit;font-size:17px;background:var(--ink);color:var(--paper);border:1px solid rgba(243,242,236,.25);border-radius:12px;padding:14px 16px;width:100%}
+input:focus,select:focus{border-color:var(--green);outline:none}
+.err{color:var(--amber);font-size:14px;min-height:20px}
+.done{display:none;flex-direction:column;gap:12px;background:var(--ink2);border:1px solid var(--green);border-radius:24px;padding:40px}
+.done.show{display:flex}
+.perks{display:grid;gap:14px;margin-top:28px}
+.perks div{display:flex;gap:14px;align-items:flex-start}
+.perks i{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;margin-top:2px}
+
+footer{border-top:1px solid var(--line);padding:48px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer b{font-family:var(--display);color:var(--paper);letter-spacing:.24em}
+
+@media (max-width:980px){
+  .hero .wrap,.rn,.ei,.formwrap{grid-template-columns:1fr}
+  .grid4,.facts{grid-template-columns:repeat(2,1fr)}
+  .grid3,.bench,.steps{grid-template-columns:1fr}
+  .navlinks{display:none}
+  .wave{max-width:420px}
+}
+@media (max-width:560px){
+  section{padding:80px 0}
+  .grid4,.facts{grid-template-columns:1fr}
+  .panel,.quiz,.result,form,.dialog{padding:28px}
+  .brand span{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ INTRO: the update pop-up ============ -->
+<div id="intro" role="dialog" aria-modal="true" aria-labelledby="introTitle">
+  <button class="skip" id="skipIntro">Skip intro</button>
+  <div class="dialog" id="dialog">
+    <div class="row">
+      <div class="appicon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#3BD98E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
+      <div style="flex:1">
+        <h1 id="introTitle">A new version of Home is available.</h1>
+        <p id="introText">Your home is running Home v1.0, built for a world that no longer exists.</p>
+        <div id="introProgress" hidden>
+          <div class="progress" aria-hidden="true"><span id="pbar"></span></div>
+          <div class="pstep" id="pstep" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+    <div class="actions" id="introActions">
+      <button class="dbtn later" id="laterBtn">Remind me later</button>
+      <button class="dbtn update" id="updateBtn">Update</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><span class="dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C100F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></span><span id="toastText"></span></div>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><b>URBANRISE</b><span>Home 2.0 · The Living Wave</span></a>
+    <div class="navlinks">
+      <a href="#release">Release notes</a>
+      <a href="#benchmarks">Benchmarks</a>
+      <a href="#version">Check your version</a>
+      <a href="#lineup">Lineup</a>
+      <a href="#urbanrise">Urbanrise EI</a>
+    </div>
+    <a class="btn btn-green" href="#access">Get early access</a>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="chip"><i></i>Now rolling out · Gattahalli, Bengaluru</span>
+      <h1>Home 2.0</h1>
+      <div class="tag">Our most capable home yet.</div>
+      <p class="lead">For thirty years, the home stayed on version 1.0. Urbanrise rebuilt it for the world we're actually going to live in. It generates, conserves, breathes, charges, grows, and lives beyond four walls.</p>
+      <div class="ctas">
+        <a class="btn btn-green" href="#access">Get early access</a>
+        <a class="btn btn-ghost" href="#version">What version is your home?</a>
+      </div>
+    </div>
+    <div aria-hidden="true">
+      <div class="wave" id="wave"></div>
+      <div class="wavecap">The Living Wave · the first build on Home 2.0</div>
+    </div>
+  </div>
+</section>
+<div class="wrap"><div class="ticker"><span>Energy · Water · Air · Mobility · Nature · Community</span><span>v2.0.0 · First release · 222 homes</span></div></div>
+
+<!-- ============ INSIGHT ============ -->
+<section>
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Why Home 2.0</span>
+      <h2>Everything around us got updated.<br>Except the home.</h2>
+    </div>
+    <div class="grid4 reveal">
+      <div class="card"><span class="k">PHONE</span><h3>Updates every month</h3></div>
+      <div class="card"><span class="k">CAR</span><h3>Went electric</h3></div>
+      <div class="card"><span class="k">WORK</span><h3>Went smart</h3></div>
+      <div class="card alert"><span class="k">HOME</span><h3>Still on v1.0</h3></div>
+    </div>
+    <p class="bigline reveal">Bengaluru writes the software the world runs on. <em>Then goes home to a home that has never been updated.</em></p>
+  </div>
+</section>
+
+<!-- ============ RELEASE NOTES ============ -->
+<section class="light" id="release">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Release notes · v2.0.0</span>
+      <h2>What's new in Home 2.0</h2>
+      <p class="sub">Six features. One release. Tap one to see how The Living Wave does it.</p>
+    </div>
+    <div class="rn reveal">
+      <div class="tabs" role="tablist" aria-label="Home 2.0 features" id="tabs"></div>
+      <div class="panel" role="tabpanel" id="panel" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENCHMARKS ============ -->
+<section id="benchmarks">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Benchmarks</span>
+      <h2>Flip the switch. See the upgrade.</h2>
+    </div>
+    <div class="switchrow reveal">
+      <button class="switch" id="vswitch" role="switch" aria-checked="false" aria-label="Show Home 2.0"></button>
+      <span class="verlabel" id="verlabel">Home v1.0</span>
+      <span class="mono" style="color:var(--muted);font-size:14px">Tap to switch versions</span>
+    </div>
+    <div class="bench reveal" id="bench"></div>
+    <p class="mono reveal" style="color:var(--muted);font-size:13px;margin-top:20px">Capabilities as designed for The Living Wave. Home v1.0 = a typical apartment built the old way.</p>
+  </div>
+</section>
+
+<!-- ============ VERSION CHECK ============ -->
+<section class="light" id="version">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Version check · 90 seconds</span>
+      <h2>What version is your home?</h2>
+      <p class="sub">12 quick questions across the six Home 2.0 features. Get your score, your known issues, and your upgrade path.</p>
+    </div>
+    <div id="quizMount" class="reveal"></div>
+  </div>
+</section>
+
+<!-- ============ LINEUP ============ -->
+<section id="lineup">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">The lineup</span>
+      <h2>Three models. One release.</h2>
+      <p class="sub">Every model runs the full Home 2.0 release. Pick yours to reserve early access.</p>
+    </div>
+    <div class="grid3 reveal" id="models"></div>
+  </div>
+</section>
+
+<!-- ============ PROJECT FACTS ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">The Living Wave · Gattahalli</span>
+      <h2>The first build.</h2>
+    </div>
+    <div class="facts reveal">
+      <div class="fact"><div class="num">4.20</div><div class="lbl">acres</div></div>
+      <div class="fact"><div class="num">368</div><div class="lbl">apartments across the project</div></div>
+      <div class="fact"><div class="num">222</div><div class="lbl">homes in the first release (Phase 1)</div></div>
+      <div class="fact"><div class="num">3 &amp; 4</div><div class="lbl">BHK configurations</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ URBANRISE / EI ============ -->
+<section class="light" id="urbanrise">
+  <div class="wrap">
+    <div class="ei">
+      <div class="reveal">
+        <span class="eyebrow">Shipped by Urbanrise</span>
+        <p class="quote" style="margin-top:16px">Green tech,<br>not green talk.</p>
+        <p class="sub" style="margin-top:24px">Home 2.0 runs on Urbanrise's Environmental Intelligence (EI), the company's proprietary technology built to deliver tangible benefits on electricity and water, for resilient living over 100 years. Every Drop, Every Watt Matters.</p>
+        <div class="eilist" aria-label="The Urbanrise EI toolkit">
+          <span>Solar power</span><span>Rainwater harvesting</span><span>Bhungroo wells</span><span>Water recycling</span><span>Miyawaki forests</span><span>EV charging</span><span>Organic waste composters</span><span>AC condensate recovery</span><span>BEE 4-star+ appliances</span><span>Recycling stations</span>
+        </div>
+        <p class="mono" style="font-size:13px;color:var(--muted-dk);margin-top:14px">EI systems specific to The Living Wave: [CONFIRM WITH URBANRISE]</p>
+      </div>
+      <div class="targets reveal">
+        <span class="eyebrow">Urbanrise 100-year EI targets</span>
+        <div class="target"><div class="num">10.3 trillion litres</div><div class="sub">of water saved through harvesting and recycling</div></div>
+        <div class="target"><div class="num">100 billion units</div><div class="sub">of clean energy generated</div></div>
+        <div class="target"><div class="num">92 million tons</div><div class="sub">of CO₂ reduced</div></div>
+      </div>
+    </div>
+    <div class="awards reveal">
+      <span>Best Brands 2025 · ET Now</span><span>#1 Brand in South India · Times Group</span><span>Fastest Growing Real Estate Brand 2024 · Hurun Grohe</span><span>Asia's Best &amp; Fastest Growing Real Estate Brand · WCRC</span><span>Bengaluru · Hyderabad · Chennai</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EARLY ACCESS ============ -->
+<section id="access">
+  <div class="wrap formwrap">
+    <div class="reveal">
+      <span class="eyebrow">Early access · Founding 222</span>
+      <h2 style="margin-top:16px">Be first to update.</h2>
+      <p class="sub" style="margin-top:18px">The first release is limited to 222 homes. Early access members get priority. Never discounts.</p>
+      <div class="perks">
+        <div><i><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0C100F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></i><span>First choice of home, floor and view</span></div>
+        <div><i><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0C100F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></i><span>A private preview of Home 2.0 at the site</span></div>
+        <div><i><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0C100F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></i><span>Priority on launch day</span></div>
+      </div>
+      <p style="margin-top:28px"><a class="btn btn-ghost" href="#" id="waLink">Or chat on WhatsApp [YOUR NUMBER]</a></p>
+    </div>
+    <div class="reveal">
+      <form id="form" novalidate>
+        <label>Your name<input id="fname" autocomplete="name" required></label>
+        <label>Mobile number<input id="fphone" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile" required></label>
+        <label>Model
+          <select id="fmodel">
+            <option value="Home 2.0">Home 2.0 · 3 BHK + 2T</option>
+            <option value="Home 2.0 Plus">Home 2.0 Plus · 3 BHK + 3T</option>
+            <option value="Home 2.0 Max">Home 2.0 Max · 4 BHK + 3T</option>
+          </select>
+        </label>
+        <label>When do you plan to move?
+          <select id="ftime"><option>0–3 months</option><option>3–6 months</option><option>Just exploring</option></select>
+        </label>
+        <div class="err" id="ferr" aria-live="polite"></div>
+        <button class="btn btn-green" type="submit" style="justify-content:center">Update to Home 2.0</button>
+        <p class="mono" style="font-size:12px;color:var(--muted)">Demo form: not connected to any system yet.</p>
+      </form>
+      <div class="done" id="done" role="status">
+        <span class="eyebrow">Update complete</span>
+        <h3 style="font-size:36px">Welcome home, <span id="dname"></span>.</h3>
+        <p class="sub">You're on the Home 2.0 early access list for <b id="dmodel"></b>. Your release notes are on the way to WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>URBANRISE</b><div style="margin-top:8px">Home, updated.</div></div>
+    <div>The Living Wave · Gattahalli, Bengaluru<br>RERA No. [RERA REGISTRATION NO.] · [WEBSITE]</div>
+    <div style="max-width:420px">[DISCLAIMER: images and specifications are indicative; final details per RERA filings and the agreement for sale.]</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Toast ---------- */
+  const toast = document.getElementById('toast'), toastText = document.getElementById('toastText');
+  let toastTimer;
+  function showToast(msg){
+    toastText.textContent = msg; toast.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(()=>toast.classList.remove('show'), 3200);
+  }
+
+  /* ---------- Intro update flow ---------- */
+  const intro = document.getElementById('intro'), dialog = document.getElementById('dialog');
+  const laterLines = [
+    'Bengaluru has been pressing "Remind me later" for 30 years.',
+    'Still later? The tanker will wait. The inverter will beep.',
+    'Fine. But Home v1.0 is no longer supported.'
+  ];
+  let laterCount = 0;
+  document.getElementById('laterBtn').addEventListener('click', ()=>{
+    showToast(laterLines[Math.min(laterCount, laterLines.length-1)]);
+    laterCount++;
+    dialog.classList.remove('shake'); void dialog.offsetWidth; dialog.classList.add('shake');
+  });
+  const steps = ['Downloading release notes…','Installing energy generation…','Installing water security…','Calibrating air you can measure…','Wiring EV chargers…','Growing vertical gardens…','Opening the clubhouses…','Update complete.'];
+  function closeIntro(){
+    intro.classList.add('gone');
+    document.body.style.overflow='';
+    setTimeout(()=>{ intro.hidden = true; }, 650);
+    document.querySelector('.hero .btn')?.focus({preventScroll:true});
+  }
+  document.getElementById('updateBtn').addEventListener('click', ()=>{
+    document.getElementById('introActions').hidden = true;
+    document.getElementById('introTitle').textContent = 'Installing Home 2.0';
+    document.getElementById('introText').textContent = 'The Living Wave · Gattahalli, Bengaluru';
+    document.getElementById('introProgress').hidden = false;
+    const bar = document.getElementById('pbar'), ps = document.getElementById('pstep');
+    let i = 0; const total = steps.length; const delay = reduce ? 120 : 380;
+    (function tick(){
+      bar.style.width = Math.round(((i+1)/total)*100) + '%';
+      ps.textContent = steps[i];
+      i++;
+      if(i < total){ setTimeout(tick, delay); }
+      else { setTimeout(()=>{ closeIntro(); showToast("You're on the latest version."); }, reduce ? 200 : 700); }
+    })();
+  });
+  document.getElementById('skipIntro').addEventListener('click', closeIntro);
+  document.body.style.overflow='hidden';
+  document.getElementById('updateBtn').focus();
+
+  /* ---------- Hero wave ---------- */
+  const wave = document.getElementById('wave');
+  for(let k=0;k<16;k++){
+    const d = document.createElement('div');
+    d.style.animationDelay = (-k*0.28) + 's';
+    d.style.opacity = (1 - k*0.045).toFixed(2);
+    wave.appendChild(d);
+  }
+
+  /* ---------- Release notes ---------- */
+  const features = [
+    {id:'energy',n:'01',label:'Energy',short:'A home that generates',title:'Your home now generates.',
+     sub:'Windmills and solar produce green energy right here on site, with energy infrastructure built for the future.',
+     steps:[['Generate','Solar panels and windmills on the project produce green energy.'],['Power','That energy goes to work for the community. [CONFIRM: what it powers]'],['Future-ready','Energy infrastructure designed for the next era, not the last one.']],
+     v1:'consumes',v2:'generates'},
+    {id:'water',n:'02',label:'Water',short:'Designed for water security',title:'Your home now conserves water.',
+     sub:'A water-conserving community: rainwater is captured, and every drop is used smarter, for long-term water security.',
+     steps:[['Capture','Rainwater is harvested from rooftops and landscaped areas.'],['Store and recharge','Collected water is stored and recharged on site. [CONFIRM: capacity]'],['Use smarter','Design and fittings that make every litre go further.']],
+     v1:'depends on supply',v2:'conserves and secures'},
+    {id:'air',n:'03',label:'Air',short:'Air quality you can measure',title:'Air you can measure.',
+     sub:'Outdoor and in-home purification, with air quality made measurable and visible, so you never have to guess.',
+     steps:[['Outdoors','Purification across the community’s outdoor spaces.'],['In your home','In-home purification for the air your family breathes. [CONFIRM: system]'],['Visible','Air quality shown inside and out, in real time.']],
+     v1:'unmeasured',v2:'purified and measured'},
+    {id:'mobility',n:'04',label:'Mobility',short:'EV-ready from day one',title:'EV-ready from day one.',
+     sub:'An EV charger in every private parking. Your next car is already welcome.',
+     steps:[['At your spot','A charger at your own private parking, not a shared queue.'],['From handover','Ready the day you move in. No cable from the balcony.'],['Next era','Built for where mobility is heading. [CONFIRM: charger spec]']],
+     v1:'not supported',v2:'every private parking'},
+    {id:'nature',n:'05',label:'Nature',short:'Green, every single day',title:'Your home now grows.',
+     sub:'Biophilic design and vertical gardens bring nature into everyday architecture.',
+     steps:[['Biophilic design','Spaces shaped around light, green and natural materials.'],['Vertical gardens','Green that climbs the building, not just the ground floor.'],['Every day','Nature you live with daily, not visit on weekends.']],
+     v1:'downstairs, if at all',v2:'built into the architecture'},
+    {id:'community',n:'06',label:'Community',short:'Living beyond four walls',title:'Beyond four walls.',
+     sub:'Multiple clubhouses and entertainment spaces. Living that carries on past your front door.',
+     steps:[['Clubhouses','More than one place to gather, play and unwind. [CONFIRM: count]'],['Entertainment','Spaces built for evenings, weekends and celebrations.'],['Neighbours','Designed so people actually meet, not just pass by.']],
+     v1:'ends at the door',v2:'multiple clubhouses'}
+  ];
+  const tabs = document.getElementById('tabs'), panel = document.getElementById('panel');
+  features.forEach((f,i)=>{
+    const b = document.createElement('button');
+    b.className='tab'; b.setAttribute('role','tab'); b.id='tab-'+f.id;
+    b.setAttribute('aria-controls','panel');
+    b.innerHTML = `<span class="n">${f.n}</span><span><strong>${f.label}</strong><small>${f.short}</small></span>`;
+    b.addEventListener('click',()=>selectFeature(i,true));
+    b.addEventListener('keydown',e=>{
+      if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();selectFeature((i+1)%features.length,true,true);}
+      if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();selectFeature((i-1+features.length)%features.length,true,true);}
+    });
+    tabs.appendChild(b);
+  });
+  function selectFeature(i, animate, focus){
+    const f = features[i];
+    [...tabs.children].forEach((t,j)=>{t.setAttribute('aria-selected', j===i?'true':'false'); t.tabIndex = j===i?0:-1;});
+    if(focus) tabs.children[i].focus();
+    panel.setAttribute('aria-labelledby','tab-'+f.id);
+    panel.innerHTML = `
+      <span class="eyebrow">New · ${f.label}</span>
+      <h3>${f.title}</h3>
+      <p class="sub">${f.sub}</p>
+      <span class="mono" style="font-size:13px;color:var(--muted)">HOW WE DO IT AT THE LIVING WAVE</span>
+      <div class="steps">${f.steps.map((s,k)=>`<div class="step"><span class="mono">STEP ${k+1}</span><b>${s[0]}</b><p>${s[1]}</p></div>`).join('')}</div>
+      <div class="compare"><span class="old">Home v1.0: ${f.v1}</span><span class="new">Home 2.0: ${f.v2}</span></div>`;
+    if(animate){panel.classList.remove('swap'); void panel.offsetWidth; panel.classList.add('swap');}
+  }
+  selectFeature(1,false);
+
+  /* ---------- Benchmarks toggle ---------- */
+  const bench = document.getElementById('bench'), vswitch = document.getElementById('vswitch'), verlabel = document.getElementById('verlabel');
+  function renderBench(v2){
+    bench.classList.toggle('v2', v2);
+    bench.innerHTML = features.map(f=>`<div class="bcell"><span class="k">${f.label.toUpperCase()}</span><span class="v">${v2?f.v2:f.v1}</span></div>`).join('');
+    verlabel.textContent = v2 ? 'Home 2.0' : 'Home v1.0';
+    vswitch.setAttribute('aria-checked', v2?'true':'false');
+  }
+  vswitch.addEventListener('click',()=>renderBench(vswitch.getAttribute('aria-checked')!=='true'));
+  renderBench(false);
+
+  /* ---------- Version check quiz ---------- */
+  const Q = [
+    ['Energy','When the power goes out, what happens at home?',['Total blackout','The inverter starts beeping','We barely notice']],
+    ['Energy','Does your home make any of its own power?',['No','Some solar in common areas','Yes, solar powers our home']],
+    ['Water','Has your building ordered water tankers this year?',['Often','Sometimes','Never']],
+    ['Water','Does your building harvest rainwater?',['No idea','Yes, not sure it works','Yes, and we use it']],
+    ['Air','Do you know the air quality inside your home right now?',['No idea','I check outdoor air on an app','Yes, we measure indoors']],
+    ['Air','How is the air at home cleaned?',["It isn't",'A purifier in one room','Built into the home']],
+    ['Mobility','Can you charge an EV at your parking spot?',['No','Only with a cable or workaround','Yes, a dedicated charger']],
+    ['Mobility','Is your building ready for more EVs?',['Not at all','A few shared points','Every parking is EV-ready']],
+    ['Nature','What do you see from your window?',['Mostly concrete','A few trees','Green, every day']],
+    ['Nature',"Where's the nearest green space you actually use?",['Need to drive there','Walk outside the complex','Inside my building']],
+    ['Community','How many neighbours do you know by name?',['Zero','A few','Many']],
+    ['Community','Where do evenings happen for your family?',['Inside the flat','Outside the complex','In common spaces at home']]
+  ];
+  const mount = document.getElementById('quizMount');
+  let qi = 0, answers = [];
+  function renderQ(){
+    const [pillar, text, opts] = Q[qi];
+    mount.innerHTML = `<div class="quiz">
+      <div class="qmeta"><span>${pillar.toUpperCase()}</span><span>${qi+1} / ${Q.length}</span></div>
+      <div class="qbar" aria-hidden="true"><span style="width:${(qi/Q.length)*100}%"></span></div>
+      <p class="qtext" id="qtext" tabindex="-1">${text}</p>
+      <div class="opts" role="group" aria-labelledby="qtext">${opts.map((o,k)=>`<button class="opt" data-k="${k}">${o}</button>`).join('')}</div>
+      ${qi>0?'<button class="qback" id="qback">Back</button>':''}
+    </div>`;
+    mount.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
+      answers[qi] = +b.dataset.k; qi++;
+      if(qi < Q.length){ renderQ(); document.getElementById('qtext').focus({preventScroll:true}); } else renderResult();
+    }));
+    const back = document.getElementById('qback');
+    if(back) back.addEventListener('click',()=>{ qi--; renderQ(); });
+  }
+  function renderResult(){
+    const pts = answers.reduce((a,b)=>a+b,0);
+    const score = Math.round(pts/24*100);
+    const version = 'v1.' + Math.min(9, Math.floor(score/10));
+    const issues = Q.map((q,i)=>({q,a:answers[i]})).filter(x=>x.a===0);
+    const byPillar = {};
+    Q.forEach((q,i)=>{ byPillar[q[0]] = (byPillar[q[0]]||0) + answers[i]; });
+    const min = Math.min(...Object.values(byPillar));
+    const weakest = Object.keys(byPillar).filter(k=>byPillar[k]===min);
+    mount.innerHTML = `<div class="result" role="status">
+      <span class="eyebrow">Your home is running</span>
+      <div class="ver">${version}</div>
+      <div class="meta">Score ${score}/100 · ${issues.length} known issue${issues.length===1?'':'s'} · Weakest: ${weakest.join(', ')}</div>
+      ${issues.length?`<div class="issues">${issues.map(x=>`<div class="issue"><span>${x.q[1]} — ${x.q[2][0]}</span><span>${x.q[0].toUpperCase()}</span></div>`).join('')}</div>`:'<p class="sub" style="margin:24px 0">No critical issues. Still, nobody at home runs 2.0 yet.</p>'}
+      <p style="font-family:var(--display);font-weight:700;font-size:28px;margin:8px 0 24px">Update available → Home 2.0</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-green" href="#access">Get early access</a>
+        <button class="btn btn-ghost" id="retake">Retake</button>
+      </div>
+    </div>`;
+    document.getElementById('retake').addEventListener('click',()=>{qi=0;answers=[];renderQ();});
+  }
+  renderQ();
+
+  /* ---------- Lineup ---------- */
+  const models = [['Home 2.0','3 BHK + 2T','1,500–1,550 sq ft'],['Home 2.0 Plus','3 BHK + 3T','1,700–1,750 sq ft'],['Home 2.0 Max','4 BHK + 3T','1,950–2,000 sq ft']];
+  const mwrap = document.getElementById('models'), fmodel = document.getElementById('fmodel');
+  models.forEach(([name,cfg,sz])=>{
+    const b = document.createElement('button');
+    b.className='model'; b.setAttribute('aria-pressed','false');
+    b.innerHTML = `<span class="name">${name}</span><span class="cfg">${cfg}</span><span class="sz">${sz}</span><span class="sz">[YOUR PRICE]</span><span class="pick">Reserve early access →</span>`;
+    b.addEventListener('click',()=>{
+      [...mwrap.children].forEach(c=>c.setAttribute('aria-pressed','false'));
+      b.setAttribute('aria-pressed','true');
+      fmodel.value = name;
+      showToast(name + ' selected. Finish your early access below.');
+      document.getElementById('access').scrollIntoView({behavior: reduce?'auto':'smooth'});
+    });
+    mwrap.appendChild(b);
+  });
+
+  /* ---------- Form (demo only) ---------- */
+  document.getElementById('form').addEventListener('submit', e=>{
+    e.preventDefault();
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.replace(/\D/g,'');
+    const err = document.getElementById('ferr');
+    if(!name){ err.textContent='Please add your name.'; return; }
+    if(phone.length!==10){ err.textContent='Please enter a 10-digit mobile number.'; return; }
+    err.textContent='';
+    document.getElementById('dname').textContent = name.split(' ')[0];
+    document.getElementById('dmodel').textContent = fmodel.value;
+    e.target.style.display='none';
+    document.getElementById('done').classList.add('show');
+    showToast('Update complete. Welcome home.');
+  });
+  document.getElementById('waLink').addEventListener('click', e=>{ e.preventDefault(); showToast('Add the Urbanrise WhatsApp number here before launch.'); });
+
+  /* ---------- Scroll reveal ---------- */
+  const els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    const io = new IntersectionObserver(ents=>ents.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} }),{threshold:.12});
+    els.forEach(el=>io.observe(el));
+  } else els.forEach(el=>el.classList.add('in'));
+})();
+</script>
+</body>
+</html>
