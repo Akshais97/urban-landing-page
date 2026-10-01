@@ -268,6 +268,43 @@ footer .logo{color:var(--on-dark);font-size:13px}
 .viewer .bg .ph{filter:none;transform:none;background-size:auto 115%;background-position:var(--pan) 50%}
 .viewer .vlabel{position:absolute;left:50%;bottom:calc(28px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:3;min-height:48px;padding:0 20px;font-size:13px;white-space:nowrap}
 
+/* ---------- Home 2.0 startup dialog ---------- */
+body.intro-pending{overflow:hidden}
+body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){visibility:hidden}
+#intro{position:fixed;inset:0;z-index:1000;background:#0c0f14;color:var(--on-dark);transition:opacity .6s ease;isolation:isolate}
+#intro[hidden],#introToast[hidden],#intro [hidden]{display:none!important}
+#intro.gone{opacity:0;pointer-events:none}
+#intro > .bg .ph{inset:-40px;background-position:70% 50%;filter:blur(18px) brightness(.55) saturate(1.2)}
+#intro .intro-glow{position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 50%,rgba(255,160,90,.18),transparent 70%)}
+#intro .intro-center{position:absolute;inset:0;z-index:2;display:grid;place-items:center;padding:80px 24px 40px;overflow:auto}
+#intro .dialog{width:min(640px,100%);padding:30px;border-radius:30px;background:rgba(12,15,20,.3);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 0 0 1px rgba(255,255,255,.14),0 10px 30px rgba(0,0,0,.25)}
+#intro .dialog.lg-on{background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
+#intro .row{display:flex;gap:22px;align-items:flex-start}
+#intro .intro-copy{flex:1;min-width:0}
+#intro .appicon{width:64px;height:64px;flex:none;border-radius:16px;background:rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),inset 0 0 0 1px rgba(255,255,255,.14);display:grid;place-items:center}
+#intro h1{font-family:"Inter","Segoe UI",system-ui,sans-serif;font-weight:400;font-size:clamp(26px,4vw,36px);letter-spacing:-.025em;line-height:1.1;margin:0}
+#intro p{color:var(--on-dark-soft);font-size:14px;line-height:1.55;margin:10px 0 0}
+#intro .actions{display:flex;justify-content:flex-end;gap:12px;margin-top:28px;flex-wrap:wrap}
+#intro .dbtn{border-radius:14px;padding:14px 24px;font-size:15px;font-weight:500;min-height:48px}
+#intro .later{background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+#intro .update{background:#fff;color:#111;padding:14px 34px}
+#intro .dbtn:hover{filter:brightness(1.12)}
+#intro .skip{position:absolute;top:calc(20px + env(safe-area-inset-top,0px));right:24px;z-index:3;padding:10px;color:var(--on-dark-soft);font-size:14px;text-decoration:underline;text-underline-offset:4px}
+#intro .progress{height:12px;border-radius:6px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:24px}
+#intro .progress span{display:block;height:100%;width:0;background:var(--glow);border-radius:6px;transition:width .25s linear}
+#intro .pstep{font-size:14px;color:var(--on-dark-soft);margin-top:12px;min-height:22px;line-height:1.5}
+#intro .shake{animation:intro-shake .4s}
+@keyframes intro-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+#introToast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%);z-index:1001;width:max-content;max-width:calc(100% - 32px);padding:14px 24px;border-radius:20px;background:rgba(12,15,20,.85);color:var(--on-dark);border:1px solid rgba(255,255,255,.18);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);font-size:14px;line-height:1.5;text-align:center;pointer-events:none}
+@media(max-width:640px){
+  #intro .intro-center{padding:76px 16px 100px}
+  #intro .dialog{padding:24px}
+  #intro .row{flex-direction:column;gap:18px}
+  #intro .appicon{width:52px;height:52px}
+  #intro .actions{flex-direction:column-reverse}
+  #intro .dbtn{width:100%}
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width:1080px){
   .navpill{display:none}
@@ -305,8 +342,41 @@ footer .logo{color:var(--on-dark);font-size:13px}
   html{scroll-behavior:auto}
 }
 </style>
+<noscript><style>
+body.intro-pending{overflow-x:hidden;overflow-y:auto}
+body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){visibility:visible}
+#intro,#introToast{display:none!important}
+</style></noscript>
 </head>
-<body>
+<body class="intro-pending">
+<!-- ================= HOME UPDATE INTRO ================= -->
+<div id="intro" role="dialog" aria-modal="true" aria-labelledby="introTitle" aria-describedby="introText" data-scene-root>
+  <div class="bg" aria-hidden="true"><div class="ph img-hero"></div><div class="intro-glow"></div></div>
+  <button class="skip" id="skipIntro">Skip intro</button>
+  <div class="intro-center">
+  <div class="dialog lg" id="dialog" data-lg='{"scale":34,"depth":24,"curvature":2.4,"chroma":0.1,"blur":14,"glow":0.04,"edge":0.75,"tint":0.3,"tintColor":"#0c0f14"}'>
+    <div class="c">
+    <div class="row">
+      <div class="appicon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
+      <div class="intro-copy">
+        <h1 id="introTitle">A new version of Home is available.</h1>
+        <p id="introText">Your home is running Home v1.0, built for a world that no longer exists.</p>
+        <div id="introProgress" hidden>
+          <div class="progress" aria-hidden="true"><span id="pbar"></span></div>
+          <div class="pstep" id="pstep" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+    <div class="actions" id="introActions">
+      <button class="dbtn later" id="laterBtn">Remind me later</button>
+      <button class="dbtn update" id="updateBtn">Update</button>
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+<div id="introToast" role="status" aria-live="polite" hidden></div>
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 10.5 12 3.8l8.5 6.7V20a.8.8 0 0 1-.8.8h-4.9v-6h-5.6v6H4.3a.8.8 0 0 1-.8-.8z"/></symbol>
   <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 15-14-.5 9.5-6 14.5-14 14"/><path d="M5 19 13 11"/></symbol>
@@ -597,6 +667,76 @@ footer .logo{color:var(--on-dark);font-size:13px}
   <div class="btn lg vlabel" data-lg='{"scale":20,"blur":8,"tint":0.1,"tintColor":"#1d1f27"}'><span class="c" id="viewLabel">Drag or use arrow keys to look around</span></div>
   <button class="iconbtn lg closebtn" data-close aria-label="Close viewer" data-lg='{"scale":14,"blur":6,"tint":0.08}'><span class="c"><svg class="ico"><use href="#i-x"/></svg></span></button>
 </div>
+
+<script>
+/* Intro runs independently so Skip still works if the glass library is unavailable. */
+(function(){
+  'use strict';
+  var intro=document.getElementById('intro'), dialog=document.getElementById('dialog');
+  var toast=document.getElementById('introToast'), update=document.getElementById('updateBtn');
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var closed=false, installing=false, laterCount=0, progressTimer, toastTimer;
+  var previousOverflow=document.body.style.overflow;
+  var siblings=Array.from(document.body.children).filter(function(el){
+    return el!==intro && el!==toast && !['SCRIPT','NOSCRIPT','SVG'].includes(el.tagName);
+  }).map(function(el){ var state={el:el,inert:el.inert}; el.inert=true; return state; });
+  document.body.style.overflow='hidden';
+  function showToast(message){
+    clearTimeout(toastTimer); toast.textContent=message; toast.hidden=false;
+    toastTimer=setTimeout(function(){toast.hidden=true;},3200);
+  }
+  function closeIntro(){
+    if(closed)return;
+    closed=true; clearTimeout(progressTimer); clearTimeout(toastTimer); toast.hidden=true;
+    document.body.classList.remove('intro-pending');
+    document.body.style.overflow=previousOverflow;
+    siblings.forEach(function(state){state.el.inert=state.inert;});
+    intro.classList.add('gone'); intro.inert=true;
+    var target=document.querySelector('.hero [data-open="join"]') || document.querySelector('.hero a');
+    if(target)target.focus({preventScroll:true});
+    intro.setAttribute('aria-hidden','true');
+    setTimeout(function(){intro.hidden=true;},reduce?0:650);
+  }
+  var laterLines=[
+    'Bengaluru has been pressing "Remind me later" for 30 years.',
+    'Still later? The tanker will wait. The inverter will beep.',
+    'Fine. But Home v1.0 is no longer supported.'
+  ];
+  document.getElementById('laterBtn').addEventListener('click',function(){
+    showToast(laterLines[Math.min(laterCount++,laterLines.length-1)]);
+    if(!reduce){dialog.classList.remove('shake');void dialog.offsetWidth;dialog.classList.add('shake');}
+  });
+  var steps=['Downloading release notes…','Installing energy generation…','Installing water security…','Calibrating air you can measure…','Wiring EV chargers…','Growing vertical gardens…','Opening the clubhouses…','Update complete.'];
+  update.addEventListener('click',function(){
+    if(installing || closed)return;
+    installing=true;
+    document.getElementById('skipIntro').focus({preventScroll:true});
+    document.getElementById('introActions').hidden=true;
+    document.getElementById('introTitle').textContent='Installing Home 2.0';
+    document.getElementById('introText').textContent='The Living Wave · Gattahalli, Bengaluru';
+    document.getElementById('introProgress').hidden=false;
+    var i=0, bar=document.getElementById('pbar'), status=document.getElementById('pstep');
+    (function tick(){
+      if(closed)return;
+      bar.style.width=Math.round((i+1)/steps.length*100)+'%';
+      status.textContent=steps[i++];
+      if(i<steps.length)progressTimer=setTimeout(tick,reduce?120:380);
+      else progressTimer=setTimeout(function(){closeIntro();showToast("You're on the latest version.");},reduce?200:700);
+    })();
+  });
+  document.getElementById('skipIntro').addEventListener('click',closeIntro);
+  intro.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){e.preventDefault();closeIntro();}
+    if(e.key==='Tab'){
+      var buttons=Array.from(intro.querySelectorAll('button')).filter(function(el){return el.offsetParent!==null && !el.disabled;});
+      var first=buttons[0], last=buttons[buttons.length-1];
+      if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
+      else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
+    }
+  });
+  update.focus({preventScroll:true});
+})();
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/liquid-glass-js@0.1.0/dist/liquid-glass.umd.min.js"></script>
 <script>
