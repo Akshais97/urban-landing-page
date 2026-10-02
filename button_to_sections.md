@@ -24,7 +24,9 @@ This document records the current destinations and behaviors. To change a mappin
 
 | Button | Location | Destination / action |
 | --- | --- | --- |
+| Search features | Release notes ? `#releaseSearch` | Filters feature tabs by name or description. Escape clears the search; the first matching feature opens if needed. |
 | Energy / Water / Air / Mobility / Nature / Community | Release notes ? `#release` | Selects the corresponding `#release-panel-*` within the section. Arrow keys, Home and End also change the selected feature. |
+| Show Home 2.0 switch | Benchmarks ? `#vswitch` | Toggles all six `#bench` tiles between Home v1.0 and Home 2.0. Click, Enter or Space toggles the switch. |
 | Discover the Vision | Home evolution — `#vision` | Scrolls to Experience — `#experience`. |
 | Explore in 3D | Home evolution — `#vision` | Opens the residence view in `#ov-view`. |
 | Intelligent Living | Experience — `#experience` | Expands its description; no section navigation. |
