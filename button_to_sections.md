@@ -16,7 +16,7 @@ This document records the current destinations and behaviors. To change a mappin
 | Experience | Header / menu | Experience — `#experience` | Scrolls to the experience section. |
 | Join Early Access | Header / footer | Early-access form — `#ov-join` | Opens the existing modal. The mobile arrow button uses the same destination. |
 | Open / Close menu — `#menuToggle` | Header | Compact dropdown — `#ov-menu` | Toggles the dropdown and changes the three bars into an X. Escape, an outside click, or choosing a link closes it. |
-| Check Your Version | Hero version card — `#heroCheckVersion` | Home evolution — `#vision` | Scrolls within this page. This is the current destination while a dedicated version-check section is unspecified. Reassign `data-section-target` when that section is introduced. |
+| Check Your Version | Hero version card (`#heroCheckVersion`) | Version check (`#version`) | Scrolls to the 12-question home version check. |
 | Remind Me Later | Hero version card — `#heroRemindLater` | Bottom message — `#introToast` | Uses the same messages and shake effect as the intro's Remind me later button. Repeated clicks advance the messages. Each message disappears after 3.2 seconds; another click restarts that timer. |
 | Live Panorama | Hero | Panorama viewer — `#ov-view` | Opens the panorama overlay. |
 
@@ -27,6 +27,13 @@ This document records the current destinations and behaviors. To change a mappin
 | Search features | Release notes ? `#releaseSearch` | Filters feature tabs by name or description. Escape clears the search; the first matching feature opens if needed. |
 | Energy / Water / Air / Mobility / Nature / Community | Release notes ? `#release` | Selects the corresponding `#release-panel-*` within the section. Arrow keys, Home and End also change the selected feature. |
 | Show Home 2.0 switch | Benchmarks ? `#vswitch` | Toggles all six `#bench` tiles between Home v1.0 and Home 2.0. Click, Enter or Space toggles the switch. |
+| Answer choices | Version check | Selecting an answer fades into the next question; the final answer shows the result. Repeated clicks during the fade cannot skip questions. |
+| Back | Version check (`#versionBack`) | Returns to the previous question with its saved answer selected. |
+| Retake | Version check result (`#versionRetake`) | Clears answers and restarts the check. |
+| Get early access | Version check result | Opens the existing form (`#ov-join`). |
+| Update to Home 2.0 | Inline Early Access (`#accessForm`) | Validates name and mobile number, then shows a local selection preview. No data is sent. |
+| Edit my details | Inline Early Access (`#accessEdit`) | Reopens the form with the entered details and preferences retained. |
+| Or chat on WhatsApp | Inline Early Access | Opens `https://wa.me/918943214897` in a new tab (user-provided number: `00918943214897`). |
 | Discover the Vision | Home evolution — `#vision` | Scrolls to Experience — `#experience`. |
 | Explore in 3D | Home evolution — `#vision` | Opens the residence view in `#ov-view`. |
 | Intelligent Living | Experience — `#experience` | Expands its description; no section navigation. |

@@ -153,6 +153,9 @@ a{color:inherit;text-decoration:none}
 .pano-btn .thumb{width:38px;height:38px;border-radius:50%;background-size:cover;background-position:40% 50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.4)}
 
 /* ---------- Why Home 2.0 ---------- */
+.img-why-home{background-image:url("assets/background/background_section2.png")}
+/* Crop the image's baked-in pale borders, with room for scaling/rounding. */
+.bg .img-why-home{inset:-15% 0!important}
 .why-home{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) 0;background:#171a19}
 .why-home > .bg .ph{background-position:60% 50%}
 .why-home .why-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,14,15,.92),rgba(13,18,19,.66) 50%,rgba(13,18,19,.38)),linear-gradient(0deg,rgba(9,13,15,.8),transparent 45%,rgba(9,13,15,.25))}
@@ -343,6 +346,132 @@ a{color:inherit;text-decoration:none}
 @media(max-width:760px){.benchmarks{padding:64px 0}.benchmark-heading{flex-direction:column;align-items:flex-start;gap:28px;margin-bottom:30px}.benchmark-control{width:min(100%,320px);padding:20px 22px}.benchmark-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.benchmark-tile{padding:22px 18px;border-radius:24px}.benchmark-tile dt{flex-wrap:wrap;gap:12px;font-size:9px;letter-spacing:.12em}.benchmark-icon{width:36px;height:36px;border-radius:12px}.benchmark-tile dt > span:last-of-type{flex-basis:calc(100% - 27px);order:2}.benchmark-check{order:3}.benchmark-value{margin-top:18px;font-size:22px;min-height:3.9em}.benchmark-caption{margin-top:22px;font-size:11px}}
 @media(max-width:380px){.benchmark-grid{gap:12px}.benchmark-tile{padding:20px 16px}.benchmark-value{font-size:20px}.benchmark-tile dt{font-size:8px;letter-spacing:.08em}}
 @media(prefers-reduced-motion:reduce){.benchmark-switch,.benchmark-switch > span,.benchmark-icon,.benchmark-check{transition:none}.benchmark-grid.benchmark-swap .benchmark-value{animation:none}}
+
+/* ---------- Home version diagnostic ---------- */
+.version-diagnostic{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) 0;background:#171d1c}
+.version-diagnostic > .bg .ph{background-position:55% 50%}
+.version-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,18,19,.91),rgba(18,24,24,.67) 55%,rgba(18,24,24,.6)),linear-gradient(0deg,rgba(12,18,19,.84),transparent 65%)}
+.version-layout{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(40px,6vw,88px);align-items:center}
+.version-diagnostic .eyebrow{color:#dfc9a8;letter-spacing:.23em}
+.version-diagnostic h2{font-size:clamp(34px,3.7vw,52px);font-weight:350;line-height:1.15;letter-spacing:-.035em}
+.version-intro{max-width:40ch;margin:24px 0 0;font-size:15px;line-height:1.75;color:#d3d9d5}
+.version-pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 20px;max-width:400px;list-style:none;margin:40px 0 0;padding:0}
+.version-pillars li{display:flex;align-items:center;gap:12px;min-width:0;color:#c0c9c5;font-size:12px}
+.version-pillar-icon{display:grid;place-items:center;flex:none;width:40px;height:40px;border-radius:13px;background:rgba(221,231,223,.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);color:#bdcac2;transition:color .2s ease,background-color .2s ease}
+.version-pillar-icon .ico{width:22px;height:22px}
+.version-pillars li.is-current .version-pillar-icon{color:#f3ddb8;background:rgba(220,186,134,.22);box-shadow:inset 0 0 0 1px rgba(239,214,175,.4)}
+.version-pillars li.is-done .version-pillar-icon{color:#cae7d2;background:rgba(112,170,133,.19)}
+.version-pillars li.is-current{color:#f1dfc1}
+.version-card{min-width:0;border-radius:32px;background:rgba(209,222,216,.13);box-shadow:inset 0 1px 1px rgba(255,255,255,.4),inset 0 0 0 1px rgba(255,255,255,.23),0 28px 70px rgba(0,0,0,.3)}
+.version-card > .c{border-radius:inherit;overflow:hidden;text-shadow:none!important}
+.version-card-toolbar{display:flex;align-items:center;gap:12px;padding:22px 28px;border-bottom:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.035)}
+.version-home-icon{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:12px;color:#f3dcb6;background:linear-gradient(145deg,rgba(215,184,139,.38),rgba(124,98,60,.14));box-shadow:inset 0 1px 0 rgba(255,235,203,.35)}
+.version-card-toolbar strong{display:block;font-size:13px;font-weight:500}
+.version-card-toolbar > div > span{display:block;margin-top:4px;font-size:10px;color:#c8d0ca}
+.version-duration{margin-left:auto;font-size:10px;color:#e8ddcb;white-space:nowrap}
+.version-quiz,.version-result{padding:28px clamp(24px,3vw,36px) 32px}
+.version-question-meta{display:flex;justify-content:space-between;gap:12px;color:#e4d3b7;font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+.version-progress{height:3px;background:rgba(226,234,228,.15);border-radius:99px;overflow:hidden;margin-top:16px}
+.version-progress span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#b0caba,#ead1aa);transition:width .2s ease}
+.version-question{margin:28px 0 24px;font-family:"Inter","Segoe UI",system-ui,sans-serif;font-size:clamp(23px,2.25vw,30px);font-weight:350;line-height:1.3;letter-spacing:-.025em;text-wrap:balance;min-height:2.6em}
+.version-question:focus-visible,.version-result-title:focus-visible{outline:2px solid #dcc6a5;outline-offset:6px;border-radius:6px}
+.version-options{display:grid;gap:12px;margin:0;padding:0;border:0;min-width:0}
+.version-option{display:flex;width:100%;text-align:left;align-items:center;gap:14px;padding:17px 18px;min-height:58px;border-radius:17px;background:rgba(18,25,24,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 0 0 1px rgba(255,255,255,.17);cursor:pointer;font-size:14px;line-height:1.45;color:#e4e9e4;transition:background-color .2s ease,box-shadow .2s ease}
+.version-choice{flex:none;display:block;width:18px;height:18px;border-radius:50%;border:1px solid rgba(225,236,226,.6);background:transparent}
+.version-option[aria-pressed="true"] .version-choice{border:5px solid #bcd8c6;background:#2f4639}
+.version-option[aria-pressed="true"]{background:rgba(136,177,148,.17);box-shadow:inset 0 1px 0 rgba(226,244,229,.25),inset 0 0 0 1px rgba(179,215,190,.65)}
+.version-option:focus-within{outline:2px solid #dcc6a5;outline-offset:3px}
+.version-quiz-actions{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:26px}
+.version-back{display:flex;align-items:center;gap:6px;padding:10px 0;color:#d5dcd6;font-size:12px}
+.version-back .ico{width:14px;height:14px;transform:rotate(180deg)}
+.version-back:disabled{opacity:.35;cursor:default}
+.version-access{display:inline-flex;justify-content:center;align-items:center;gap:12px;min-height:46px;padding:12px 20px;border-radius:16px;color:#233b2d;background:linear-gradient(135deg,#d9e6da,#accbb5);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 5px 16px rgba(0,0,0,.12);font-size:13px;font-weight:500;line-height:1.4}
+.version-answer-hint{margin:0;max-width:155px;font-size:10px;line-height:1.5;color:#c0cbc2;text-align:right}
+.version-result-title{margin:0 0 8px;font-size:11px;color:#dac5a6;font-weight:400;letter-spacing:.1em;text-transform:uppercase}
+.version-result-overview{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:0 0 20px}
+.version-result-version{font-family:"Inter","Segoe UI",system-ui,sans-serif;font-size:clamp(44px,5vw,64px);font-weight:300;letter-spacing:-.04em;line-height:1.1;color:#f0ddbd}
+.version-result-score{font-size:24px;letter-spacing:-.02em;color:#d5e9d9;white-space:nowrap}
+.version-result-score small{font-size:12px;color:#c9d5cd}
+.version-result-meta{font-size:12px;line-height:1.7;color:#d4dcd5;margin:0 0 22px}
+.version-score-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px;margin:0 0 26px}
+.version-score-grid > div > span{display:flex;justify-content:space-between;gap:8px;color:#d7dfd8;font-size:10px}
+.version-score-track{height:3px;border-radius:99px;background:rgba(255,255,255,.15);margin-top:8px;overflow:hidden}
+.version-score-track i{display:block;height:100%;background:#b5d1be}
+.version-issues{border-top:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16);padding:16px 0;margin-bottom:24px}
+.version-issues summary{cursor:pointer;color:#eddabd;font-size:12px;line-height:1.5}
+.version-issues ul{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:12px}
+.version-issues li{font-size:11px;line-height:1.6;color:#d3dcd4;border-top:1px solid rgba(255,255,255,.1);padding-top:12px}
+.version-issues li span{display:block;margin-top:4px;color:#eed6b0}
+.version-upgrade{margin:0 0 18px;font-size:18px;font-weight:350;line-height:1.4;color:#f0debf}
+.version-result-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.version-retake{min-height:46px;padding:12px 18px;border-radius:16px;font-size:12px;background:rgba(230,240,232,.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}
+.version-noscript{padding:28px;margin:0;font-size:14px;line-height:1.6}
+@media(hover:hover) and (pointer:fine){.version-option:hover{background:rgba(230,240,232,.12)}.version-access:hover{filter:brightness(1.07)}.version-retake:hover{background:rgba(230,240,232,.14)}}
+@media(max-width:1080px){.version-layout{gap:36px;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}.version-pillars{gap:18px 10px}.version-pillars li{flex-direction:column;align-items:flex-start;gap:8px}.version-card-toolbar{padding:20px 24px}}
+@media(max-width:760px){.version-diagnostic{padding:64px 0}.version-layout{grid-template-columns:1fr;gap:32px}.version-diagnostic h2{font-size:clamp(34px,7vw,46px)}.version-intro{font-size:14px;max-width:50ch;margin-top:20px}.version-pillars{grid-template-columns:repeat(3,minmax(0,1fr));max-width:400px;gap:20px 16px;margin-top:28px}.version-pillars li{align-items:flex-start;font-size:11px;gap:9px}.version-pillar-icon{width:38px;height:38px;border-radius:12px}.version-card{border-radius:28px}.version-card-toolbar{padding:18px 20px;gap:10px}.version-quiz,.version-result{padding:24px 22px 26px}.version-question{font-size:24px;margin-top:24px}.version-option{font-size:13px;padding:16px 15px;gap:12px}.version-quiz-actions{gap:12px}.version-card-toolbar strong{font-size:12px}.version-card-toolbar > div > span{font-size:9px}.version-result-score{font-size:22px}.version-result-actions{align-items:stretch}.version-access,.version-retake{flex:1}}
+@media(prefers-reduced-motion:reduce){.version-progress span,.version-option,.version-pillar-icon{transition:none}}
+
+#quizContent{opacity:1;transition:opacity .14s ease}
+#quizContent.version-leaving{opacity:0;pointer-events:none}
+#quizContent.version-entering{animation:version-question-in .24s ease-out}
+@keyframes version-question-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){#quizContent{transition:none}#quizContent.version-entering{animation:none}}
+
+/* ---------- Founding early access ---------- */
+.access-section{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) 0;background:#1b211f}
+.access-section > .bg .ph{background-position:58% 50%}
+.access-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,20,18,.9),rgba(19,26,23,.67) 55%,rgba(19,26,23,.55)),linear-gradient(0deg,rgba(13,20,18,.85),transparent 65%)}
+.access-layout{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,6vw,88px);align-items:center}
+.access-section .eyebrow{color:#dfc9a8;letter-spacing:.23em}
+.access-section h2{font-size:clamp(36px,3.9vw,56px);font-weight:350;line-height:1.12;letter-spacing:-.035em}
+.access-intro{max-width:38ch;margin:24px 0 0;font-size:15px;line-height:1.75;color:#d4dcd6}
+.access-perks{list-style:none;display:grid;gap:22px;max-width:410px;padding:28px 0 0;margin:34px 0 0;border-top:1px solid rgba(255,255,255,.17)}
+.access-perks li{display:flex;align-items:center;gap:16px;font-size:14px;line-height:1.5;color:#e4e9e2}
+.access-perk-icon{display:grid;place-items:center;flex:none;width:42px;height:42px;border-radius:14px;color:#efd8b2;background:linear-gradient(145deg,rgba(210,185,145,.23),rgba(159,137,99,.07));box-shadow:inset 0 1px 0 rgba(255,235,204,.28),inset 0 0 0 1px rgba(233,211,177,.15)}
+.access-perk-icon .ico{width:22px;height:22px}
+.access-card{min-width:0;border-radius:32px;background:rgba(210,222,214,.13);box-shadow:inset 0 1px 1px rgba(255,255,255,.4),inset 0 0 0 1px rgba(255,255,255,.23),0 28px 70px rgba(0,0,0,.3)}
+.access-card > .c{border-radius:inherit;overflow:hidden;text-shadow:none!important}
+.access-toolbar{display:flex;align-items:center;gap:12px;padding:22px 28px;border-bottom:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.035)}
+.access-home-icon{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:12px;color:#f2dbb4;background:linear-gradient(145deg,rgba(215,184,139,.38),rgba(124,98,60,.14));box-shadow:inset 0 1px 0 rgba(255,235,203,.35)}
+.access-toolbar strong{display:block;font-size:13px;font-weight:500}
+.access-toolbar > div > span{display:block;margin-top:4px;font-size:10px;color:#c9d1cb}
+.access-founding{margin-left:auto;padding:7px 9px;border-radius:999px;background:rgba(232,210,176,.1);box-shadow:inset 0 0 0 1px rgba(238,217,185,.25);font-size:9px;color:#edddc4;white-space:nowrap}
+.access-form,.access-done{padding:28px clamp(24px,3vw,36px) 32px}
+.access-form[hidden],.access-done[hidden],.access-error[hidden]{display:none}
+.access-fields{display:grid;gap:18px;border:0;padding:0;margin:0 0 28px;min-width:0}
+.access-fields legend{padding:0;margin-bottom:18px;color:#e4d4b9;font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+.access-field{display:grid;gap:8px;min-width:0;font-size:12px;color:#e5eae4}
+.access-field input,.access-field select{width:100%;min-width:0;min-height:48px;padding:13px 14px;border-radius:14px;border:1px solid rgba(234,243,234,.2);background:rgba(16,24,19,.15);color:#f0f3ed;font-size:14px;line-height:1.4;box-shadow:inset 0 1px 2px rgba(0,0,0,.05);color-scheme:dark}
+.access-field input::placeholder{color:#bfc9c0;opacity:1}
+.access-field select{padding-right:12px;cursor:pointer}
+.access-field select option{background:#26302a;color:#f0f3ed}
+.access-field input:focus-visible,.access-field select:focus-visible{outline:2px solid #ddc8a6;outline-offset:2px;border-radius:14px}
+.access-field [aria-invalid="true"]{border-color:#eab7a6}
+.access-field-error{color:#ffd0be;font-size:11px;line-height:1.5}
+.access-field-error:empty{display:none}
+.access-error{margin:0 0 14px;color:#ffd0be;font-size:12px;line-height:1.5}
+.access-submit{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:50px;padding:14px 20px;border-radius:16px;color:#243d2e;background:linear-gradient(135deg,#dce8da,#aecbb6);box-shadow:inset 0 1px 0 rgba(255,255,255,.75),0 5px 16px rgba(0,0,0,.12);font-size:14px;font-weight:500;transition:transform .2s ease,filter .2s ease}
+.access-submit .ico{width:16px;height:16px}
+.access-preview-note{margin:14px 0 0;font-size:10px;line-height:1.65;color:#c9d2c9;text-align:center}
+.access-done-icon{display:grid;place-items:center;width:60px;height:60px;border-radius:19px;color:#d5ecdc;background:linear-gradient(145deg,rgba(140,182,150,.42),rgba(99,145,114,.16));box-shadow:inset 0 1px 0 rgba(242,255,243,.35),inset 0 0 0 1px rgba(208,236,214,.3);margin-bottom:28px}
+.access-done-icon .ico{width:30px;height:30px}
+.access-done-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:#e7d3b3;margin:0 0 12px}
+.access-done h3{margin:0 0 20px;font-family:"Inter","Segoe UI",system-ui,sans-serif;font-size:clamp(28px,2.8vw,38px);line-height:1.2;font-weight:350;letter-spacing:-.035em;overflow-wrap:anywhere}
+.access-done h3:focus-visible{outline:2px solid #ddc8a6;outline-offset:6px;border-radius:6px}
+.access-done > p:not(.access-done-kicker){font-size:14px;line-height:1.7;color:#dce4dc;margin:0 0 16px}
+.access-done > .access-done-note{font-size:12px!important;color:#c9d2c9!important}
+.access-edit{margin-top:12px;min-height:46px;padding:12px 18px;border-radius:15px;font-size:13px;color:#e9eee7;background:rgba(230,240,230,.09);box-shadow:inset 0 0 0 1px rgba(255,255,255,.23)}
+.access-noscript{padding:28px;margin:0;font-size:14px;line-height:1.6}
+@media(hover:hover) and (pointer:fine){.access-submit:hover{transform:translateY(-2px);filter:brightness(1.06)}.access-submit:active{transform:translateY(0)}.access-edit:hover{background:rgba(230,240,230,.16)}}
+@media(max-width:1080px){.access-layout{gap:36px;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}.access-toolbar{padding:20px 24px}.access-perks li{font-size:13px}}
+@media(max-width:760px){.access-section{padding:64px 0}.access-layout{grid-template-columns:1fr;gap:36px}.access-section h2{font-size:clamp(36px,7vw,48px)}.access-intro{max-width:50ch;font-size:14px;margin-top:20px}.access-perks{max-width:none;margin-top:28px;padding-top:24px;gap:18px}.access-perks li{font-size:13px;gap:14px}.access-card{border-radius:28px}.access-toolbar{padding:18px 20px;gap:10px}.access-toolbar strong{font-size:12px}.access-toolbar > div > span{font-size:9px}.access-founding{font-size:8px;padding:6px 8px}.access-form,.access-done{padding:24px 22px 28px}.access-field input,.access-field select{font-size:16px}.access-done h3{font-size:30px}}
+@media(prefers-reduced-motion:reduce){.access-submit{transition:none}}
+
+.access-whatsapp{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:11px 14px;border-radius:15px;color:#cee5d5;background:rgba(119,174,139,.1);box-shadow:inset 0 0 0 1px rgba(181,218,191,.2);font-size:12px;line-height:1.5;transition:background-color .2s ease}
+.access-whatsapp > .ico{width:18px;height:18px}
+.access-whatsapp > .access-external{width:13px;height:13px;margin-left:6px}
+@media(hover:hover) and (pointer:fine){.access-whatsapp:hover{background:rgba(119,174,139,.2)}}
+@media(prefers-reduced-motion:reduce){.access-whatsapp{transition:none}}
 
 /* ---------- Light sections ---------- */
 .light{position:relative;overflow:hidden;color:var(--ink)}
@@ -575,7 +704,7 @@ body.intro-pending{overflow-x:hidden;overflow-y:auto}
 body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){visibility:visible}
 #intro,#introToast{display:none!important}
 </style></noscript>
-<noscript><style>.benchmark-control{display:none}.release-tabs,.release-search{display:none}.release-panel[hidden]{display:block}.release-panels{display:grid;gap:24px}</style></noscript>
+<noscript><style>.access-form{display:none}.benchmark-control{display:none}.release-tabs,.release-search{display:none}.release-panel[hidden]{display:block}.release-panels{display:grid;gap:24px}</style></noscript>
 </head>
 <body class="intro-pending">
 <!-- ================= HOME UPDATE INTRO ================= -->
@@ -688,7 +817,7 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
           </div>
           <div class="version-card-actions">
             <button class="version-later lg" id="heroRemindLater" type="button" data-lg='{"scale":22,"blur":10,"tint":0.15,"tintColor":"#dce8f8","edge":0.9}'><span class="c">Remind Me Later</span></button>
-            <button class="version-check lg" id="heroCheckVersion" type="button" data-section-target="vision" data-lg='{"scale":26,"blur":8,"tint":0.88,"tintColor":"#5afff2","glow":0.35,"edge":1}'><span class="c">Check Your Version</span></button>
+            <button class="version-check lg" id="heroCheckVersion" type="button" data-section-target="version" data-lg='{"scale":26,"blur":8,"tint":0.88,"tintColor":"#5afff2","glow":0.35,"edge":1}'><span class="c">Check Your Version</span></button>
           </div>
         </div>
       </div>
@@ -721,7 +850,7 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
 <main>
 <!-- ================= WHY HOME 2.0 ================= -->
 <section class="why-home on-dark" id="why-home" aria-labelledby="whyHomeTitle" data-scene-root>
-  <div class="bg" aria-hidden="true"><div class="ph img-intro"></div><div class="why-shade"></div></div>
+  <div class="bg" aria-hidden="true"><div class="ph img-why-home"></div><div class="why-shade"></div></div>
   <div class="wrap why-layout">
     <div class="why-story">
       <p class="eyebrow">Why Home 2.0</p>
@@ -965,6 +1094,33 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
   </div>
 </section>
 
+<!-- ================= VERSION CHECK ================= -->
+<section class="version-diagnostic on-dark" id="version" aria-labelledby="versionTitle" data-scene-root>
+  <div class="bg" aria-hidden="true"><div class="ph img-intro"></div><div class="version-shade"></div></div>
+  <div class="wrap version-layout">
+    <div class="version-story">
+      <p class="eyebrow">Version check &middot; 90 seconds</p>
+      <h2 class="serif" id="versionTitle">What version<br>is your home?</h2>
+      <p class="version-intro">12 quick questions across the six Home 2.0 features. Get your score, your known issues, and your upgrade path.</p>
+      <ol class="version-pillars" aria-label="Version check features">
+        <li data-pillar="Energy"><span class="version-pillar-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z"/></svg></span><span>Energy</span><span class="sr version-pillar-status">Not started</span></li>
+        <li data-pillar="Water"><span class="version-pillar-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z"/><path d="M8 15a4 4 0 0 0 4 4"/></svg></span><span>Water</span><span class="sr version-pillar-status">Not started</span></li>
+        <li data-pillar="Air"><span class="version-pillar-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h12a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h5a3 3 0 1 1-3 3"/></svg></span><span>Air</span><span class="sr version-pillar-status">Not started</span></li>
+        <li data-pillar="Mobility"><span class="version-pillar-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2v5m6-5v5M6 7h12v4a6 6 0 0 1-12 0V7Zm6 10v5m0-12-2 3h4"/></svg></span><span>Mobility</span><span class="sr version-pillar-status">Not started</span></li>
+        <li data-pillar="Nature"><span class="version-pillar-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-leaf"/></svg></span><span>Nature</span><span class="sr version-pillar-status">Not started</span></li>
+        <li data-pillar="Community"><span class="version-pillar-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 21v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v2"/></svg></span><span>Community</span><span class="sr version-pillar-status">Not started</span></li>
+      </ol>
+    </div>
+    <div class="version-card lg" id="quizMount" data-lg='{"scale":30,"depth":24,"blur":18,"tint":0.2,"tintColor":"#414744","edge":1}'>
+      <div class="c">
+        <div class="version-card-toolbar"><span class="version-home-icon" aria-hidden="true"><svg class="ico"><use href="#i-home"/></svg></span><div><strong>Home diagnostic</strong><span>The Living Wave &middot; Home 2.0</span></div><span class="version-duration">90 sec</span></div>
+        <div id="quizContent"></div>
+        <noscript><p class="version-noscript">Enable JavaScript to take the version check.</p></noscript>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= EVOLVED ================= -->
 <section class="light evolve" id="vision" data-scene-root>
   <div class="bg-light bg"></div>
@@ -1053,6 +1209,51 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
       <span class="chev"><svg class="ico" style="width:14px;height:14px"><use href="#i-chev"/></svg></span>
       <span class="more">Plans built around daylight, quiet corners and rooms that move easily between work, family and rest.</span>
     </span></button>
+  </div>
+</section>
+
+<!-- ================= EARLY ACCESS ================= -->
+<section class="access-section on-dark" id="access" aria-labelledby="accessTitle" data-scene-root>
+  <div class="bg" aria-hidden="true"><div class="ph img-res"></div><div class="access-shade"></div></div>
+  <div class="wrap access-layout">
+    <div class="access-story">
+      <p class="eyebrow">Early access &middot; Founding 222</p>
+      <h2 class="serif" id="accessTitle">Be first<br>to update.</h2>
+      <p class="access-intro">The first release is limited to 222 homes. Early access members get priority. Never discounts.</p>
+      <ul class="access-perks">
+        <li><span class="access-perk-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><path d="m11 11 9 9m-3-3 3-3m-6 0 3-3"/></svg></span><span>First choice of home, floor and view</span></li>
+        <li><span class="access-perk-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></span><span>A private preview of Home 2.0 at the site</span></li>
+        <li><span class="access-perk-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 10h18m-13 5 3 3 5-5"/></svg></span><span>Priority on launch day</span></li>
+      </ul>
+      <a class="access-whatsapp" href="https://wa.me/918943214897" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp at 00918943214897"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a9 9 0 0 1-9 9 10 10 0 0 1-4-.9L3 21l1.4-4.6A9 9 0 1 1 21 11.5Z"/><path d="M8 7.5c.4 4 3 6.6 7 7l1.5-2-2.6-1.2-1 1c-1.4-.5-2.6-1.6-3.1-3l1-1L9.6 6Z"/></svg><span>Or chat on WhatsApp</span><svg class="ico access-external" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+    </div>
+    <div class="access-card lg" data-lg='{"scale":30,"depth":24,"blur":18,"tint":0.2,"tintColor":"#3d433f","edge":1}'>
+      <div class="c">
+        <div class="access-toolbar"><span class="access-home-icon" aria-hidden="true"><svg class="ico"><use href="#i-home"/></svg></span><div><strong>Your next home</strong><span>The Living Wave &middot; Home 2.0</span></div><span class="access-founding">Founding 222</span></div>
+        <form class="access-form" id="accessForm" novalidate>
+          <fieldset class="access-fields"><legend>Contact details</legend>
+            <label class="access-field" for="accessName"><span>Your name</span><input id="accessName" name="name" autocomplete="name" placeholder="Full name" required aria-describedby="accessNameError"><span class="access-field-error" id="accessNameError"></span></label>
+            <label class="access-field" for="accessPhone"><span>Mobile number</span><input id="accessPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="10-digit mobile" required aria-describedby="accessPhoneError"><span class="access-field-error" id="accessPhoneError"></span></label>
+          </fieldset>
+          <fieldset class="access-fields"><legend>Residence preferences</legend>
+            <label class="access-field" for="accessModel"><span>Model</span><select id="accessModel" name="model"><option value="Home 2.0">Home 2.0 &middot; 3 BHK + 2T</option><option value="Home 2.0 Plus">Home 2.0 Plus &middot; 3 BHK + 3T</option><option value="Home 2.0 Max">Home 2.0 Max &middot; 4 BHK + 3T</option></select></label>
+            <label class="access-field" for="accessTime"><span>When do you plan to move?</span><select id="accessTime" name="time"><option>0&ndash;3 months</option><option>3&ndash;6 months</option><option>Just exploring</option></select></label>
+          </fieldset>
+          <p class="access-error" id="accessError" role="alert" hidden></p>
+          <button class="access-submit" type="submit"><span>Update to Home 2.0</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <p class="access-preview-note">Preview form: your details stay on this page and are not submitted.</p>
+        </form>
+        <div class="access-done" id="accessDone" hidden>
+          <span class="access-done-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span>
+          <p class="access-done-kicker">Selection ready</p>
+          <h3 id="accessDoneTitle" tabindex="-1">Welcome home, <span id="accessDoneName"></span>.</h3>
+          <p>You selected <strong id="accessDoneModel"></strong>.</p>
+          <p class="access-done-note">This is a local preview. Your details have not been sent, and no WhatsApp message has been scheduled.</p>
+          <button class="access-edit" type="button" id="accessEdit">Edit my details</button>
+        </div>
+        <noscript><p class="access-noscript">Enable JavaScript to preview your early-access selection.</p></noscript>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1485,6 +1686,137 @@ benchmarkSwitch.addEventListener('click', function(){
   void benchmarkGrid.offsetWidth;
   benchmarkGrid.classList.add('benchmark-swap');
   document.getElementById('benchmarkStatus').textContent = (v2 ? 'Home 2.0' : 'Home v1.0') + ' selected. All six capabilities updated.';
+  requestAnimationFrame(resyncAll);
+});
+
+/* ---------- Home version check ---------- */
+  var versionQuestions = [
+    ['Energy','When the power goes out, what happens at home?',['Total blackout','The inverter starts beeping','We barely notice']],
+    ['Energy','Does your home make any of its own power?',['No','Some solar in common areas','Yes, solar powers our home']],
+    ['Water','Has your building ordered water tankers this year?',['Often','Sometimes','Never']],
+    ['Water','Does your building harvest rainwater?',['No idea','Yes, not sure it works','Yes, and we use it']],
+    ['Air','Do you know the air quality inside your home right now?',['No idea','I check outdoor air on an app','Yes, we measure indoors']],
+    ['Air','How is the air at home cleaned?',["It isn't",'A purifier in one room','Built into the home']],
+    ['Mobility','Can you charge an EV at your parking spot?',['No','Only with a cable or workaround','Yes, a dedicated charger']],
+    ['Mobility','Is your building ready for more EVs?',['Not at all','A few shared points','Every parking is EV-ready']],
+    ['Nature','What do you see from your window?',['Mostly concrete','A few trees','Green, every day']],
+    ['Nature',"Where's the nearest green space you actually use?",['Need to drive there','Walk outside the complex','Inside my building']],
+    ['Community','How many neighbours do you know by name?',['Zero','A few','Many']],
+    ['Community','Where do evenings happen for your family?',['Inside the flat','Outside the complex','In common spaces at home']]
+  ];
+
+var versionIcons = {"Energy": "<svg class=\"ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m13 2-9 12h7l-1 8 10-13h-7l1-7Z\"/></svg>", "Water": "<svg class=\"ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z\"/><path d=\"M8 15a4 4 0 0 0 4 4\"/></svg>", "Air": "<svg class=\"ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 8h12a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h5a3 3 0 1 1-3 3\"/></svg>", "Mobility": "<svg class=\"ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M9 2v5m6-5v5M6 7h12v4a6 6 0 0 1-12 0V7Zm6 10v5m0-12-2 3h4\"/></svg>", "Nature": "<svg class=\"ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><use href=\"#i-leaf\"/></svg>", "Community": "<svg class=\"ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"9\" cy=\"8\" r=\"3\"/><path d=\"M3 21v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v2\"/></svg>"};
+var versionPillars = Object.keys(versionIcons);
+var versionIndex = 0, versionAnswers = [];
+var quizContent = document.getElementById('quizContent');
+function versionEscape(text){ return String(text).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+function updateVersionPillars(finished){
+  document.querySelectorAll('.version-pillars li').forEach(function(li, i){
+    var done = finished || versionIndex >= (i + 1) * 2;
+    var current = !finished && Math.floor(versionIndex / 2) === i;
+    li.classList.toggle('is-done', done);
+    li.classList.toggle('is-current', current);
+    li.querySelector('.version-pillar-status').textContent = done ? 'Completed' : current ? 'In progress' : 'Not started';
+  });
+}
+function revealVersionContent(focus){
+  quizContent.classList.remove('version-leaving', 'version-entering');
+  if (focus){ void quizContent.offsetWidth; quizContent.classList.add('version-entering'); }
+}
+function renderVersionQuestion(focus){
+  var q = versionQuestions[versionIndex], selected = versionAnswers[versionIndex];
+  quizContent.innerHTML = '<div class="version-quiz">' +
+    '<div class="version-question-meta"><span>' + q[0] + '</span><span>' + (versionIndex + 1) + ' / 12</span></div>' +
+    '<div class="version-progress" aria-hidden="true"><span style="width:' + (versionIndex / 12 * 100) + '%"></span></div>' +
+    '<h3 class="version-question" id="qtext" tabindex="-1">' + versionEscape(q[1]) + '</h3>' +
+    '<div class="version-options" role="group" aria-labelledby="qtext">' + q[2].map(function(option, k){
+      return '<button type="button" class="version-option" data-answer="' + k + '" aria-pressed="' + String(selected === k) + '"><span class="version-choice" aria-hidden="true"></span><span>' + versionEscape(option) + '</span></button>';
+    }).join('') + '</div>' +
+    '<div class="version-quiz-actions"><button type="button" class="version-back" id="versionBack"' + (versionIndex === 0 ? ' disabled' : '') + '><svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>Back</button>' +
+    '<p class="version-answer-hint">Tap an answer to continue</p></div></div>';
+  updateVersionPillars(false);
+  revealVersionContent(focus);
+  var advancing = false;
+  quizContent.querySelectorAll('.version-option').forEach(function(button){
+    button.addEventListener('click', function(){
+      if (advancing) return;
+      advancing = true;
+      quizContent.querySelectorAll('.version-option').forEach(function(option){ option.setAttribute('aria-pressed', String(option === button)); });
+      document.getElementById('versionBack').disabled = true;
+      var answer = Number(button.dataset.answer);
+      function advance(){
+        versionAnswers = versionAnswers.slice(0, versionIndex);
+        versionAnswers[versionIndex] = answer;
+        versionIndex++;
+        if (versionIndex < versionQuestions.length) renderVersionQuestion(true); else renderVersionResult();
+      }
+      if (reduce) advance();
+      else { quizContent.classList.remove('version-entering'); quizContent.classList.add('version-leaving'); setTimeout(advance, 140); }
+    });
+  });
+  document.getElementById('versionBack').addEventListener('click', function(){ if (!advancing && versionIndex > 0){ versionIndex--; renderVersionQuestion(true); } });
+  if (focus) document.getElementById('qtext').focus({preventScroll:true});
+  requestAnimationFrame(resyncAll);
+}
+function renderVersionResult(){
+  var points = versionAnswers.reduce(function(a, b){ return a + b; }, 0);
+  var score = Math.round(points / 24 * 100);
+  var version = 'v1.' + Math.min(9, Math.floor(score / 10));
+  var issues = versionQuestions.map(function(q, i){ return {q:q, answer:versionAnswers[i]}; }).filter(function(item){ return item.answer === 0; });
+  var pillarScores = {};
+  versionQuestions.forEach(function(q, i){ pillarScores[q[0]] = (pillarScores[q[0]] || 0) + versionAnswers[i]; });
+  var lowest = Math.min.apply(null, Object.values(pillarScores));
+  var weakest = versionPillars.filter(function(name){ return pillarScores[name] === lowest; });
+  quizContent.innerHTML = '<div class="version-result"><h3 class="version-result-title" id="versionResultTitle" tabindex="-1">Your home is running</h3>' +
+    '<div class="version-result-overview"><span class="version-result-version">' + version + '</span><span class="version-result-score">' + score + '<small> / 100</small></span></div>' +
+    '<p class="version-result-meta">' + issues.length + ' known issue' + (issues.length === 1 ? '' : 's') + '<br>Lowest scoring: ' + weakest.join(', ') + '</p>' +
+    '<div class="version-score-grid">' + versionPillars.map(function(name){ var pct = pillarScores[name] / 4 * 100; return '<div><span><b>' + name + '</b><span>' + pct + '%</span></span><div class="version-score-track" aria-hidden="true"><i style="width:' + pct + '%"></i></div></div>'; }).join('') + '</div>' +
+    (issues.length ? '<details class="version-issues"><summary>Review ' + issues.length + ' known issue' + (issues.length === 1 ? '' : 's') + '</summary><ul>' + issues.map(function(item){ return '<li>' + versionEscape(item.q[1]) + '<span>' + versionEscape(item.q[2][0]) + '</span></li>'; }).join('') + '</ul></details>' : '<p class="version-result-meta">No critical issues identified in your answers.</p>') +
+    '<p class="version-upgrade">Update available &rarr; Home 2.0</p><div class="version-result-actions"><button type="button" class="version-access" data-open="join">Get early access</button><button type="button" class="version-retake" id="versionRetake">Retake</button></div></div>';
+  updateVersionPillars(true);
+  revealVersionContent(true);
+  document.getElementById('versionRetake').addEventListener('click', function(){ versionIndex = 0; versionAnswers = []; renderVersionQuestion(true); });
+  document.getElementById('versionResultTitle').focus({preventScroll:true});
+  requestAnimationFrame(resyncAll);
+}
+renderVersionQuestion(false);
+
+/* ---------- Inline early access preview ---------- */
+var accessForm = document.getElementById('accessForm');
+var accessName = document.getElementById('accessName');
+var accessPhone = document.getElementById('accessPhone');
+function validateAccessField(input, valid, message){
+  input.setAttribute('aria-invalid', String(!valid));
+  document.getElementById(input.id + 'Error').textContent = valid ? '' : message;
+  return valid;
+}
+accessForm.addEventListener('submit', function(event){
+  event.preventDefault();
+  var nameValid = validateAccessField(accessName, accessName.value.trim().length > 1, 'Enter your full name.');
+  var phone = accessPhone.value.trim();
+  var phoneValid = validateAccessField(accessPhone, /^[0-9\s()-]+$/.test(phone) && phone.replace(/[\s()-]/g, '').length === 10, 'Enter a 10-digit mobile number.');
+  var error = document.getElementById('accessError');
+  error.hidden = nameValid && phoneValid;
+  error.textContent = nameValid && phoneValid ? '' : 'Please check the highlighted fields.';
+  if (!nameValid || !phoneValid){ (nameValid ? accessPhone : accessName).focus(); return; }
+  document.getElementById('accessDoneName').textContent = accessName.value.trim().split(/\s+/)[0];
+  document.getElementById('accessDoneModel').textContent = document.getElementById('accessModel').value;
+  accessForm.hidden = true;
+  document.getElementById('accessDone').hidden = false;
+  document.getElementById('accessDoneTitle').focus({preventScroll:true});
+  requestAnimationFrame(resyncAll);
+});
+[accessName, accessPhone].forEach(function(input){
+  input.addEventListener('input', function(){
+    input.removeAttribute('aria-invalid');
+    document.getElementById(input.id + 'Error').textContent = '';
+    document.getElementById('accessError').hidden = true;
+  });
+});
+document.getElementById('accessEdit').addEventListener('click', function(){
+  document.getElementById('accessDone').hidden = true;
+  accessForm.hidden = false;
+  accessName.focus({preventScroll:true});
   requestAnimationFrame(resyncAll);
 });
 
