@@ -149,8 +149,6 @@ a{color:inherit;text-decoration:none}
 .knob .c{width:100%;height:100%;display:grid;place-items:center}
 .knob .c i{width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 10px rgba(255,220,170,.9)}
 .track:focus-within .knob{outline:2px solid var(--glow);outline-offset:3px}
-.pano-btn{position:absolute;right:0;bottom:0;padding:0 18px 0 6px;min-height:50px;font-size:13px}
-.pano-btn .thumb{width:38px;height:38px;border-radius:50%;background-size:cover;background-position:40% 50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.4)}
 
 /* ---------- Why Home 2.0 ---------- */
 .img-why-home{background-image:url("assets/background/background_section2.png")}
@@ -543,53 +541,85 @@ a{color:inherit;text-decoration:none}
 @media(max-width:380px){.project-widget > .c{padding:18px}.project-widget-small-metric .project-fact-value{font-size:36px}.project-widget-title{font-size:8px;letter-spacing:.04em;gap:6px}.project-widget-title .ico{width:14px;height:14px}.project-widget-footprint > .c{padding:24px}.project-widget-phase > .c{padding:24px}.project-release-ring{width:210px}}
 @media(prefers-reduced-motion:reduce){.project-facts-location,.project-phase-link{transition:none}}
 
-/* ---------- Urbanrise Environmental Intelligence ---------- */
-.urbanrise-ei{position:relative;isolation:isolate;overflow:hidden;padding:clamp(80px,8vw,120px) 0;background:#16231c}
+/* ---------- Urbanrise EI: impact summary and system explanations ---------- */
+.urbanrise-ei{position:relative;isolation:isolate;overflow:hidden;padding:clamp(64px,7vw,96px) 0;background:#16231c}
 .urbanrise-ei > .bg .ph{background-position:35% 50%}
-.ei-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,24,17,.92),rgba(16,30,21,.71)),linear-gradient(0deg,rgba(11,24,17,.94),transparent 65%,rgba(11,24,17,.45))}
+.ei-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,24,17,.91),rgba(16,30,21,.65)),linear-gradient(0deg,rgba(11,24,17,.94),transparent 65%,rgba(11,24,17,.4))}
 .urbanrise-ei .wrap{position:relative;z-index:1}
-.ei-overview{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:clamp(40px,7vw,96px);align-items:center}
-.ei-story{max-width:570px}
+.ei-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:clamp(32px,5vw,72px);align-items:end;margin-bottom:32px}
 .urbanrise-ei .eyebrow{color:#dec7a5;letter-spacing:.23em;line-height:1.8}
-.urbanrise-ei h2{font-size:clamp(38px,4.4vw,62px);font-weight:350;line-height:1.12;letter-spacing:-.04em}
+.urbanrise-ei h2{font-size:clamp(36px,4vw,56px);font-weight:350;line-height:1.12;letter-spacing:-.04em}
 .urbanrise-ei h2 span{color:#c4dbbf}
-.ei-intro{max-width:48ch;margin:26px 0 0;font-size:15px;line-height:1.85;color:#d1dccd}
-.ei-motto{display:flex;align-items:center;gap:12px;margin:28px 0 0;padding-top:24px;border-top:1px solid rgba(225,238,214,.16);color:#ddc9a7;font-size:12px;line-height:1.6;letter-spacing:.02em}
-.ei-motto .ico{width:22px;height:22px;color:#bdd7b5}
-.ei-targets{min-width:0;border-radius:32px;background:rgba(184,211,173,.12)}
-.ei-targets > .c{padding:28px 30px;text-shadow:none!important}
-.ei-targets h3{display:flex;align-items:center;gap:10px;margin:0 0 26px;color:#d1dfc7;font-size:10px;font-weight:500;letter-spacing:.14em;line-height:1.7;text-transform:uppercase}
-.ei-targets h3 .ico{width:19px;height:19px;color:#d8c49f}
-.ei-targets dl{margin:0}
-.ei-target{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:18px;align-items:start;padding:24px 0}
-.ei-target:first-child{padding-top:0}
-.ei-target + .ei-target{border-top:1px solid rgba(227,239,216,.15)}
-.ei-target:last-child{padding-bottom:0}
-.ei-target dt{display:contents}
-.ei-target-icon{display:grid;place-items:center;grid-column:1;grid-row:1 / 3;width:40px;height:40px;margin-top:4px;border-radius:13px;color:#cfdfbf;background:linear-gradient(145deg,rgba(185,215,156,.2),rgba(168,195,143,.04));box-shadow:inset 0 1px 0 rgba(235,251,215,.24),inset 0 0 0 1px rgba(217,240,191,.12)}
-.ei-target-icon .ico{width:22px;height:22px}
-.ei-target-description{grid-column:2;grid-row:2;margin-top:10px;color:#c7d6bf;font-size:12px;line-height:1.7;max-width:34ch}
-.ei-target dd{grid-column:2;grid-row:1;display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;margin:0;color:#e9e9d8;font-family:"Inter","Segoe UI",system-ui,sans-serif;font-size:clamp(32px,3.3vw,46px);font-weight:350;letter-spacing:-.045em;line-height:1.1;font-variant-numeric:tabular-nums}
-.ei-target dd span{font-family:var(--sans);font-size:14px;font-weight:400;letter-spacing:0;line-height:1.5;color:#d6d9c2}
-.ei-toolkit{margin-top:clamp(44px,5vw,64px)}
-.ei-toolkit-heading{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:22px}
-.ei-toolkit-heading h3{margin:0;color:#e3e8db;font-size:14px;font-weight:500;line-height:1.6}
-.ei-toolkit-heading p{margin:0;color:#bccbb5;font-size:11px;line-height:1.6}
-.ei-toolkit-glass{border-radius:28px;background:rgba(191,210,179,.08)}
-.ei-tools{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:28px 24px;margin:0;padding:30px;list-style:none;text-shadow:none!important}
-.ei-tools li{display:flex;align-items:flex-start;gap:12px;min-width:0;color:#d6dfce;font-size:12px;line-height:1.7}
-.ei-tools .ico{width:22px;height:22px;margin-top:1px;color:#c5d5b5}
-.ei-recognition{margin-top:36px;padding-top:28px;border-top:1px solid rgba(228,239,214,.16)}
-.ei-recognition-title{display:flex;align-items:center;gap:10px;margin:0 0 20px;color:#dbc7a6;font-size:10px;font-weight:500;letter-spacing:.15em;line-height:1.5;text-transform:uppercase}
+.ei-intro{margin:0;font-size:14px;line-height:1.8;color:#d1dccd;max-width:48ch}
+.ei-motto{display:flex;align-items:center;gap:10px;margin:18px 0 0;color:#ddc9a7;font-size:12px;line-height:1.6}
+.ei-motto .ico{width:19px;height:19px;color:#bdd7b5}
+.ei-insights{min-width:0;border-radius:30px;background:rgba(196,213,182,.11)}
+.ei-insights > .c{border-radius:inherit;overflow:hidden;text-shadow:none!important}
+.ei-insights-toolbar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 28px;border-bottom:1px solid rgba(224,239,209,.14);background:rgba(225,242,208,.035)}
+.ei-insights-toolbar > span:first-child{display:flex;align-items:center;gap:10px;color:#dce8d3;font-size:12px;font-weight:500;line-height:1.5}
+.ei-insights-toolbar .ico{width:19px;height:19px;color:#d6c19b}
+.ei-insights-toolbar > span:last-child{font-size:10px;color:#bccbb2;line-height:1.6}
+.ei-topic-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:24px 28px 0}
+.ei-topic{position:relative;min-width:0;text-align:left;padding:18px 22px;border-radius:20px;background:rgba(13,27,18,.16);box-shadow:inset 0 0 0 1px rgba(224,239,209,.12);color:#d0ddc5;transition:background-color .2s ease,box-shadow .2s ease}
+.ei-topic-name{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:500;line-height:1.5;margin-bottom:12px}
+.ei-topic-name .ico{width:18px;height:18px}
+.ei-topic-value{display:block;font-family:"Inter","Segoe UI",system-ui,sans-serif;font-size:32px;font-weight:350;letter-spacing:-.04em;line-height:1.1;font-variant-numeric:tabular-nums}
+.ei-topic-unit{display:block;font-size:11px;line-height:1.6;margin-top:5px;color:#bdcbb3}
+.ei-topic[data-ei-topic="water"] .ei-topic-name,.ei-topic[data-ei-topic="water"] .ei-topic-value{color:#c9e0e0}
+.ei-topic[data-ei-topic="energy"] .ei-topic-name,.ei-topic[data-ei-topic="energy"] .ei-topic-value{color:#e5d2ad}
+.ei-topic[data-ei-topic="carbon"] .ei-topic-name,.ei-topic[data-ei-topic="carbon"] .ei-topic-value{color:#c8dfb8}
+.ei-topic-selected{position:absolute;right:18px;top:21px;opacity:.35}
+.ei-topic-selected .ico{width:13px;height:13px}
+.ei-topic[aria-selected="true"]{background:rgba(179,213,159,.15);box-shadow:inset 0 1px 0 rgba(237,254,222,.2),inset 0 0 0 1px rgba(207,229,184,.6)}
+.ei-topic[aria-selected="true"] .ei-topic-selected{opacity:1}
+.ei-topic:focus-visible{border-radius:20px;outline-color:#dec7a5;outline-offset:3px}
+.ei-panel{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,64px);padding:30px 32px}
+.ei-panel[hidden]{display:none}
+.ei-panel:not([hidden]){animation:ei-panel-in .18s ease-out}
+@keyframes ei-panel-in{from{opacity:.55}to{opacity:1}}
+.ei-panel:focus-visible{outline:2px solid #dec7a5;outline-offset:-6px;border-radius:20px}
+.ei-panel-story{padding:4px 0}
+.ei-panel-kicker{margin:0 0 14px;color:#c7d6be;font-size:11px;letter-spacing:.13em;line-height:1.7;text-transform:uppercase}
+.ei-panel-story h3{margin:0;color:#e5ebdc;font-family:"Inter","Segoe UI",system-ui,sans-serif;font-size:clamp(28px,2.6vw,38px);font-weight:350;letter-spacing:-.035em;line-height:1.2;max-width:20ch}
+.ei-panel-description{margin:18px 0 0;color:#d1ddc8;font-size:17px;line-height:1.65;max-width:42ch}
+.ei-panel-target{display:flex;flex-direction:column;gap:9px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(224,239,209,.15)}
+.ei-panel-target-label{color:#c5d5ba;font-size:13px;line-height:1.6}
+.ei-panel-target strong{font-family:"Inter","Segoe UI",system-ui,sans-serif;font-size:46px;font-weight:350;letter-spacing:-.04em;line-height:1.2;color:#d7e8d0}
+.ei-panel[data-ei-panel="water"] .ei-panel-target strong{color:#cee3e2}.ei-panel[data-ei-panel="energy"] .ei-panel-target strong{color:#e6d3ad}
+.ei-panel-target small{display:inline-block;font-family:var(--sans);font-size:17px;font-weight:400;letter-spacing:0;line-height:1.6;color:#c8d6be}
+.ei-panel-target-description{font-size:15px;line-height:1.6;color:#c8d8be;max-width:34ch}
+.ei-systems-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 14px}
+.ei-systems-heading h4{margin:0;color:#d9e4ce;font-size:14px;font-weight:500;line-height:1.6}
+.ei-systems-heading > span{color:#b1c3a5;font-size:11px;line-height:1.6;white-space:nowrap}
+.ei-tech-list{padding:0 18px;border-radius:20px;background:rgba(15,29,19,.16);box-shadow:inset 0 0 0 1px rgba(224,239,209,.12)}
+.ei-tech + .ei-tech{border-top:1px solid rgba(225,241,207,.12)}
+.ei-tech summary{box-sizing:border-box;display:flex;align-items:center;gap:12px;list-style:none;cursor:pointer;padding:16px 0;min-height:58px;color:#dbe6d0;font-size:14px;line-height:1.6}
+.ei-tech summary::-webkit-details-marker{display:none}
+.ei-tech-icon{display:grid;place-items:center;flex:none;width:28px;height:28px;color:#c6dcb6}
+.ei-tech-icon .ico{width:23px;height:23px;stroke-width:1.4}
+.ei-panel[data-ei-panel="water"] .ei-tech-icon{color:#bcd9d9}.ei-panel[data-ei-panel="energy"] .ei-tech-icon{color:#e3cfa7}
+.ei-tech-chevron{flex:none;margin-left:auto;width:13px;height:13px;color:#b4c7a9;transition:transform .18s ease}
+.ei-tech[open] .ei-tech-chevron{transform:rotate(90deg)}
+.ei-tech[open] summary{color:#f0e4cc}
+.ei-tech summary:focus-visible{border-radius:12px;outline-color:#dec7a5;outline-offset:0}
+.ei-tech p{margin:0;padding:0 0 18px 40px;color:#c2d2b7;font-size:14px;line-height:1.8}
+.ei-systems-hint{margin:12px 0 0;color:#aebfa4;font-size:11px;line-height:1.6}
+.ei-insights-footer{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 28px;border-top:1px solid rgba(224,239,209,.13);color:#aebeA3;font-size:10px;line-height:1.7}
+.ei-insights-footer a{display:flex;align-items:center;gap:10px;color:#d6e5cc;font-size:11px}
+.ei-insights-footer .ico{width:14px;height:14px}
+.ei-recognition{margin-top:28px;padding-top:24px;border-top:1px solid rgba(228,239,214,.16)}
+.ei-recognition-title{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:#dbc7a6;font-size:10px;font-weight:500;letter-spacing:.15em;line-height:1.5;text-transform:uppercase}
 .ei-recognition-title .ico{width:18px;height:18px}
 .ei-awards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:0;padding:0;list-style:none}
 .ei-awards li{min-width:0;color:#d4ddcc;font-size:11px;line-height:1.8}
 .ei-awards li span{display:block;margin-top:6px;font-size:10px;color:#a9bda4}
-.ei-cities{display:flex;align-items:center;gap:8px;margin:24px 0 0;color:#a9bda4;font-size:10px;line-height:1.8}
+.ei-cities{display:flex;align-items:center;gap:8px;margin:20px 0 0;color:#a9bda4;font-size:10px;line-height:1.8}
 .ei-cities .ico{width:14px;height:14px}
-@media(max-width:1080px){.ei-overview{gap:40px}.ei-targets > .c{padding:26px}.ei-tools{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding:28px}.ei-tools li{font-size:12px}.ei-awards{gap:22px}}
-@media(max-width:760px){.urbanrise-ei{padding:64px 0}.ei-overview{grid-template-columns:1fr;gap:36px}.ei-story{max-width:none}.urbanrise-ei h2{font-size:clamp(38px,7vw,52px)}.ei-intro{font-size:14px;max-width:none;margin-top:22px}.ei-motto{margin-top:24px;padding-top:22px}.ei-targets{border-radius:28px}.ei-targets > .c{padding:26px}.ei-targets h3{margin-bottom:24px}.ei-target dd{font-size:40px}.ei-toolkit{margin-top:40px}.ei-toolkit-heading{align-items:flex-start;flex-direction:column;gap:8px}.ei-tools{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 20px;padding:26px}.ei-tools li{font-size:11px;gap:10px}.ei-tools .ico{width:20px;height:20px}.ei-toolkit-glass{border-radius:26px}.ei-recognition{margin-top:30px;padding-top:26px}.ei-awards{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
-@media(max-width:380px){.ei-targets > .c{padding:24px 20px}.ei-target{grid-template-columns:34px minmax(0,1fr);column-gap:14px}.ei-target-icon{width:34px;height:34px;border-radius:11px}.ei-target-icon .ico{width:19px;height:19px}.ei-target dd{font-size:36px}.ei-target dd span{font-size:12px}.ei-target-description{font-size:11px}.ei-tools{padding:24px 20px;gap:22px 16px}.ei-tools li{font-size:10px;gap:8px}.ei-tools .ico{width:18px;height:18px}.ei-toolkit-heading p{font-size:10px}}
+@media(hover:hover) and (pointer:fine){.ei-topic:hover{background:rgba(202,227,184,.15)}.ei-tech summary:hover{color:#ead8b7}.ei-insights-footer a:hover{color:#ead8b7}}
+@media(max-width:900px){.ei-heading{gap:32px}.ei-panel{gap:32px;padding:28px}.ei-topic{padding:18px}.ei-panel-target strong{font-size:42px}.ei-panel-target small{font-size:16px}}
+@media(max-width:760px){.urbanrise-ei{padding:60px 0}.ei-heading{grid-template-columns:1fr;gap:24px;margin-bottom:28px}.urbanrise-ei h2{font-size:clamp(36px,7vw,48px)}.ei-insights{border-radius:26px}.ei-insights-toolbar{padding:18px 22px;align-items:flex-start;flex-direction:column;gap:6px}.ei-insights-toolbar > span:first-child{font-size:12px}.ei-insights-toolbar > span:last-child{padding-left:29px;font-size:9px}.ei-topic-list{gap:10px;padding:20px 20px 0}.ei-topic{padding:14px 12px;border-radius:16px}.ei-topic-name{gap:6px;font-size:10px;margin-bottom:12px}.ei-topic-name .ico{width:15px;height:15px}.ei-topic-value{font-size:28px}.ei-topic-unit{font-size:9px;line-height:1.5}.ei-topic-selected{display:none}.ei-panel{grid-template-columns:1fr;gap:26px;padding:26px 22px}.ei-panel-kicker{font-size:11px;margin-bottom:12px}.ei-panel-story h3{font-size:30px;max-width:none}.ei-panel-description{font-size:16px;margin-top:16px;max-width:none}.ei-panel-target{margin-top:18px;padding-top:18px;gap:7px}.ei-panel-target strong{font-size:40px}.ei-panel-target small{font-size:16px}.ei-panel-target-description{max-width:none}.ei-tech-list{padding:0 16px}.ei-tech summary{font-size:13px;gap:10px;padding:15px 0}.ei-tech p{padding-left:38px;font-size:13px}.ei-insights-footer{padding:16px 22px;align-items:flex-start;flex-direction:column;gap:8px}.ei-awards{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}}
+@media(max-width:380px){.ei-topic-list{padding:18px 16px 0;gap:8px}.ei-topic{padding:13px 10px}.ei-topic-value{font-size:26px}.ei-topic-name{font-size:9px;gap:5px}.ei-topic-name .ico{width:13px;height:13px}.ei-topic-unit{font-size:9px}.ei-panel{padding:24px 20px}.ei-panel-story h3{font-size:28px}.ei-tech-list{padding:0 14px}.ei-tech summary{font-size:13px;gap:8px}.ei-tech-icon{width:24px;height:24px}.ei-tech-icon .ico{width:21px;height:21px}.ei-tech p{padding-left:32px}.ei-insights-toolbar{padding:18px 20px}}
+@media(prefers-reduced-motion:reduce){.ei-topic,.ei-tech-chevron{transition:none}.ei-panel:not([hidden]){animation:none}}
 
 /* ---------- Residence model lineup ---------- */
 .lineup-section{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) 0;background:#1a211f}
@@ -827,16 +857,25 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
   .stats{display:flex;padding:18px 0}
   .stat{padding:0 14px;flex:1}
   .stat span{white-space:normal}
-  .hero-side{min-height:430px}
-  .tod{top:-20px;width:min(100%,280px);padding:12px 14px;border-radius:24px}
+  .hero-body{grid-template-rows:1fr auto;gap:32px;padding-top:36px;padding-bottom:32px}
+  .hero-body > div:first-child{display:flex;flex-direction:column;justify-content:space-between;align-self:stretch;gap:24px;min-width:0}
+  .hero h1{position:relative;top:var(--hero-headline-offset,0px)}
+  .hero .lede{margin:0}
+  .hero-version-card{margin:0}
+  .hero .stats{margin-top:0}
+  .hero-side{min-height:56px;align-self:start}
+  .tod{position:relative;top:auto;margin-inline:auto;width:min(100%,280px);padding:12px 14px;border-radius:24px}
   .tod .c{flex-direction:row;justify-content:space-between;gap:8px}
+  .tod > .c > .ico:first-child{order:4}
+  .tod > .c > .lbl{order:1}
+  .tod > .c > .track{order:2}
+  .tod > .c > .ico:last-child{order:0}
   .tod .lbl{flex:none;min-width:48px;white-space:nowrap}
   .tod .track{width:104px;height:32px;margin:0;flex:none}
-  .tod .track::before{left:12px;right:12px;top:50%;bottom:auto;width:auto;height:2px;margin:-1px 0 0;background:linear-gradient(90deg,#f6c98a,#9aa6c9 70%,#5c6488)}
+  .tod .track::before{left:12px;right:12px;top:50%;bottom:auto;width:auto;height:2px;margin:-1px 0 0;background:linear-gradient(90deg,#5c6488,#9aa6c9 30%,#f6c98a)}
   .tod .track input{transform:none;width:104px;height:32px}
   .tod .knob{top:4px;left:calc(var(--tod-position,.72) * (100% - 24px))}
   .tod .knob .c{justify-content:center}
-  .pano-btn{right:auto;left:0}
   .vmeta .n{display:none}
   .resframe{min-height:0}
   .feats{grid-template-columns:1fr}
@@ -997,7 +1036,6 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
           <svg class="ico"><use href="#i-moon"/></svg>
         </div>
       </div>
-      <button class="btn lg pano-btn" data-open="pano" data-lg='{"scale":24,"blur":6,"tint":0.06}'><span class="c"><span class="thumb img-video"></span>Live Panorama<svg class="ico"><use href="#i-chev"/></svg></span></button>
     </div>
   </div>
 </header>
@@ -1388,41 +1426,44 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
 <section class="urbanrise-ei on-dark" id="urbanrise" aria-labelledby="eiTitle" data-scene-root>
   <div class="bg" aria-hidden="true"><div class="ph img-sustain"></div><div class="ei-shade"></div></div>
   <div class="wrap">
-    <div class="ei-overview">
-      <div class="ei-story">
-        <p class="eyebrow">Shipped by Urbanrise</p>
-        <h2 class="serif" id="eiTitle">Green tech,<br><span>not green talk.</span></h2>
-        <p class="ei-intro">Home 2.0 runs on Urbanrise&rsquo;s Environmental Intelligence (EI), the company&rsquo;s proprietary technology built to deliver tangible benefits on electricity and water, for resilient living over 100 years.</p>
-        <p class="ei-motto"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-leaf"/></svg><span>Every Drop, Every Watt Matters.</span></p>
-      </div>
-      <div class="ei-targets lg" data-lg='{"scale":28,"depth":22,"blur":18,"tint":0.18,"tintColor":"#bcccac","edge":1}'>
-        <div class="c">
-          <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>Urbanrise 100-year EI targets</h3>
-          <dl>
-            <div class="ei-target"><dt><span class="ei-target-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z"/><path d="M8 15a4 4 0 0 0 4 4"/></svg></span><span class="ei-target-description">of water saved through harvesting and recycling</span></dt><dd>10.3 <span>trillion litres</span></dd></div>
-            <div class="ei-target"><dt><span class="ei-target-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z"/></svg></span><span class="ei-target-description">of clean energy generated</span></dt><dd>100 <span>billion units</span></dd></div>
-            <div class="ei-target"><dt><span class="ei-target-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><use href="#i-leaf"/></svg></span><span class="ei-target-description">of CO&#8322; reduced</span></dt><dd>92 <span>million tons</span></dd></div>
-          </dl>
+    <div class="ei-heading"><div><p class="eyebrow">Shipped by Urbanrise</p><h2 class="serif" id="eiTitle">Green tech,<br><span>not green talk.</span></h2></div><div class="ei-story"><p class="ei-intro">Home 2.0 runs on Urbanrise&rsquo;s Environmental Intelligence (EI), the company&rsquo;s proprietary technology built to deliver tangible benefits on electricity and water, for resilient living over 100 years.</p><p class="ei-motto"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-leaf"/></svg><span>Every Drop, Every Watt Matters.</span></p></div></div>
+    <div class="ei-insights lg" data-lg='{"scale":28,"depth":22,"blur":18,"tint":0.16,"tintColor":"#c1ccba","edge":1}'>
+      <div class="c">
+        <div class="ei-insights-toolbar"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sprout"/></svg>Environmental Intelligence</span><span>Urbanrise 100-year EI targets</span></div>
+        <div class="ei-topic-list" role="tablist" aria-label="Explore EI by environmental impact">
+          <button class="ei-topic" type="button" role="tab" id="eiTab-water" aria-controls="eiPanel-water" aria-selected="true" tabindex="0" data-ei-topic="water"><span class="ei-topic-name"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z"/><path d="M8 15a4 4 0 0 0 4 4"/></svg>Water</span><span class="ei-topic-value">10.3</span><span class="ei-topic-unit">trillion litres</span><span class="ei-topic-selected" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></span></button>
+          <button class="ei-topic" type="button" role="tab" id="eiTab-energy" aria-controls="eiPanel-energy" aria-selected="false" tabindex="-1" data-ei-topic="energy"><span class="ei-topic-name"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z"/></svg>Energy</span><span class="ei-topic-value">100</span><span class="ei-topic-unit">billion units</span><span class="ei-topic-selected" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></span></button>
+          <button class="ei-topic" type="button" role="tab" id="eiTab-carbon" aria-controls="eiPanel-carbon" aria-selected="false" tabindex="-1" data-ei-topic="carbon"><span class="ei-topic-name"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-leaf"/></svg>Carbon</span><span class="ei-topic-value">92</span><span class="ei-topic-unit">million tons</span><span class="ei-topic-selected" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></span></button>
         </div>
+        <div class="ei-panel" id="eiPanel-water" role="tabpanel" aria-labelledby="eiTab-water" tabindex="0" data-ei-panel="water">
+          <div class="ei-panel-story"><p class="ei-panel-kicker">Water &middot; Environmental Intelligence</p><h3>Water that goes further.</h3><p class="ei-panel-description">Harvest rain, replenish groundwater and put water back to work. EI connects these systems to support more resilient water use.</p><div class="ei-panel-target"><span class="ei-panel-target-label">Urbanrise&rsquo;s 100-year target</span><strong>10.3 <small>trillion litres</small></strong><span class="ei-panel-target-description">of water saved through harvesting and recycling</span></div></div>
+          <div class="ei-panel-systems"><div class="ei-systems-heading"><h4>The Urbanrise EI toolkit</h4><span>4 systems</span></div><div class="ei-tech-list">
+              <details class="ei-tech" name="eiTech-water" open><summary><span class="ei-tech-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z"/><path d="M8 15a4 4 0 0 0 4 4"/></svg></span><span>Rainwater harvesting</span><svg class="ico ei-tech-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></summary><p>Rainwater harvesting collects rainfall for storage and reuse.</p></details>
+              <details class="ei-tech" name="eiTech-water"><summary><span class="ei-tech-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M4 5h16M6 9h12M8 13h8M10 17h4M12 3v16m-3-3 3 3 3-3M3 22h18"/></svg></span><span>Bhungroo wells</span><svg class="ico ei-tech-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></summary><p>Bhungroo wells direct rainwater underground to help replenish groundwater reserves.</p></details>
+              <details class="ei-tech" name="eiTech-water"><summary><span class="ei-tech-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M4 9a8 8 0 0 1 13-5l3 3M20 3v4h-4M20 15a8 8 0 0 1-13 5l-3-3M4 21v-4h4"/><path d="M12 7s-3 4-3 6a3 3 0 0 0 6 0c0-2-3-6-3-6Z"/></svg></span><span>Water recycling</span><svg class="ico ei-tech-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></summary><p>Water recycling treats used water so it can be reused.</p></details>
+              <details class="ei-tech" name="eiTech-water"><summary><span class="ei-tech-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="7" rx="2"/><path d="M6 7h12m-6 6s-3 4-3 6a3 3 0 0 0 6 0c0-2-3-6-3-6Z"/></svg></span><span>AC condensate recovery</span><svg class="ico ei-tech-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></summary><p>Condensate recovery collects water produced by air-conditioning systems for reuse.</p></details>
+            </div><p class="ei-systems-hint">Select a system to learn how it works.</p></div>
+        </div>
+        <div class="ei-panel" id="eiPanel-energy" role="tabpanel" aria-labelledby="eiTab-energy" tabindex="0" data-ei-panel="energy" hidden>
+          <div class="ei-panel-story"><p class="ei-panel-kicker">Energy &middot; Environmental Intelligence</p><h3>Generate. Then use wisely.</h3><p class="ei-panel-description">Solar generation and efficient appliances work on both sides of the equation: producing clean power and using less electricity.</p><div class="ei-panel-target"><span class="ei-panel-target-label">Urbanrise&rsquo;s 100-year target</span><strong>100 <small>billion units</small></strong><span class="ei-panel-target-description">of clean energy generated</span></div></div>
+          <div class="ei-panel-systems"><div class="ei-systems-heading"><h4>The Urbanrise EI toolkit</h4><span>2 systems</span></div><div class="ei-tech-list">
+              <details class="ei-tech" name="eiTech-energy" open><summary><span class="ei-tech-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><use href="#i-sun"/></svg></span><span>Solar power</span><svg class="ico ei-tech-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></summary><p>Solar panels generate renewable electricity, reducing reliance on non-renewable power.</p></details>
+              <details class="ei-tech" name="eiTech-energy"><summary><span class="ei-tech-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="m12 7 1.3 2.6 2.9.4-2.1 2 .5 2.9-2.6-1.4-2.6 1.4.5-2.9-2.1-2 2.9-.4Z"/></svg></span><span>BEE 4-star+ appliances</span><svg class="ico ei-tech-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></summary><p>BEE 4-star or higher-rated appliances help reduce electricity consumption.</p></details>
+            </div><p class="ei-systems-hint">Select a system to learn how it works.</p></div>
+        </div>
+        <div class="ei-panel" id="eiPanel-carbon" role="tabpanel" aria-labelledby="eiTab-carbon" tabindex="0" data-ei-panel="carbon" hidden>
+          <div class="ei-panel-story"><p class="ei-panel-kicker">Carbon &middot; Environmental Intelligence</p><h3>A lighter footprint, every day.</h3><p class="ei-panel-description">Forests, composting, recycling and EV charging bring the EI toolkit into the everyday choices that shape a community.</p><div class="ei-panel-target"><span class="ei-panel-target-label">Urbanrise&rsquo;s 100-year target</span><strong>92 <small>million tons</small></strong><span class="ei-panel-target-description">of CO&#8322; reduced</span></div></div>
+          <div class="ei-panel-systems"><div class="ei-systems-heading"><h4>The Urbanrise EI toolkit</h4><span>4 systems</span></div><div class="ei-tech-list">
+              <details class="ei-tech" name="eiTech-carbon" open><summary><span class="ei-tech-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m7 3-4 6h2l-3 5h4v7m11-18-4 6h2l-3 5h8l-3-5h2l-4-6Zm0 11v7M4 21h16"/></svg></span><span>Miyawaki forests</span><svg class="ico ei-tech-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></summary><p>Dense Miyawaki forests support biodiversity and create natural cooling zones.</p></details>
+              <details class="ei-tech" name="eiTech-carbon"><summary><span class="ei-tech-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M9 2v5m6-5v5M6 7h12v4a6 6 0 0 1-12 0V7Zm6 10v5m0-12-2 3h4"/></svg></span><span>EV charging</span><svg class="ico ei-tech-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></summary><p>EV charging provides a place to recharge electric vehicles.</p></details>
+              <details class="ei-tech" name="eiTech-carbon"><summary><span class="ei-tech-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><use href="#i-sprout"/><path d="M4 17h4m8 0h4M5 17l1 5h12l1-5"/></svg></span><span>Organic waste composters</span><svg class="ico ei-tech-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></summary><p>Composters turn organic household waste into nutrient-rich compost.</p></details>
+              <details class="ei-tech" name="eiTech-carbon"><summary><span class="ei-tech-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m8 8 4-6 4 6m-7-2-1 2 3 1M17 11l4 7h-8m6-3 2 3-2 2M9 18H3l4-7m-3 5-1 2 2 2"/></svg></span><span>Recycling stations</span><svg class="ico ei-tech-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></summary><p>Recycling stations provide dedicated spaces to sort materials such as paper, glass and PET bottles.</p></details>
+            </div><p class="ei-systems-hint">Select a system to learn how it works.</p></div>
+        </div>
+        <div class="ei-insights-footer"><span>10 systems. Three areas of impact.</span><a href="https://www.urbanrise.in/environmental-intelligence" target="_blank" rel="noopener noreferrer">Explore Urbanrise EI<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div>
       </div>
     </div>
-    <div class="ei-toolkit">
-      <div class="ei-toolkit-heading"><h3>The Urbanrise EI toolkit</h3><p>Environmental Intelligence, built into everyday living.</p></div>
-      <div class="ei-toolkit-glass lg" data-lg='{"scale":24,"depth":20,"blur":16,"tint":0.12,"tintColor":"#bcc8ad","edge":0.95}'>
-        <ul class="ei-tools c" aria-label="The Urbanrise EI toolkit">
-        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sun"/></svg><span>Solar power</span></li>
-        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z"/><path d="M8 15a4 4 0 0 0 4 4"/></svg><span>Rainwater harvesting</span></li>
-        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M6 9h12M8 13h8M10 17h4M12 3v16m-3-3 3 3 3-3M3 22h18"/></svg><span>Bhungroo wells</span></li>
-        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9a8 8 0 0 1 13-5l3 3M20 3v4h-4M20 15a8 8 0 0 1-13 5l-3-3M4 21v-4h4"/><path d="M12 7s-3 4-3 6a3 3 0 0 0 6 0c0-2-3-6-3-6Z"/></svg><span>Water recycling</span></li>
-        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 3-4 6h2l-3 5h4v7m11-18-4 6h2l-3 5h8l-3-5h2l-4-6Zm0 11v7M4 21h16"/></svg><span>Miyawaki forests</span></li>
-        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2v5m6-5v5M6 7h12v4a6 6 0 0 1-12 0V7Zm6 10v5m0-12-2 3h4"/></svg><span>EV charging</span></li>
-        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sprout"/><path d="M4 17h4m8 0h4M5 17l1 5h12l1-5"/></svg><span>Organic waste composters</span></li>
-        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="7" rx="2"/><path d="M6 7h12m-6 6s-3 4-3 6a3 3 0 0 0 6 0c0-2-3-6-3-6Z"/></svg><span>AC condensate recovery</span></li>
-        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="m12 7 1.3 2.6 2.9.4-2.1 2 .5 2.9-2.6-1.4-2.6 1.4.5-2.9-2.1-2 2.9-.4Z"/></svg><span>BEE 4-star+ appliances</span></li>
-        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8 4-6 4 6m-7-2-1 2 3 1M17 11l4 7h-8m6-3 2 3-2 2M9 18H3l4-7m-3 5-1 2 2 2"/></svg><span>Recycling stations</span></li>
-        </ul>
-      </div>
-    </div>
+    <noscript><style>.ei-panel[hidden]{display:grid}.ei-topic-list{display:none}</style></noscript>
     <div class="ei-recognition">
       <h3 class="ei-recognition-title"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8v6a4 4 0 0 1-8 0V3Zm0 2H4v3a4 4 0 0 0 4 4m8-7h4v3a4 4 0 0 1-4 4M12 13v5M8 21h8M9 18h6v3"/></svg>Recognition for Urbanrise</h3>
       <ul class="ei-awards">
@@ -1880,11 +1921,13 @@ window.addEventListener('resize', function(){ placeThumb(document.querySelector(
 /* ---------- Time-of-day slider (drives the hero image through CSS variables,
    which the lens clones inherit too, so the refraction stays live) ---------- */
 var todRange = document.getElementById('todRange');
+var todIsMobile = false;
 var knob = document.querySelector('.knob');
 var todName = document.getElementById('todName'), todTime = document.getElementById('todTime');
 function fmt(mins){ var h = Math.floor(mins/60), m = Math.round(mins%60); var hh = ((h+11)%12)+1; return hh + ':' + (m<10?'0':'') + m + ' ' + (h<12?'AM':'PM'); }
 function setTod(v){
-  var t = v/100;                       // 0 = 5:00 PM, 1 = 8:30 PM
+  var position = v/100;
+  var t = todIsMobile ? 1 - position : position; // Golden hour to night; reversed on mobile.
   var mins = 17*60 + t*210;
   todTime.textContent = fmt(mins);
   todName.textContent = t < .3 ? 'Golden hour' : t < .62 ? 'Sunset' : t < .8 ? 'Blue hour' : 'Night';
@@ -1893,7 +1936,7 @@ function setTod(v){
   root.style.setProperty('--tod-s', (t < .55 ? 1.12 - t*.2 : 1 - (t-.55)*.9).toFixed(3));
   root.style.setProperty('--tod-h', (t > .55 ? -(t-.55)*28 : (.55-t)*-6).toFixed(1) + 'deg');
   root.style.setProperty('--tod-night', Math.max(0, (t-.6)/.4*.5).toFixed(3));
-  knob.style.setProperty('--tod-position', t);
+  knob.style.setProperty('--tod-position', position);
   resync(knob._glass || {_syncBg:function(){},placeLens:function(){}});
   todRange.setAttribute('aria-valuetext', todName.textContent + ', ' + todTime.textContent);
 }
@@ -1903,13 +1946,23 @@ todRange.addEventListener('input', function(){ setTod(+todRange.value); });
 
 /* ---------- Pin hero glass to the photo itself on wide screens ---------- */
 var heroSide = document.querySelector('.hero-side');
-var nTod = document.querySelector('.tod'), nPano = document.querySelector('.pano-btn');
+var nTod = document.querySelector('.tod');
 function mapHero(){
-  var els = [nPano];
+  var mobile = innerWidth <= 640;
+  if (mobile !== todIsMobile){
+    todRange.value = 100 - Number(todRange.value);
+    todIsMobile = mobile;
+  }
+  var heroHeading = document.querySelector('.hero h1');
+  heroHeading.style.setProperty('--hero-headline-offset', '0px');
+  if (mobile){
+    var ledeTop = document.querySelector('.hero .lede').getBoundingClientRect().top;
+    var headingBottom = heroHeading.getBoundingClientRect().bottom;
+    heroHeading.style.setProperty('--hero-headline-offset', Math.max(0, ledeTop - headingBottom - 16) + 'px');
+  }
   if (innerWidth <= 1080){
-    els.forEach(function(e){ ['left','top','right','width','minHeight','minWidth'].forEach(function(k){ e.style[k] = ''; }); });
     nTod.style.top = '';
-    nTod.style.right = '0';
+    nTod.style.right = innerWidth <= 640 ? 'auto' : '0';
     nTod.style.left = 'auto';
   } else {
     var bg = document.querySelector('.bg-hero').getBoundingClientRect();
@@ -1920,11 +1973,6 @@ function mapHero(){
     nTod.style.right = '0';
     nTod.style.left = 'auto';
     nTod.style.top = Math.max(0, Y(308) - nTod.offsetHeight/2 - 80) + 'px';
-    nPano.style.minWidth = Math.min(250, 148*s) + 'px';
-    nPano.style.minHeight = Math.min(66, 44*s) + 'px';
-    nPano.style.right = 'auto';
-    nPano.style.left = Math.min(sr.width - nPano.offsetWidth, X(929) - nPano.offsetWidth/2) + 'px';
-    nPano.style.top = (Y(451) - nPano.offsetHeight/2) + 'px';
   }
   setTod(+todRange.value);
   requestAnimationFrame(resyncAll);
@@ -1985,6 +2033,37 @@ var releaseMobile = window.matchMedia('(max-width:760px)');
 function orientReleaseTabs(){ releaseTablist.setAttribute('aria-orientation', releaseMobile.matches ? 'horizontal' : 'vertical'); }
 releaseMobile.addEventListener('change', orientReleaseTabs);
 orientReleaseTabs();
+
+/* ---------- EI impact summary and related technology ---------- */
+(function(){
+  var tabs = Array.from(document.querySelectorAll('.ei-topic'));
+  var panels = Array.from(document.querySelectorAll('.ei-panel'));
+  function select(tab, focus){
+    if (tab.getAttribute('aria-selected') === 'true') { if (focus) tab.focus(); return; }
+    tabs.forEach(function(item){
+      var active = item === tab;
+      item.setAttribute('aria-selected', String(active));
+      item.tabIndex = active ? 0 : -1;
+    });
+    panels.forEach(function(panel){ panel.hidden = panel.dataset.eiPanel !== tab.dataset.eiTopic; });
+    if (focus) tab.focus({preventScroll:true});
+    requestAnimationFrame(resyncAll);
+  }
+  tabs.forEach(function(tab, index){
+    tab.addEventListener('click', function(){ select(tab, false); });
+    tab.addEventListener('keydown', function(event){
+      var next;
+      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+      else if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = tabs.length - 1;
+      else return;
+      event.preventDefault();
+      select(tabs[next], true);
+    });
+  });
+  document.querySelectorAll('.ei-tech').forEach(function(tech){ tech.addEventListener('toggle', function(){ requestAnimationFrame(resyncAll); }); });
+})();
 
 /* ---------- First-release information on hover, focus or tap ---------- */
 (function(){

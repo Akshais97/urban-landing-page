@@ -1,0 +1,284 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Living Wave Carbon Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: thesis hero over a wave line → two-pane tool (inputs | result), assumptions drawer below */
+:root{
+  --bg:#F1F4EE; --surface:#FFFFFF; --ink:#0E2A2B; --muted:#5B6E6A; --line:#D5DDD6;
+  --wave:#17766A; --wave-soft:#D7ECE6; --sun:#D98E1F; --smoke:#8C7A6B; --smoke-soft:#ECE6DF;
+  --display:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body:"Instrument Sans", "Helvetica Neue", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --c-energy:#D98E1F; --c-water:#2E86AB; --c-move:#17766A; --c-cook:#8C7A6B; --c-nature:#5E9E4A;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B1A1B; --surface:#112627; --ink:#E5EEEA; --muted:#93A8A3; --line:#24403F;
+  --wave:#4FC3AE; --wave-soft:#163B37; --sun:#F0AE4A; --smoke:#B3A08F; --smoke-soft:#2A2624;
+  --c-energy:#F0AE4A; --c-water:#5BB0D4; --c-move:#4FC3AE; --c-cook:#B3A08F; --c-nature:#86C46F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1A1B; --surface:#112627; --ink:#E5EEEA; --muted:#93A8A3; --line:#24403F;
+  --wave:#4FC3AE; --wave-soft:#163B37; --sun:#F0AE4A; --smoke:#B3A08F; --smoke-soft:#2A2624;
+  --c-energy:#F0AE4A; --c-water:#5BB0D4; --c-move:#4FC3AE; --c-cook:#B3A08F; --c-nature:#86C46F; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px;padding-block:28px 56px}
+.brand{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,64px);line-height:1;letter-spacing:-.02em;margin:22px 0 10px;text-wrap:balance;max-width:16ch}
+h1 em{font-style:normal;color:var(--wave)}
+.lede{max-width:58ch;color:var(--muted);font-size:17px;margin:0}
+#waveline{display:block;width:100%;height:56px;margin:18px 0 26px}
+.tool{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:28px;align-items:start}
+@media (max-width:860px){.tool{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.panel h2{font-family:var(--display);font-weight:700;font-size:20px;margin:0 0 4px}
+.sub{color:var(--muted);font-size:13px;margin:0 0 16px}
+.field{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding-block:12px;border-top:1px solid var(--line)}
+.field label{font-weight:600;font-size:14px}
+.field .hint{grid-column:1/-1;color:var(--muted);font-size:12px}
+.field output{font-family:var(--mono);font-size:14px;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.field input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--wave)}
+.pillar{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;border-radius:99px;margin-right:6px;vertical-align:2px}
+.seg{display:flex;gap:6px;flex-wrap:wrap;grid-column:1/-1}
+.seg button{font:500 13px var(--body);padding:6px 12px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.toggle{display:flex;align-items:center;gap:10px;grid-column:1/-1;font-size:14px;cursor:pointer}
+.toggle input{width:18px;height:18px;accent-color:var(--wave)}
+button:focus-visible,input:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--wave);outline-offset:2px}
+
+.result{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px)}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.vs .card{border-radius:12px;padding:16px}
+.today{background:var(--smoke-soft)}
+.lw{background:var(--wave-soft)}
+.card .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.card .v{font-family:var(--display);font-weight:800;font-size:clamp(32px,5vw,46px);line-height:1.05;font-variant-numeric:tabular-nums}
+.card .u{font-size:13px;color:var(--muted)}
+.lw .v{color:var(--wave)}
+.cut{font-family:var(--display);font-weight:700;font-size:22px;margin:0 0 6px;text-wrap:balance}
+.cut b{color:var(--wave)}
+.bars{display:grid;gap:10px;margin:16px 0 8px}
+.barrow{display:grid;grid-template-columns:86px minmax(0,1fr);gap:10px;align-items:center;font-size:13px}
+.track{display:flex;height:26px;border-radius:6px;overflow:hidden;background:var(--bg)}
+.track span{display:block;height:100%;transition:width .5s ease}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--muted);margin-bottom:14px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{text-align:right;padding:7px 4px;border-top:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+th{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td.save{color:var(--wave);font-weight:600}
+.equiv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+@media (max-width:480px){.equiv{grid-template-columns:1fr}}
+.equiv div{border-top:2px solid var(--wave);padding-top:8px}
+.equiv b{display:block;font-family:var(--display);font-size:22px;font-variant-numeric:tabular-nums}
+.equiv span{font-size:12px;color:var(--muted)}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.btn{font:600 14px var(--body);padding:11px 16px;border-radius:10px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink)}
+.fine{font-size:12px;color:var(--muted);margin-top:14px}
+
+details{margin-top:28px}
+summary{font-family:var(--display);font-weight:700;font-size:18px;cursor:pointer}
+.assume{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px 24px;margin-top:12px}
+.assume .field input[type=number]{width:90px;font:14px var(--mono);padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);text-align:right}
+@media (prefers-reduced-motion:reduce){.track span{transition:none}}
+</style>
+
+<div class="wrap">
+  <div class="brand"><span>Urbanrise · The Living Wave · Gattahalli</span><span>Future Home Standard</span></div>
+  <h1>Your home has a carbon bill. <em>See what the future home cuts.</em></h1>
+  <p class="lede">Move the sliders to match how your household lives today. We compare it with the same family living at The Living Wave — solar and wind on site, water recycled, an EV charger in every parking bay.</p>
+  <svg id="waveline" viewBox="0 0 1000 56" preserveAspectRatio="none" aria-hidden="true"><path id="wp" fill="none" stroke="var(--wave)" stroke-width="2"/><path id="wp2" fill="none" stroke="var(--sun)" stroke-width="1.2" opacity=".7"/></svg>
+
+  <div class="tool">
+    <section class="panel" aria-labelledby="h-in">
+      <h2 id="h-in">How you live today</h2>
+      <p class="sub">Pre-filled with a typical Bengaluru family of four in a 3 BHK.</p>
+
+      <div class="field"><label for="ppl">People at home</label><output id="o-ppl"></output>
+        <input type="range" id="ppl" min="1" max="8" step="1" value="4"></div>
+
+      <div class="field"><label for="kwh"><span class="pillar" style="background:var(--c-energy);color:var(--bg)">Energy</span>Electricity per month</label><output id="o-kwh"></output>
+        <input type="range" id="kwh" min="50" max="1500" step="10" value="400">
+        <span class="hint">Units (kWh) on your BESCOM bill. A 3 BHK with 2 ACs usually runs 300–600.</span></div>
+
+      <div class="field"><label for="water"><span class="pillar" style="background:var(--c-water);color:var(--bg)">Water</span>Water per day</label><output id="o-water"></output>
+        <input type="range" id="water" min="100" max="2000" step="10" value="540">
+        <span class="hint">Litres for the household. Indian planning norm is 135 L per person.</span></div>
+
+      <div class="field"><label for="car"><span class="pillar" style="background:var(--c-move);color:var(--bg)">Mobility</span>Car per month</label><output id="o-car"></output>
+        <input type="range" id="car" min="0" max="3000" step="50" value="800">
+        <div class="seg" role="group" aria-label="Car fuel"><button type="button" data-fuel="petrol" aria-pressed="true">Petrol</button><button type="button" data-fuel="diesel" aria-pressed="false">Diesel</button><button type="button" data-fuel="ev" aria-pressed="false">Already EV</button></div></div>
+
+      <div class="field"><label for="tw">Two-wheeler per month</label><output id="o-tw"></output>
+        <input type="range" id="tw" min="0" max="2000" step="50" value="400"></div>
+
+      <div class="field"><label class="toggle" for="switchev"><input type="checkbox" id="switchev" checked> I'd switch to EV with a charger in my own parking bay</label></div>
+
+      <div class="field"><label for="lpg"><span class="pillar" style="background:var(--c-cook);color:var(--bg)">Cooking</span>LPG cylinders per month</label><output id="o-lpg"></output>
+        <input type="range" id="lpg" min="0" max="4" step="0.25" value="1">
+        <span class="hint">14.2 kg domestic cylinders. Kept the same in both homes.</span></div>
+    </section>
+
+    <section class="panel result" aria-labelledby="h-out" aria-live="polite">
+      <h2 id="h-out" class="cut">The Living Wave cuts <b id="pct">–</b> of your home's emissions.</h2>
+      <p class="sub">Tonnes of CO₂ per year, whole household.</p>
+      <div class="vs">
+        <div class="card today"><div class="k">Your home today</div><div class="v" id="t-today">–</div><div class="u" id="pp-today"></div></div>
+        <div class="card lw"><div class="k">At The Living Wave</div><div class="v" id="t-lw">–</div><div class="u" id="pp-lw"></div></div>
+      </div>
+
+      <div class="bars">
+        <div class="barrow"><span>Today</span><div class="track" id="bar-today"></div></div>
+        <div class="barrow"><span>Living Wave</span><div class="track" id="bar-lw"></div></div>
+      </div>
+      <div class="legend" id="legend"></div>
+
+      <div style="overflow-x:auto"><table>
+        <thead><tr><th>Pillar</th><th>Today</th><th>Living Wave</th><th>Saved</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table></div>
+
+      <div class="equiv">
+        <div><b id="e-kg">–</b><span>kg CO₂ saved a year</span></div>
+        <div><b id="e-trees">–</b><span>mature trees' yearly absorption</span></div>
+        <div><b id="e-10">–</b><span>tonnes saved over 10 years</span></div>
+      </div>
+
+      <div class="cta">
+        <a class="btn" id="wa" href="#" target="_blank" rel="noopener">Share on WhatsApp</a>
+        <button class="btn ghost" type="button" id="copy">Copy result</button>
+      </div>
+      <p class="fine">Indicative estimate. Living Wave figures use planning assumptions you can see and change below; final numbers come from Urbanrise engineering data.</p>
+    </section>
+  </div>
+
+  <details>
+    <summary>Assumptions behind the numbers</summary>
+    <div class="assume" id="assume"></div>
+    <p class="fine">Grid factor: CEA CO₂ Baseline Database, India weighted average (~0.71 kg/kWh). LPG: IPCC default (~2.98 kg CO₂ per kg). Petrol 2.31 and diesel 2.68 kg CO₂ per litre. Tree absorption ~21 kg CO₂ a year for a mature tree.</p>
+  </details>
+</div>
+
+<script>
+const A = {
+  grid:   {v:0.71, label:"Grid electricity", unit:"kg CO₂/kWh", step:0.01},
+  lpg:    {v:2.98, label:"LPG", unit:"kg CO₂/kg", step:0.01},
+  petrolL:{v:2.31, label:"Petrol", unit:"kg CO₂/L", step:0.01},
+  dieselL:{v:2.68, label:"Diesel", unit:"kg CO₂/L", step:0.01},
+  carKmpl:{v:15,   label:"Car mileage", unit:"km/L", step:0.5},
+  twKmpl: {v:45,   label:"Two-wheeler mileage", unit:"km/L", step:1},
+  evCar:  {v:0.15, label:"EV car use", unit:"kWh/km", step:0.01},
+  evTw:   {v:0.03, label:"E-scooter use", unit:"kWh/km", step:0.005},
+  waterKwh:{v:1.5, label:"Energy to supply water", unit:"kWh/kL", step:0.1},
+  solar:  {v:30,   label:"LW · solar + wind share of home power", unit:"%", step:1},
+  eff:    {v:10,   label:"LW · design efficiency saving", unit:"%", step:1},
+  waterCut:{v:40,  label:"LW · rainwater + recycling cut", unit:"%", step:1},
+  green:  {v:60,   label:"LW · green cover absorption per home", unit:"kg/yr", step:5},
+  tree:   {v:21,   label:"One mature tree absorbs", unit:"kg/yr", step:1},
+};
+const P = [
+  {id:"energy", name:"Energy", c:"--c-energy"},
+  {id:"water", name:"Water", c:"--c-water"},
+  {id:"move", name:"Mobility", c:"--c-move"},
+  {id:"cook", name:"Cooking", c:"--c-cook"},
+  {id:"nature", name:"Nature", c:"--c-nature"},
+];
+let fuel = "petrol";
+const $ = id => document.getElementById(id);
+
+// Pure calculation: inputs + assumptions -> kg CO2 per year by pillar
+function calc(i, a){
+  const g = a.grid;
+  const carKgKm = i.fuel==="ev" ? a.evCar*g : (i.fuel==="diesel" ? a.dieselL : a.petrolL)/a.carKmpl;
+  const twKgKm = a.petrolL/a.twKmpl;
+  const waterKL = i.water*365/1000;
+  const today = {
+    energy: i.kwh*12*g,
+    water: waterKL*a.waterKwh*g,
+    move: i.car*12*carKgKm + i.tw*12*twKgKm,
+    cook: i.lpg*12*14.2*a.lpg,
+    nature: 0,
+  };
+  const ev = i.switchev || i.fuel==="ev";
+  const lw = {
+    energy: today.energy*(1-a.eff/100)*(1-a.solar/100),
+    water: today.water*(1-a.waterCut/100),
+    move: ev ? i.car*12*a.evCar*g + i.tw*12*a.evTw*g : today.move,
+    cook: today.cook,
+    nature: -a.green,
+  };
+  const sum = o => Object.values(o).reduce((s,x)=>s+x,0);
+  return {today, lw, tToday:sum(today), tLw:sum(lw)};
+}
+
+const fmtT = kg => (kg/1000).toFixed(1);
+const fmtN = n => Math.round(n).toLocaleString("en-IN");
+
+function read(){
+  return {ppl:+$("ppl").value, kwh:+$("kwh").value, water:+$("water").value, car:+$("car").value,
+          tw:+$("tw").value, lpg:+$("lpg").value, fuel, switchev:$("switchev").checked};
+}
+function av(){ const o={}; for(const k in A) o[k]=A[k].v; return o; }
+
+function render(){
+  const i = read(), a = av(), r = calc(i,a);
+  $("o-ppl").textContent = i.ppl;
+  $("o-kwh").textContent = i.kwh+" kWh";
+  $("o-water").textContent = fmtN(i.water)+" L";
+  $("o-car").textContent = fmtN(i.car)+" km";
+  $("o-tw").textContent = fmtN(i.tw)+" km";
+  $("o-lpg").textContent = i.lpg;
+  $("switchev").closest(".field").hidden = fuel==="ev";
+
+  const saved = r.tToday - r.tLw, pct = r.tToday>0 ? Math.round(saved/r.tToday*100) : 0;
+  $("pct").textContent = pct+"%";
+  $("t-today").textContent = fmtT(r.tToday);
+  $("t-lw").textContent = fmtT(r.tLw);
+  $("pp-today").textContent = fmtT(r.tToday/i.ppl)+" t per person";
+  $("pp-lw").textContent = fmtT(r.tLw/i.ppl)+" t per person";
+
+  const max = Math.max(r.tToday, 1);
+  const bar = (o) => P.filter(p=>o[p.id]>0).map(p=>`<span title="${p.name}: ${fmtN(o[p.id])} kg" style="width:${o[p.id]/max*100}%;background:var(${p.c})"></span>`).join("");
+  $("bar-today").innerHTML = bar(r.today);
+  $("bar-lw").innerHTML = bar(r.lw);
+
+  $("rows").innerHTML = P.map(p=>{
+    const t=r.today[p.id], l=r.lw[p.id], s=t-l;
+    return `<tr><td>${p.name}</td><td>${fmtN(t)}</td><td>${fmtN(l)}</td><td class="${s>0?'save':''}">${s>0?'−'+fmtN(s):'—'}</td></tr>`;
+  }).join("") + `<tr><td><b>Total (kg)</b></td><td><b>${fmtN(r.tToday)}</b></td><td><b>${fmtN(r.tLw)}</b></td><td class="save"><b>−${fmtN(saved)}</b></td></tr>`;
+
+  $("e-kg").textContent = fmtN(saved);
+  $("e-trees").textContent = fmtN(saved/a.tree);
+  $("e-10").textContent = (saved*10/1000).toFixed(0);
+
+  const msg = `My home puts out ${fmtT(r.tToday)} t of CO₂ a year. Living at Urbanrise The Living Wave would cut that by ${pct}% — the same as ${fmtN(saved/a.tree)} trees working for us every year. Why are we still building homes for yesterday?`;
+  $("wa").href = "https://wa.me/?text="+encodeURIComponent(msg);
+  $("copy").dataset.msg = msg;
+}
+
+$("legend").innerHTML = P.map(p=>`<span><i style="background:var(${p.c})"></i>${p.name}</span>`).join("");
+$("assume").innerHTML = Object.entries(A).map(([k,o])=>`<div class="field"><label for="a-${k}">${o.label}</label><span><input type="number" id="a-${k}" value="${o.v}" step="${o.step}" min="0"> <span class="hint" style="display:inline">${o.unit}</span></span></div>`).join("");
+Object.keys(A).forEach(k=>$("a-"+k).addEventListener("input",e=>{const v=parseFloat(e.target.value); if(!isNaN(v)&&v>=0){A[k].v=v;render();}}));
+["ppl","kwh","water","car","tw","lpg","switchev"].forEach(id=>$(id).addEventListener("input",render));
+document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{
+  fuel=b.dataset.fuel; document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x===b)); render();}));
+$("copy").addEventListener("click",e=>{
+  const b=e.currentTarget, m=b.dataset.msg;
+  navigator.clipboard.writeText(m).then(()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy result",1600)})
+    .catch(()=>{b.textContent="Copy blocked — select the text in WhatsApp share";});
+});
+
+// Wave line: two sine waves; drifts unless reduced motion
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function wave(t){
+  const pts=(amp,f,ph,y)=>{let d="";for(let x=0;x<=1000;x+=10){const yy=y+amp*Math.sin(x/1000*Math.PI*2*f+ph);d+=(x?"L":"M")+x+" "+yy.toFixed(1);}return d;};
+  $("wp").setAttribute("d",pts(16,2.2,t,28)); $("wp2").setAttribute("d",pts(10,3.1,-t*1.3+1,30));
+  if(!reduce) requestAnimationFrame(()=>wave(t+0.012));
+}
+wave(0);
+render();
+</script>
+
+</body></html>

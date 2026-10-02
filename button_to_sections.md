@@ -18,7 +18,6 @@ This document records the current destinations and behaviors. To change a mappin
 | Open / Close menu — `#menuToggle` | Header | Compact dropdown — `#ov-menu` | Toggles the dropdown and changes the three bars into an X. Escape, an outside click, or choosing a link closes it. |
 | Check Your Version | Hero version card (`#heroCheckVersion`) | Version check (`#version`) | Scrolls to the 12-question home version check. |
 | Remind Me Later | Hero version card — `#heroRemindLater` | Bottom message — `#introToast` | Uses the same messages and shake effect as the intro's Remind me later button. Repeated clicks advance the messages. Each message disappears after 3.2 seconds; another click restarts that timer. |
-| Live Panorama | Hero | Panorama viewer — `#ov-view` | Opens the panorama overlay. |
 
 ## Section buttons
 
@@ -51,6 +50,8 @@ This document records the current destinations and behaviors. To change a mappin
 | Our Approach | Sustainability section | Opens the approach modal — `#ov-approach`. |
 
 ## Intro, film, and modal controls
+
+The Urbanrise EI summary tabs (`#urbanrise .ei-topic`) select Water, Energy, or Carbon and show the matching target and related systems. Arrow keys, Home, and End navigate the tabs. Each system uses an inline disclosure (`.ei-tech`); click or Enter/Space expands its explanation, with one system open per category. "Explore Urbanrise EI" opens the official Environmental Intelligence page in a new tab.
 
 These controls perform actions rather than navigate to a section.
 
