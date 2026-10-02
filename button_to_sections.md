@@ -26,6 +26,11 @@ This document records the current destinations and behaviors. To change a mappin
 | Search features | Release notes ? `#releaseSearch` | Filters feature tabs by name or description. Escape clears the search; the first matching feature opens if needed. |
 | Energy / Water / Air / Mobility / Nature / Community | Release notes ? `#release` | Selects the corresponding `#release-panel-*` within the section. Arrow keys, Home and End also change the selected feature. |
 | Show Home 2.0 switch | Benchmarks ? `#vswitch` | Toggles all six `#bench` tiles between Home v1.0 and Home 2.0. Click, Enter or Space toggles the switch. |
+| Household sliders | Carbon calculator (`#carbon-calculator`) | Updates annual totals, category breakdown, per-person emissions and savings equivalents using the calculator's fixed planning assumptions. |
+| Petrol / Diesel / Already EV | Carbon calculator | Selects current car fuel; Already EV hides the optional EV-switch control. |
+| EV switch | Carbon calculator | Models switching household travel to EV in the Living Wave scenario. |
+| Share on WhatsApp | Carbon calculator (`#cc-wa`) | Opens WhatsApp with the current indicative result; the user chooses whether to send it. |
+| Copy result | Carbon calculator (`#cc-copy`) | Copies the current estimate to the clipboard and reports success or browser restrictions inline. |
 | Answer choices | Version check | Selecting an answer fades into the next question; the final answer shows the result. Repeated clicks during the fade cannot skip questions. |
 | Back | Version check (`#versionBack`) | Returns to the previous question with its saved answer selected. |
 | Retake | Version check result (`#versionRetake`) | Clears answers and restarts the check. |

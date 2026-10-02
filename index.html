@@ -227,6 +227,7 @@ a{color:inherit;text-decoration:none}
 /* ---------- Home 2.0 release notes ---------- */
 .release{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) 0;background:#181b1c;color:#f6f3ee}
 .release > .bg .ph{background-image:url("assets/background/release-section-background-updated.png");background-position:55% 45%}
+@media(max-width:640px){.release > .bg .ph{background-image:url("assets/background/release-section-background-updated_mobile_banner.png")}}
 .release-wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,17,19,.85),rgba(16,21,23,.52) 55%,rgba(13,17,19,.56)),linear-gradient(0deg,rgba(12,16,18,.9),transparent 60%,rgba(12,16,18,.45))}
 .release .wrap{position:relative;z-index:1}
 .release-heading{margin-bottom:clamp(32px,4vw,48px);max-width:780px}
@@ -543,15 +544,15 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- Urbanrise EI: impact summary and system explanations ---------- */
 .urbanrise-ei{position:relative;isolation:isolate;overflow:hidden;padding:clamp(64px,7vw,96px) 0;background:#16231c}
-.urbanrise-ei > .bg .ph{background-position:35% 50%}
+.urbanrise-ei > .bg .ph{background-image:url("assets/background/urbanrise_desktop_background_image_.png");background-position:35% 50%}
+@media(max-width:640px){.urbanrise-ei > .bg .ph{background-image:url("assets/background/urbanrise_mobile_background_image_.png");background-position:50% 50%}}
 .ei-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,24,17,.91),rgba(16,30,21,.65)),linear-gradient(0deg,rgba(11,24,17,.94),transparent 65%,rgba(11,24,17,.4))}
 .urbanrise-ei .wrap{position:relative;z-index:1}
-.ei-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:clamp(32px,5vw,72px);align-items:end;margin-bottom:32px}
+.ei-heading{display:grid;grid-template-columns:1fr;gap:clamp(32px,5vw,72px);align-items:end;margin-bottom:32px}
 .urbanrise-ei .eyebrow{color:#dec7a5;letter-spacing:.23em;line-height:1.8}
 .urbanrise-ei h2{font-size:clamp(36px,4vw,56px);font-weight:350;line-height:1.12;letter-spacing:-.04em}
 .urbanrise-ei h2 span{color:#c4dbbf}
-.ei-intro{margin:0;font-size:14px;line-height:1.8;color:#d1dccd;max-width:48ch}
-.ei-motto{display:flex;align-items:center;gap:10px;margin:18px 0 0;color:#ddc9a7;font-size:12px;line-height:1.6}
+.ei-motto{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin:0 28px 12px;text-align:right;color:#ddc9a7;font-size:12px;line-height:1.6}
 .ei-motto .ico{width:19px;height:19px;color:#bdd7b5}
 .ei-insights{min-width:0;border-radius:30px;background:rgba(196,213,182,.11)}
 .ei-insights > .c{border-radius:inherit;overflow:hidden;text-shadow:none!important}
@@ -617,9 +618,73 @@ a{color:inherit;text-decoration:none}
 .ei-cities .ico{width:14px;height:14px}
 @media(hover:hover) and (pointer:fine){.ei-topic:hover{background:rgba(202,227,184,.15)}.ei-tech summary:hover{color:#ead8b7}.ei-insights-footer a:hover{color:#ead8b7}}
 @media(max-width:900px){.ei-heading{gap:32px}.ei-panel{gap:32px;padding:28px}.ei-topic{padding:18px}.ei-panel-target strong{font-size:42px}.ei-panel-target small{font-size:16px}}
-@media(max-width:760px){.urbanrise-ei{padding:60px 0}.ei-heading{grid-template-columns:1fr;gap:24px;margin-bottom:28px}.urbanrise-ei h2{font-size:clamp(36px,7vw,48px)}.ei-insights{border-radius:26px}.ei-insights-toolbar{padding:18px 22px;align-items:flex-start;flex-direction:column;gap:6px}.ei-insights-toolbar > span:first-child{font-size:12px}.ei-insights-toolbar > span:last-child{padding-left:29px;font-size:9px}.ei-topic-list{gap:10px;padding:20px 20px 0}.ei-topic{padding:14px 12px;border-radius:16px}.ei-topic-name{gap:6px;font-size:10px;margin-bottom:12px}.ei-topic-name .ico{width:15px;height:15px}.ei-topic-value{font-size:28px}.ei-topic-unit{font-size:9px;line-height:1.5}.ei-topic-selected{display:none}.ei-panel{grid-template-columns:1fr;gap:26px;padding:26px 22px}.ei-panel-kicker{font-size:11px;margin-bottom:12px}.ei-panel-story h3{font-size:30px;max-width:none}.ei-panel-description{font-size:16px;margin-top:16px;max-width:none}.ei-panel-target{margin-top:18px;padding-top:18px;gap:7px}.ei-panel-target strong{font-size:40px}.ei-panel-target small{font-size:16px}.ei-panel-target-description{max-width:none}.ei-tech-list{padding:0 16px}.ei-tech summary{font-size:13px;gap:10px;padding:15px 0}.ei-tech p{padding-left:38px;font-size:13px}.ei-insights-footer{padding:16px 22px;align-items:flex-start;flex-direction:column;gap:8px}.ei-awards{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}}
+@media(max-width:760px){.urbanrise-ei{padding:60px 0}.ei-heading{grid-template-columns:1fr;gap:24px;margin-bottom:28px}.ei-motto{margin-inline:22px}.urbanrise-ei h2{font-size:clamp(36px,7vw,48px)}.ei-insights{border-radius:26px}.ei-insights-toolbar{padding:18px 22px;align-items:flex-start;flex-direction:column;gap:6px}.ei-insights-toolbar > span:first-child{font-size:12px}.ei-insights-toolbar > span:last-child{padding-left:29px;font-size:9px}.ei-topic-list{gap:10px;padding:20px 20px 0}.ei-topic{padding:14px 12px;border-radius:16px}.ei-topic-name{gap:6px;font-size:10px;margin-bottom:12px}.ei-topic-name .ico{width:15px;height:15px}.ei-topic-value{font-size:28px}.ei-topic-unit{font-size:9px;line-height:1.5}.ei-topic-selected{display:none}.ei-panel{grid-template-columns:1fr;gap:26px;padding:26px 22px}.ei-panel-kicker{font-size:11px;margin-bottom:12px}.ei-panel-story h3{font-size:30px;max-width:none}.ei-panel-description{font-size:16px;margin-top:16px;max-width:none}.ei-panel-target{margin-top:18px;padding-top:18px;gap:7px}.ei-panel-target strong{font-size:40px}.ei-panel-target small{font-size:16px}.ei-panel-target-description{max-width:none}.ei-tech-list{padding:0 16px}.ei-tech summary{font-size:13px;gap:10px;padding:15px 0}.ei-tech p{padding-left:38px;font-size:13px}.ei-insights-footer{padding:16px 22px;align-items:flex-start;flex-direction:column;gap:8px}.ei-awards{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}}
 @media(max-width:380px){.ei-topic-list{padding:18px 16px 0;gap:8px}.ei-topic{padding:13px 10px}.ei-topic-value{font-size:26px}.ei-topic-name{font-size:9px;gap:5px}.ei-topic-name .ico{width:13px;height:13px}.ei-topic-unit{font-size:9px}.ei-panel{padding:24px 20px}.ei-panel-story h3{font-size:28px}.ei-tech-list{padding:0 14px}.ei-tech summary{font-size:13px;gap:8px}.ei-tech-icon{width:24px;height:24px}.ei-tech-icon .ico{width:21px;height:21px}.ei-tech p{padding-left:32px}.ei-insights-toolbar{padding:18px 20px}}
 @media(prefers-reduced-motion:reduce){.ei-topic,.ei-tech-chevron{transition:none}.ei-panel:not([hidden]){animation:none}}
+
+/* ---------- Household carbon calculator ---------- */
+.carbon-calculator{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) 0;background:#14221d;--cc-energy:#e2bd7d;--cc-water:#99c7d5;--cc-move:#a9ccb7;--cc-cook:#c6aaa0;--cc-nature:#c8dda2}
+.carbon-calculator > .bg .ph{background-image:url("assets/background/carbon_calculator_banner.jpeg");background-position:50% 50%;filter:saturate(.5) brightness(.65)}
+@media(max-width:640px){.carbon-calculator > .bg .ph{background-image:url("assets/background/carbon_calculator_mobile_banner.jpeg")}}
+.cc-shade{position:absolute;inset:0;background:linear-gradient(120deg,rgba(12,26,21,.9),rgba(17,31,24,.68) 55%,rgba(12,23,20,.92))}
+.cc-heading{position:relative;display:grid;grid-template-columns:1fr;align-items:end;gap:48px;margin-bottom:36px}
+.cc-heading .eyebrow{color:#dfc9a8;margin-bottom:18px}
+.cc-heading h2{font-size:clamp(32px,3.6vw,50px);font-weight:350;line-height:1.17;letter-spacing:-.035em}
+.cc-heading h2 span{color:#c6d9bb}
+.cc-heading > p{font-size:16px;line-height:1.75;color:#cedbc7;max-width:46ch;margin:0}
+.cc-tool{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:24px;align-items:start}
+.cc-panel{min-width:0;border-radius:28px;background:rgba(185,207,175,.08)}
+.cc-panel-body{padding:28px;border-radius:inherit;text-shadow:none!important}
+.cc-panel h3{display:flex;align-items:center;gap:12px;font-size:24px;line-height:1.25;font-weight:400;letter-spacing:-.025em;margin:0 0 10px;color:#eef2e8}
+.cc-panel h3 .ico{width:24px;height:24px;color:#dcc5a0;flex:none}
+.cc-result-icon{display:inline-flex}
+.cc-sub{margin:0 0 22px;font-size:14px;line-height:1.7;color:#c2d0ba}
+.carbon-calculator [hidden]{display:none!important}
+.cc-field{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 12px;padding:18px 0;border-top:1px solid rgba(224,239,209,.16)}
+.cc-field label{font-size:15px;font-weight:450;line-height:1.5;color:#e4ebdb}
+.cc-field output{font-size:15px;font-variant-numeric:tabular-nums;line-height:1.5;text-align:right;color:#e8d9bd;white-space:nowrap}
+.cc-hint{grid-column:1/-1;color:#b9cbb0;font-size:12px;line-height:1.65}
+.cc-pillar{display:block;width:fit-content;color:#18241c!important;background:var(--cc-energy);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-bottom:5px;line-height:1.5}
+.cc-field input[type=range]{grid-column:1/-1;width:100%;height:32px;margin:0;background:transparent;accent-color:#cadcb7;cursor:pointer;touch-action:pan-y}
+.cc-seg{display:flex;grid-column:1/-1;gap:4px;padding:4px;border:1px solid rgba(221,239,205,.13);border-radius:14px;background:rgba(11,23,16,.2)}
+.cc-seg button{flex:1;min-width:0;border:0;border-radius:10px;min-height:40px;padding:8px 10px;color:#cbd8c2;font:400 13px/1.4 var(--sans);cursor:pointer;transition:background .18s,color .18s}
+.cc-seg button[aria-pressed=true]{color:#edf2e8;background:rgba(224,238,209,.18);box-shadow:0 2px 8px rgba(0,0,0,.14),inset 0 0 0 1px rgba(235,246,223,.2)}
+.cc-toggle{display:flex;align-items:center;gap:12px;grid-column:1/-1;cursor:pointer}
+.cc-toggle input{appearance:none;-webkit-appearance:none;flex:none;width:44px;height:26px;border-radius:20px;background:rgba(218,228,208,.2);box-shadow:inset 0 0 0 1px rgba(228,241,215,.2);position:relative;cursor:pointer;transition:background .2s}
+.cc-toggle input::after{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#e6ece0;box-shadow:0 2px 4px #0003;transition:transform .2s}
+.cc-toggle input:checked{background:#91ac7c}.cc-toggle input:checked::after{transform:translateX(18px)}
+.cc-result{position:sticky;top:24px}
+.cc-vs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}
+.cc-card{min-width:0;border-radius:20px;padding:20px 16px;border:1px solid rgba(220,235,207,.14);background:rgba(28,29,25,.2)}
+.cc-lw{background:rgba(173,203,149,.15);border-color:rgba(212,235,191,.28)}
+.cc-k{font-size:11px;line-height:1.6;color:#cbd8c2;margin-bottom:14px}
+.cc-v{font-size:clamp(38px,4vw,54px);font-weight:350;line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums;color:#e5dfd0}
+.cc-lw .cc-v{color:#d2e6c2}
+.cc-u{margin-top:12px;font-size:12px;line-height:1.5;color:#bdceb1}
+.cc-reduction{font-size:21px;line-height:1.5;color:#e5ebdc;margin:0 0 22px;letter-spacing:-.015em}.cc-reduction b{font-weight:500;color:#d1e6be}
+.cc-bars{display:grid;gap:12px;margin-bottom:16px}
+.cc-barrow{display:grid;grid-template-columns:80px minmax(0,1fr);gap:12px;align-items:center;font-size:12px;color:#c9d8bd}
+.cc-track{display:flex;height:16px;border-radius:20px;overflow:hidden;background:rgba(8,18,12,.25)}
+.cc-track span{height:100%;flex:none;transition:width .25s ease}
+.cc-legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin:0 0 22px;color:#becdb3;font-size:11px;line-height:1.5}
+.cc-legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.cc-panel table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.5;font-variant-numeric:tabular-nums}
+.cc-panel th,.cc-panel td{padding:11px 3px;border-top:1px solid rgba(225,238,211,.14);text-align:right;color:#dce5d3}
+.cc-panel th{font-size:10px;font-weight:400;color:#b6c8ab;letter-spacing:.02em}
+.cc-panel th:first-child,.cc-panel td:first-child{text-align:left}.cc-panel td.cc-save{color:#d0e5bb}
+.cc-equiv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0;padding-top:22px;border-top:1px solid rgba(225,238,211,.16)}
+.cc-equiv b{display:block;font-size:25px;font-weight:400;line-height:1.2;color:#d8e8ca;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.cc-equiv span{display:block;font-size:11px;line-height:1.6;color:#becfb2;margin-top:8px}
+.cc-cta{display:flex;flex-wrap:wrap;gap:10px}
+.cc-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 16px;border-radius:14px;background:#d1dfc3;color:#203120;font:500 13px/1.4 var(--sans);border:1px solid #d1dfc3;cursor:pointer;transition:background .2s}
+.cc-btn.cc-ghost{background:rgba(216,233,201,.08);color:#e0ead6;border-color:rgba(218,235,202,.24)}
+.cc-fine{font-size:12px;line-height:1.7;color:#b7c8ab;margin-top:20px}.cc-copy-status{color:#d9e7cc;font-size:12px;line-height:1.6;margin:8px 0 0}.cc-copy-status:empty{display:none}
+.cc-panel :is(button,input,a):focus-visible{outline:2px solid #e4cda6;outline-offset:3px}
+@media(max-width:1080px){.cc-heading{gap:32px}.cc-panel-body{padding:24px}.cc-tool{gap:20px}.cc-field label{font-size:14px}.cc-field output{font-size:14px}.cc-panel h3{font-size:22px}}
+@media(max-width:860px){.cc-tool{grid-template-columns:1fr}.cc-result{position:relative;top:auto}.cc-heading{grid-template-columns:1fr;gap:24px}.cc-heading > p{max-width:56ch}}
+@media(max-width:640px){.carbon-calculator{padding:64px 0}.cc-heading{margin-bottom:28px}.cc-heading h2{font-size:34px}.cc-heading > p{font-size:15px}.cc-panel{border-radius:24px}.cc-panel-body{padding:22px}.cc-panel h3{font-size:23px}.cc-sub{font-size:14px}.cc-field{padding:18px 0}.cc-field label{font-size:15px}.cc-field output{font-size:14px}.cc-vs{gap:10px}.cc-card{padding:18px 14px}.cc-v{font-size:42px}.cc-k{font-size:11px}.cc-u{font-size:12px}.cc-reduction{font-size:20px}.cc-equiv{gap:12px}.cc-equiv b{font-size:24px}.cc-equiv span{font-size:11px}.cc-panel table{font-size:12px}.cc-panel th{font-size:9px}.cc-barrow{grid-template-columns:72px minmax(0,1fr)}.cc-btn{flex:1}}
+@media(max-width:380px){.cc-panel-body{padding:18px}.cc-heading h2{font-size:31px}.cc-field{gap:10px 8px}.cc-field label{font-size:14px}.cc-field output{font-size:13px}.cc-card{padding:16px 12px}.cc-v{font-size:38px}.cc-equiv{grid-template-columns:1fr}.cc-equiv > div{display:flex;align-items:baseline;gap:12px}.cc-equiv b{min-width:70px}.cc-equiv span{margin:0}.cc-cta{flex-direction:column}.cc-panel th{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.cc-track span,.cc-toggle input,.cc-toggle input::after,.cc-seg button,.cc-btn{transition:none}}
 
 /* ---------- Residence model lineup ---------- */
 .lineup-section{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) 0;background:#1a211f}
@@ -770,6 +835,7 @@ html[data-scene="4"] .vstage .vframe[data-i="4"]{opacity:1}
 footer{position:relative;background:var(--night);color:var(--on-dark-soft);padding:36px 0;font-size:13px}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
 footer .logo-art{width:clamp(140px,12vw,170px)}
+footer .ei-recognition{flex-basis:100%;min-width:0;margin:0 0 8px;padding:0 0 24px;border-top:0;border-bottom:1px solid rgba(228,239,214,.16)}
 
 /* ---------- Overlays (modal, menu, viewer) ---------- */
 .overlay{position:fixed;inset:0;z-index:50;display:none;color:var(--on-dark)}
@@ -1287,6 +1353,81 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
   </div>
 </section>
 
+<!-- ================= HOUSEHOLD CARBON CALCULATOR ================= -->
+<section class="carbon-calculator on-dark" id="carbon-calculator" aria-labelledby="carbonTitle" data-scene-root>
+  <div class="bg" aria-hidden="true"><div class="ph"></div><div class="cc-shade"></div></div>
+  <div class="wrap">
+    <div class="cc-heading">
+      <div><p class="eyebrow">The Living Wave · Carbon calculator</p><h2 id="carbonTitle">Your home has a carbon bill.<br><span>See what a future home could cut.</span></h2></div>
+    </div>
+    <div class="cc-tool">
+    <div class="cc-panel lg" data-lg='{"scale":24,"depth":20,"blur":16,"tint":0.12,"tintColor":"#bacaba","edge":1}'><div class="c cc-panel-body" aria-labelledby="cc-h-in">
+      <h3 id="cc-h-in"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-home"/></svg>How you live today</h3>
+      <p class="cc-sub">Start with a family of four. Adjust each slider to match your household.</p>
+
+      <div class="cc-field"><label for="cc-ppl">People at home</label><output id="cc-o-ppl"></output>
+        <input type="range" id="cc-ppl" min="1" max="8" step="1" value="4"></div>
+
+      <div class="cc-field"><label for="cc-kwh"><span class="cc-pillar" style="background:var(--cc-energy);color:var(--bg)">Energy</span>Electricity per month</label><output id="cc-o-kwh"></output>
+        <input type="range" id="cc-kwh" min="50" max="1500" step="10" value="400">
+        <span class="cc-hint">Units (kWh) on your BESCOM bill. A 3 BHK with 2 ACs usually runs 300–600.</span></div>
+
+      <div class="cc-field"><label for="cc-water"><span class="cc-pillar" style="background:var(--cc-water);color:var(--bg)">Water</span>Water per day</label><output id="cc-o-water"></output>
+        <input type="range" id="cc-water" min="100" max="2000" step="10" value="540">
+        <span class="cc-hint">Litres for the household. Indian planning norm is 135 L per person.</span></div>
+
+      <div class="cc-field"><label for="cc-car"><span class="cc-pillar" style="background:var(--cc-move);color:var(--bg)">Mobility</span>Car per month</label><output id="cc-o-car"></output>
+        <input type="range" id="cc-car" min="0" max="3000" step="50" value="800">
+        <div class="cc-seg" role="group" aria-label="Car fuel"><button type="button" data-fuel="petrol" aria-pressed="true">Petrol</button><button type="button" data-fuel="diesel" aria-pressed="false">Diesel</button><button type="button" data-fuel="ev" aria-pressed="false">Already EV</button></div></div>
+
+      <div class="cc-field"><label for="cc-tw">Two-wheeler per month</label><output id="cc-o-tw"></output>
+        <input type="range" id="cc-tw" min="0" max="2000" step="50" value="400"></div>
+
+      <div class="cc-field"><label class="cc-toggle" for="cc-switchev"><input type="checkbox" id="cc-switchev" checked> I'd switch to EV with a charger in my own parking bay</label></div>
+
+      <div class="cc-field"><label for="cc-lpg"><span class="cc-pillar" style="background:var(--cc-cook);color:var(--bg)">Cooking</span>LPG cylinders per month</label><output id="cc-o-lpg"></output>
+        <input type="range" id="cc-lpg" min="0" max="4" step="0.25" value="1">
+        <span class="cc-hint">14.2 kg domestic cylinders. Kept the same in both homes.</span></div>
+    </div></div>
+
+    <div class="cc-panel cc-result lg" data-lg='{"scale":26,"depth":22,"blur":18,"tint":0.14,"tintColor":"#c1ccba","edge":1}'><div class="c cc-panel-body" aria-labelledby="cc-h-out">
+      <h3 id="cc-h-out" class="cc-cut"><span class="cc-result-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><use href="#i-leaf"/></svg></span>Your annual carbon picture.</h3>
+      <p class="cc-sub">Tonnes of CO₂ per year, whole household.</p>
+      <div class="cc-vs">
+        <div class="cc-card cc-today"><div class="cc-k">Your home today</div><div class="cc-v" id="cc-t-today">–</div><div class="cc-u" id="cc-pp-today"></div></div>
+        <div class="cc-card cc-lw"><div class="cc-k">At The Living Wave</div><div class="cc-v" id="cc-t-lw">–</div><div class="cc-u" id="cc-pp-lw"></div></div>
+      </div>
+
+      <p class="sr" id="cc-result-status" role="status" aria-live="polite" aria-atomic="true"></p>
+      <p class="cc-reduction">An estimated <b id="cc-pct">–</b> smaller footprint.</p>
+      <div class="cc-bars" aria-label="Emissions by category">
+        <div class="cc-barrow"><span>Today</span><div class="cc-track" id="cc-bar-today"></div></div>
+        <div class="cc-barrow"><span>Living Wave</span><div class="cc-track" id="cc-bar-lw"></div></div>
+      </div>
+      <div class="cc-legend" id="cc-legend"></div>
+
+      <div style="overflow-x:auto"><table><caption class="sr">Estimated annual emissions in kilograms of CO₂</caption>
+        <thead><tr><th>Pillar</th><th>Today</th><th>Living Wave</th><th>Saved</th></tr></thead>
+        <tbody id="cc-rows"></tbody>
+      </table></div>
+
+      <div class="cc-equiv">
+        <div><b id="cc-e-kg">–</b><span>kg CO₂ saved a year</span></div>
+        <div><b id="cc-e-trees">–</b><span>mature trees' yearly absorption</span></div>
+        <div><b id="cc-e-10">–</b><span>tonnes saved over 10 years</span></div>
+      </div>
+
+      <div class="cc-cta">
+        <a class="cc-btn" id="cc-wa" href="#" target="_blank" rel="noopener">Share on WhatsApp</a>
+        <button class="cc-btn cc-ghost" type="button" id="cc-copy">Copy result</button>
+      </div>
+      <p class="cc-fine">Indicative estimate based on planning assumptions. Actual results depend on household use and final Urbanrise engineering data.</p><p class="cc-copy-status" id="cc-copy-status" role="status" aria-live="polite"></p>
+    </div></div>
+    </div>
+    <noscript><p class="cc-fine">Enable JavaScript to use the interactive carbon calculator.</p></noscript>
+  </div>
+</section>
+
 <!-- ================= VERSION CHECK ================= -->
 <section class="version-diagnostic on-dark" id="version" aria-labelledby="versionTitle" data-scene-root>
   <div class="bg" aria-hidden="true"><div class="ph img-intro"></div><div class="version-shade"></div></div>
@@ -1424,9 +1565,10 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
 
 <!-- ================= URBANRISE / ENVIRONMENTAL INTELLIGENCE ================= -->
 <section class="urbanrise-ei on-dark" id="urbanrise" aria-labelledby="eiTitle" data-scene-root>
-  <div class="bg" aria-hidden="true"><div class="ph img-sustain"></div><div class="ei-shade"></div></div>
+  <div class="bg" aria-hidden="true"><div class="ph"></div><div class="ei-shade"></div></div>
   <div class="wrap">
-    <div class="ei-heading"><div><p class="eyebrow">Shipped by Urbanrise</p><h2 class="serif" id="eiTitle">Green tech,<br><span>not green talk.</span></h2></div><div class="ei-story"><p class="ei-intro">Home 2.0 runs on Urbanrise&rsquo;s Environmental Intelligence (EI), the company&rsquo;s proprietary technology built to deliver tangible benefits on electricity and water, for resilient living over 100 years.</p><p class="ei-motto"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-leaf"/></svg><span>Every Drop, Every Watt Matters.</span></p></div></div>
+    <div class="ei-heading"><div><p class="eyebrow">Shipped by Urbanrise</p><h2 class="serif" id="eiTitle">Green tech,<br><span>not green talk.</span></h2></div></div>
+    <p class="ei-motto"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-leaf"/></svg><span>Every Drop, Every Watt Matters.</span></p>
     <div class="ei-insights lg" data-lg='{"scale":28,"depth":22,"blur":18,"tint":0.16,"tintColor":"#c1ccba","edge":1}'>
       <div class="c">
         <div class="ei-insights-toolbar"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sprout"/></svg>Environmental Intelligence</span><span>Urbanrise 100-year EI targets</span></div>
@@ -1464,16 +1606,6 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
       </div>
     </div>
     <noscript><style>.ei-panel[hidden]{display:grid}.ei-topic-list{display:none}</style></noscript>
-    <div class="ei-recognition">
-      <h3 class="ei-recognition-title"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8v6a4 4 0 0 1-8 0V3Zm0 2H4v3a4 4 0 0 0 4 4m8-7h4v3a4 4 0 0 1-4 4M12 13v5M8 21h8M9 18h6v3"/></svg>Recognition for Urbanrise</h3>
-      <ul class="ei-awards">
-        <li>Best Brands 2025<span>ET Now</span></li>
-        <li>#1 Brand in South India<span>Times Group</span></li>
-        <li>Fastest Growing Real Estate Brand 2024<span>Hurun Grohe</span></li>
-        <li>Asia&rsquo;s Best &amp; Fastest Growing Real Estate Brand<span>WCRC</span></li>
-      </ul>
-      <p class="ei-cities"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>Bengaluru &middot; Hyderabad &middot; Chennai</p>
-    </div>
   </div>
 </section>
 
@@ -1593,7 +1725,6 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
           </fieldset>
           <fieldset class="access-fields"><legend>Residence preferences</legend>
             <label class="access-field" for="accessModel"><span>Model</span><select id="accessModel" name="model"><option value="Home 2.0">Home 2.0 &middot; 3 BHK + 2T</option><option value="Home 2.0 Plus">Home 2.0 Plus &middot; 3 BHK + 3T</option><option value="Home 2.0 Max">Home 2.0 Max &middot; 4 BHK + 3T</option></select></label>
-            <label class="access-field" for="accessTime"><span>When do you plan to move?</span><select id="accessTime" name="time"><option>0&ndash;3 months</option><option>3&ndash;6 months</option><option>Just exploring</option></select></label>
           </fieldset>
           <p class="access-error" id="accessError" role="alert" hidden></p>
           <button class="access-submit" type="submit"><span>Update to Home 2.0</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></button>
@@ -1664,6 +1795,16 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
 
 <footer>
   <div class="wrap">
+    <div class="ei-recognition">
+      <h3 class="ei-recognition-title"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8v6a4 4 0 0 1-8 0V3Zm0 2H4v3a4 4 0 0 0 4 4m8-7h4v3a4 4 0 0 1-4 4M12 13v5M8 21h8M9 18h6v3"/></svg>Recognition for Urbanrise</h3>
+      <ul class="ei-awards">
+        <li>Best Brands 2025<span>ET Now</span></li>
+        <li>#1 Brand in South India<span>Times Group</span></li>
+        <li>Fastest Growing Real Estate Brand 2024<span>Hurun Grohe</span></li>
+        <li>Asia&rsquo;s Best &amp; Fastest Growing Real Estate Brand<span>WCRC</span></li>
+      </ul>
+      <p class="ei-cities"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>Bengaluru &middot; Hyderabad &middot; Chennai</p>
+    </div>
     <span class="logo"><span class="logo-art"><img src="assets/logo-02.png" alt="Urbanrise — The Living Wave, Home 2.0" width="2363" height="2363"></span></span>
     <span>Home 2.0 · © 2026 UrbanRise</span>
     <button class="link" data-open="join" style="color:var(--on-dark)">Join Early Access<svg class="ico" style="width:16px;height:16px"><use href="#i-arrow"/></svg></button>
@@ -2033,6 +2174,123 @@ var releaseMobile = window.matchMedia('(max-width:760px)');
 function orientReleaseTabs(){ releaseTablist.setAttribute('aria-orientation', releaseMobile.matches ? 'horizontal' : 'vertical'); }
 releaseMobile.addEventListener('change', orientReleaseTabs);
 orientReleaseTabs();
+
+
+/* ---------- Household carbon estimate ---------- */
+(function(){
+
+const A = {
+  grid:   {v:0.71, label:"Grid electricity", unit:"kg CO₂/kWh", step:0.01},
+  lpg:    {v:2.98, label:"LPG", unit:"kg CO₂/kg", step:0.01},
+  petrolL:{v:2.31, label:"Petrol", unit:"kg CO₂/L", step:0.01},
+  dieselL:{v:2.68, label:"Diesel", unit:"kg CO₂/L", step:0.01},
+  carKmpl:{v:15,   label:"Car mileage", unit:"km/L", step:0.5},
+  twKmpl: {v:45,   label:"Two-wheeler mileage", unit:"km/L", step:1},
+  evCar:  {v:0.15, label:"EV car use", unit:"kWh/km", step:0.01},
+  evTw:   {v:0.03, label:"E-scooter use", unit:"kWh/km", step:0.005},
+  waterKwh:{v:1.5, label:"Energy to supply water", unit:"kWh/kL", step:0.1},
+  solar:  {v:30,   label:"LW · solar + wind share of home power", unit:"%", step:1},
+  eff:    {v:10,   label:"LW · design efficiency saving", unit:"%", step:1},
+  waterCut:{v:40,  label:"LW · rainwater + recycling cut", unit:"%", step:1},
+  green:  {v:60,   label:"LW · green cover absorption per home", unit:"kg/yr", step:5},
+  tree:   {v:21,   label:"One mature tree absorbs", unit:"kg/yr", step:1},
+};
+const P = [
+  {id:"energy", name:"Energy", c:"--cc-energy"},
+  {id:"water", name:"Water", c:"--cc-water"},
+  {id:"move", name:"Mobility", c:"--cc-move"},
+  {id:"cook", name:"Cooking", c:"--cc-cook"},
+  {id:"nature", name:"Nature", c:"--cc-nature"},
+];
+let fuel = "petrol";
+const $ = id => document.getElementById("cc-" + id);
+
+// Pure calculation: inputs + assumptions -> kg CO2 per year by pillar
+function calc(i, a){
+  const g = a.grid;
+  const carKgKm = i.fuel==="ev" ? a.evCar*g : (i.fuel==="diesel" ? a.dieselL : a.petrolL)/a.carKmpl;
+  const twKgKm = a.petrolL/a.twKmpl;
+  const waterKL = i.water*365/1000;
+  const today = {
+    energy: i.kwh*12*g,
+    water: waterKL*a.waterKwh*g,
+    move: i.car*12*carKgKm + i.tw*12*twKgKm,
+    cook: i.lpg*12*14.2*a.lpg,
+    nature: 0,
+  };
+  const ev = i.switchev || i.fuel==="ev";
+  const lw = {
+    energy: today.energy*(1-a.eff/100)*(1-a.solar/100),
+    water: today.water*(1-a.waterCut/100),
+    move: ev ? i.car*12*a.evCar*g + i.tw*12*a.evTw*g : today.move,
+    cook: today.cook,
+    nature: -a.green,
+  };
+  const sum = o => Object.values(o).reduce((s,x)=>s+x,0);
+  return {today, lw, tToday:sum(today), tLw:sum(lw)};
+}
+
+const fmtT = kg => (kg/1000).toFixed(1);
+const fmtN = n => Math.round(n).toLocaleString("en-IN");
+
+function read(){
+  return {ppl:+$("ppl").value, kwh:+$("kwh").value, water:+$("water").value, car:+$("car").value,
+          tw:+$("tw").value, lpg:+$("lpg").value, fuel, switchev:$("switchev").checked};
+}
+function av(){ const o={}; for(const k in A) o[k]=A[k].v; return o; }
+
+function render(){
+  const i = read(), a = av(), r = calc(i,a);
+  $("o-ppl").textContent = i.ppl;
+  $("o-kwh").textContent = i.kwh+" kWh";
+  $("o-water").textContent = fmtN(i.water)+" L";
+  $("o-car").textContent = fmtN(i.car)+" km";
+  $("o-tw").textContent = fmtN(i.tw)+" km";
+  $("o-lpg").textContent = i.lpg;
+  $("switchev").closest(".cc-field").hidden = fuel==="ev";
+
+  const saved = r.tToday - r.tLw, pct = r.tToday>0 ? Math.round(saved/r.tToday*100) : 0;
+  $("pct").textContent = pct+"%";
+  $("result-status").textContent = "Estimated annual household emissions: " + fmtT(r.tToday) + " tonnes today, " + fmtT(r.tLw) + " tonnes at The Living Wave. " + pct + "% reduction.";
+  $("t-today").textContent = fmtT(r.tToday);
+  $("t-lw").textContent = fmtT(r.tLw);
+  $("pp-today").textContent = fmtT(r.tToday/i.ppl)+" t per person";
+  $("pp-lw").textContent = fmtT(r.tLw/i.ppl)+" t per person";
+
+  const max = Math.max(Object.values(r.today).reduce((s,x)=>s+Math.max(0,x),0), Object.values(r.lw).reduce((s,x)=>s+Math.max(0,x),0), 1);
+  const bar = (o) => P.filter(p=>o[p.id]>0).map(p=>`<span title="${p.name}: ${fmtN(o[p.id])} kg" style="width:${o[p.id]/max*100}%;background:var(${p.c})"></span>`).join("");
+  $("bar-today").innerHTML = bar(r.today);
+  $("bar-lw").innerHTML = bar(r.lw);
+
+  $("rows").innerHTML = P.map(p=>{
+    const t=r.today[p.id], l=r.lw[p.id], s=t-l;
+    return `<tr><td>${p.name}</td><td>${fmtN(t)}</td><td>${fmtN(l)}</td><td class="${s>0?'cc-save':''}">${s>0?'−'+fmtN(s):'—'}</td></tr>`;
+  }).join("") + `<tr><td><b>Total (kg)</b></td><td><b>${fmtN(r.tToday)}</b></td><td><b>${fmtN(r.tLw)}</b></td><td class="cc-save"><b>−${fmtN(saved)}</b></td></tr>`;
+
+  $("e-kg").textContent = fmtN(saved);
+  $("e-trees").textContent = fmtN(saved/a.tree);
+  $("e-10").textContent = (saved*10/1000).toFixed(0);
+
+  const msg = `My household’s estimated footprint is ${fmtT(r.tToday)} t of CO₂ a year. The Living Wave scenario estimates ${fmtT(r.tLw)} t — ${pct}% less, equivalent to ${fmtN(saved/a.tree)} mature trees’ yearly absorption. Indicative estimate based on planning assumptions.`;
+  $("wa").href = "https://wa.me/?text="+encodeURIComponent(msg);
+  $("copy").dataset.msg = msg;
+}
+
+$("legend").innerHTML = P.map(p=>`<span><i style="background:var(${p.c})"></i>${p.name}</span>`).join("");
+["ppl","kwh","water","car","tw","lpg","switchev"].forEach(id=>$(id).addEventListener("input",render));
+document.querySelectorAll("#carbon-calculator .cc-seg button").forEach(b=>b.addEventListener("click",()=>{
+  fuel=b.dataset.fuel; document.querySelectorAll("#carbon-calculator .cc-seg button").forEach(x=>x.setAttribute("aria-pressed",x===b)); render();}));
+$("copy").addEventListener("click", async function(){
+  try {
+    if (!navigator.clipboard) throw new Error("Clipboard unavailable");
+    await navigator.clipboard.writeText($("copy").dataset.msg);
+    $("copy-status").textContent = "Result copied.";
+  } catch(error) {
+    $("copy-status").textContent = "Copy is unavailable in this browser. Use Share on WhatsApp to share your result.";
+  }
+});
+render();
+})();
 
 /* ---------- EI impact summary and related technology ---------- */
 (function(){
