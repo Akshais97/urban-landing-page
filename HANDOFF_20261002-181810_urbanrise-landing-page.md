@@ -2,15 +2,15 @@
 name: "UrbanRise landing page handoff"
 status: ready-for-next-request
 branch: main
-base_commit: 02bf18e
-updated_at: 2026-10-03T02:18:11.022474+05:30
+base_commit: 8e9b997
+updated_at: 2026-10-03T02:49:34.221748+05:30
 ---
 
 # UrbanRise landing page handoff
 
 ## Resume here
 
-All currently requested page changes are complete. Latest: updated the Vision video poster to `video_thumbnail.png` and the Spaces image (including its residence viewer) to `spaces_section.png`. This handoff update does not change the page. No pending user request is known.
+All currently requested page changes are complete. Latest: added the approved top-right liquid-glass early-access notification after 5 seconds of visible browsing. It opens the existing lead form and settles into a compact bell with a 1 badge. No pending user request is known.
 
 Workspace: `G:\C Landing Page`, Windows/PowerShell. Edit [Urban_Rise_Landing_Page.html](Urban_Rise_Landing_Page.html) and synchronize [index.html](index.html) byte-for-byte. They match at this handoff. Read [button_to_sections.md](button_to_sections.md) for current destinations and behaviors. Inspect the current files before editing: the user uploads updates and commits independently, so historical diffs may not describe the current source.
 
@@ -23,7 +23,7 @@ Hero `#home` -> `#why-home` -> `#release` -> `#benchmarks` -> **`#carbon-calcula
 - Experience (`#experience`, including `#location`) was removed, along with its feature-card code and waveform animation. Its navigation entries were removed. Gattahalli in Project Facts is now a location label, not a link. Vision's remaining button scrolls to Residences.
 - Sustain (`.sustain.on-dark`) and its `#ov-approach` modal were removed. The footer follows Residences directly.
 - Live Panorama and Explore in 3D (`.ghost3d`) were removed. The Spaces section's Explore Residences button still opens the residence viewer.
-- Top glass navigation and compact/mobile menu have five jumps, in order: Home, Benchmarks, Calculator, Vision, Residences. Calculator targets `#carbon-calculator`.
+- Top glass navigation has five jumps: Home, Benchmarks, Calculator, Vision, Residences. The hamburger has eight: Home, What's new, Benchmarks, Calculator, Version check, The lineup, Vision, Residences, plus its early-access action. Calculator targets `#carbon-calculator`.
 
 ## Current section behavior and design
 
@@ -34,6 +34,16 @@ Blue hour remains the default (7:31 PM). Slider is manual, without scroll coupli
 Mobile time control is centered. The old 430px empty side reservation was removed; content spacing fills available hero height, with 32px between stats and slider and 32px below it. Headline sits 16px above the description while the description's placement stays unchanged. `mapHero()` computes `--hero-headline-offset` only on mobile, without moving other elements. Keep that distinction when changing layout.
 
 Intro/reminders/menu behavior is preserved. Logo is `assets/logo-02.png`, cropped in CSS with the SVG white-lettering filter. Hero banners use the 640px breakpoint.
+
+### Early-access notification
+
+`#accessInvitation` is a fixed top-right native backdrop-filter glass notification below the header. After 5 seconds of visible browsing (intro and hidden tabs excluded), it shows a circular bell, badge 1, preview copy and dismiss button. A single gentle bell wobble and badge entrance respect reduced motion. After six seconds it becomes a compact bell; hover or keyboard focus defers compacting. Clicking opens existing `#ov-join`; form closure restores focus to the hero early-access button.
+
+It defers for open menus/modals, focused inputs and eight seconds after quiz interaction; shown notifications hide while menus/modals are open. Opening the lead modal or focusing either lead form suppresses it. Dismiss and Escape remove it. Session key `urbanrise.accessInvitation.v1` prevents repeat appearances on reload in the same tab. No automatic form opening or server submission. CSS/markup/JS are scoped to invitation classes and IDs; native blur is intentional for a fixed element crossing section backgrounds.
+
+QA: `test-invitation.cjs` covers timing, intro, compact state, menu hiding, form opening, focus restoration and session suppression at 1440/390/320. `test-invitation-edge.cjs` covers hidden-tab pause, menu deferral, compact dismissal and previous form engagement.
+
+The Vision video bottom toolbar (play toggle, seek, subtitles, speed and restart) was removed. Its orphan CSS/JS was removed; center play/pause and top fullscreen remain.
 
 ### Why Home and Release
 
@@ -110,7 +120,7 @@ Fixed Release, Version and Early Access by adding dedicated image classes and us
 
 ## Git, environment and verification
 
-Observed branch: `main`; HEAD `02bf18e Banners mostly updated, older sections to be removed now`. Recheck before work. HTML, index and button mappings are modified. Several user-provided banner assets are untracked, including current Early Access/Lineup/Project Facts/Spaces/Version/video images and `A Greener, Brighter Showroom.png`. Preserve them; deployment would need to include referenced assets. No commit/push/deploy performed in this work. Origin previously observed: `https://github.com/Akshais97/urban-landing-page.git`. Deployment state is not verified.
+Observed branch: `main`; HEAD `8e9b997 Fixed Hamburger and Navpill`. Recheck before work. HTML, index, button mappings and this handoff are modified for the invitation feature. User-provided assets are present; preserve them. No commit/push/deploy performed in this work. Origin previously observed: `https://github.com/Akshais97/urban-landing-page.git`. Deployment state is not verified.
 
 Current permissions: unrestricted filesystem/network, approval never. Do not set `sandbox_permissions`. Use native PowerShell literal-path file operations. No destructive Git operations.
 

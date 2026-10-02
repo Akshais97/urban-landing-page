@@ -18,6 +18,7 @@ This document records the current destinations and behaviors. To change a mappin
 | Version check | Hamburger menu | Home diagnostic - `#version` | Scrolls to the questionnaire. |
 | The lineup | Hamburger menu | Residence models - `#lineup` | Scrolls to the three models. |
 | Join Early Access | Header / footer | Early-access form — `#ov-join` | Opens the existing modal. The mobile arrow button uses the same destination. |
+| Early-access notification (`#accessInvitationOpen`) | Fixed top-right, below header | Existing lead form - `#ov-join` | Appears once per tab session after 5 seconds of visible browsing, then becomes a compact bell. Clicking opens the form. Dismiss or Escape removes the invitation. |
 | Open / Close menu — `#menuToggle` | Header | Compact dropdown — `#ov-menu` | Toggles the dropdown and changes the three bars into an X. Escape, an outside click, or choosing a link closes it. |
 | Check Your Version | Hero version card (`#heroCheckVersion`) | Version check (`#version`) | Scrolls to the 12-question home version check. |
 | Remind Me Later | Hero version card — `#heroRemindLater` | Bottom message — `#introToast` | Uses the same messages and shake effect as the intro's Remind me later button. Repeated clicks advance the messages. Each message disappears after 3.2 seconds; another click restarts that timer. |
@@ -61,11 +62,8 @@ These controls perform actions rather than navigate to a section.
 | Skip intro — `#skipIntro` | Startup intro — `#intro` | Closes the intro and reveals the hero. |
 | Remind me later — `#laterBtn` | Startup intro | Shows a temporary message in `#introToast` and shakes the dialog. Shares its message sequence with the hero reminder. |
 | Update — `#updateBtn` | Startup intro | Runs the update progress sequence, then reveals the hero. |
-| Play / Pause — `#vPlay`, `#vToggle` | Film player in `#vision` | Starts or pauses the preview. |
+| Play / Pause — `#vPlay` | Film player in `#vision` | Starts or pauses the preview. |
 | Full screen — `#vFull` | Film player | Toggles fullscreen. |
-| Subtitles — `#vSubs` | Film player | Toggles subtitles. |
-| Playback speed — `#vSpeed` | Film player | Cycles preview playback speed. |
-| Restart — `#vRestart` | Film player | Restarts the preview. |
 | Time-of-day slider — `#todRange` | Hero | Changes the hero's time-of-day appearance. |
 | Join Early Access submit | Early-access form — `#joinForm` | Validates the fields and displays the existing local confirmation — `#joinDone`. No server submission is currently connected. |
 | Close early access | `#ov-join` | Closes the form overlay and restores focus to the opening control. |

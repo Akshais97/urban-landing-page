@@ -102,6 +102,30 @@ a{color:inherit;text-decoration:none}
 .header-menu a:hover{color:var(--glow)}
 @media(max-width:640px){.menu-toggle{width:40px;height:40px;min-width:40px}}
 
+/* ---------- Quiet early-access invitation ---------- */
+.access-invitation{position:fixed;top:calc(92px + env(safe-area-inset-top,0px));right:max(24px,env(safe-area-inset-right,0px));z-index:80;width:340px;max-width:calc(100vw - 40px);border-radius:24px;background:linear-gradient(125deg,rgba(74,76,69,.7),rgba(35,42,39,.76));-webkit-backdrop-filter:blur(22px) saturate(1.5);backdrop-filter:blur(22px) saturate(1.5);box-shadow:inset 0 1px 1px rgba(255,250,234,.5),inset 0 0 0 1px rgba(232,239,221,.25),0 12px 36px rgba(0,0,0,.24);color:#eff2e8;transition:width .35s cubic-bezier(.2,.8,.2,1);animation:invitation-in .45s ease-out both}
+.access-invitation[hidden]{display:none!important}
+.invitation-open{display:flex;align-items:center;gap:14px;width:100%;min-height:92px;padding:18px 38px 18px 16px;border-radius:inherit;text-align:left}
+.invitation-icon{position:relative;display:grid;place-items:center;flex:none;width:42px;height:42px;border-radius:50%;background:linear-gradient(140deg,rgba(242,221,183,.25),rgba(218,233,205,.06));box-shadow:inset 0 1px 1px rgba(255,243,217,.55),inset 0 0 0 1px rgba(229,232,209,.3);color:#ecdbb9}
+.invitation-icon > .ico{width:24px;height:24px;stroke-width:1.5;transform-origin:50% 15%;animation:invitation-bell .7s ease .2s both}
+.invitation-badge{position:absolute;top:-4px;right:-4px;display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#b96653;color:#fff;font-size:11px;font-weight:600;line-height:1;box-shadow:0 0 0 2px rgba(48,54,47,.8);animation:invitation-badge .3s ease .35s both}
+.invitation-copy{min-width:0;display:block}
+.invitation-copy strong{display:block;font-size:14px;line-height:1.4;font-weight:500;letter-spacing:-.01em}
+.invitation-copy > span{display:block;margin-top:5px;color:#d6dfce;font-size:12px;line-height:1.55}
+.invitation-dismiss{position:absolute;right:8px;top:8px;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;color:#d9e2d0;background:rgba(235,244,222,.06)}
+.invitation-dismiss::before{content:"";position:absolute;inset:-8px}
+.invitation-dismiss .ico{width:13px;height:13px}
+.access-invitation.is-compact{width:64px;border-radius:50%}
+.access-invitation.is-compact .invitation-open{min-height:64px;padding:11px;gap:0}
+.access-invitation.is-compact .invitation-copy{display:none}
+.access-invitation.is-compact .invitation-dismiss{top:-8px;left:-8px;right:auto;width:24px;height:24px;background:rgba(42,49,43,.92);box-shadow:inset 0 0 0 1px rgba(232,239,221,.2)}
+.invitation-open:focus-visible,.invitation-dismiss:focus-visible{outline:2px solid #e4cda6;outline-offset:3px}
+@keyframes invitation-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes invitation-bell{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}50%{transform:rotate(6deg)}75%{transform:rotate(-3deg)}}
+@keyframes invitation-badge{from{opacity:0;transform:scale(.65)}to{opacity:1;transform:scale(1)}}
+@media(max-width:640px){.access-invitation{top:calc(84px + env(safe-area-inset-top,0px));right:max(20px,env(safe-area-inset-right,0px));width:320px}.invitation-open{padding:16px 36px 16px 14px;gap:12px}.invitation-copy strong{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.access-invitation{transition:none;animation:invitation-fade .2s ease}.invitation-icon > .ico,.invitation-badge{animation:none}@keyframes invitation-fade{from{opacity:0}to{opacity:1}}}
+
 /* ---------- Hero ---------- */
 .hero{position:relative;min-height:min(100svh,920px);height:auto;color:var(--on-dark);overflow:hidden;display:flex;flex-direction:column}
 .hero .bg{background:#121318}
@@ -761,17 +785,6 @@ html[data-scene="4"] .vstage .vframe[data-i="4"]{opacity:1}
 .vcard.playing:hover .vplay{opacity:1;pointer-events:auto}
 .vcap{position:absolute;left:50%;bottom:76px;transform:translateX(-50%);z-index:3;font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);text-align:center;width:80%;opacity:0;transition:opacity .5s;text-shadow:0 2px 18px rgba(0,0,0,.6)}
 .vcard.playing.subs .vcap{opacity:1}
-.vbar{position:absolute;left:12px;right:12px;bottom:12px;z-index:3;border-radius:18px;min-height:46px;padding:0 8px}
-.vbar .c{display:flex;align-items:center;gap:6px;height:46px}
-.vbar .iconbtn{width:36px;height:36px}
-.scrub{flex:1;position:relative;height:36px;display:flex;align-items:center;cursor:pointer;margin:0 8px}
-.scrub input{position:absolute;inset:0;width:100%;opacity:0;cursor:pointer;margin:0}
-.scrub .rail{height:3px;width:100%;background:rgba(255,255,255,.28);border-radius:3px;overflow:hidden}
-.scrub .fill{height:100%;width:0;background:#fff;border-radius:3px}
-.scrub:focus-within .rail{outline:2px solid var(--glow);outline-offset:4px}
-.txtbtn{font-size:12px;padding:0 10px;height:36px;border-radius:12px;opacity:.75}
-.txtbtn[aria-pressed="true"]{opacity:1;text-decoration:underline;text-underline-offset:4px}
-.speed{font-size:11.5px;font-weight:600;width:36px;height:36px;border-radius:12px}
 
 /* ---------- Spaces (light) ---------- */
 .spaces{padding:clamp(60px,7vw,100px) 0}
@@ -898,7 +911,6 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
   .chips{right:12px;gap:8px}
   .chip{min-height:44px;padding:0 12px 0 10px;font-size:11.5px}
   .resframe{aspect-ratio:auto;height:360px}
-  .txtbtn{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -1586,15 +1598,7 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
       </div>
       <button class="vplay lg" id="vPlay" aria-label="Play The Story of Home 2.0" data-lg='{"scale":36,"depth":30,"blur":2,"chroma":0.2,"tint":0.06}'><span class="c"><svg class="ico"><use href="#i-play"/></svg></span></button>
       <div class="vcap" id="vCap" aria-live="polite"></div>
-      <div class="vbar lg" data-lg='{"scale":22,"depth":18,"blur":12,"tint":0.12,"tintColor":"#15161b"}'>
-        <div class="c">
-          <button class="iconbtn" id="vToggle" aria-label="Play"><svg class="ico" id="vToggleIco"><use href="#i-play"/></svg></button>
-          <div class="scrub"><label class="sr" for="vSeek">Seek</label><input id="vSeek" type="range" min="0" max="1000" value="0"><div class="rail"><div class="fill" id="vFill"></div></div></div>
-          <button class="txtbtn" id="vSubs" aria-pressed="true">Subtitles</button>
-          <button class="speed" id="vSpeed" aria-label="Playback speed">1×</button>
-          <button class="iconbtn" id="vRestart" aria-label="Restart"><svg class="ico"><use href="#i-restart"/></svg></button>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -1683,6 +1687,16 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
     <button class="link" data-open="join" style="color:var(--on-dark)">Join Early Access<svg class="ico" style="width:16px;height:16px"><use href="#i-arrow"/></svg></button>
   </div>
 </footer>
+
+<!-- One quiet invitation; opens the existing early-access form. -->
+<aside class="access-invitation" id="accessInvitation" aria-label="Early access invitation" hidden>
+  <button class="invitation-open" id="accessInvitationOpen" type="button" aria-label="Open early access form, one invitation">
+    <span class="invitation-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4M12 2V1"/></svg><span class="invitation-badge">1</span></span>
+    <span class="invitation-copy"><strong>Your Home 2.0 preview</strong><span>Explore early access to The Living Wave.</span></span>
+  </button>
+  <button class="invitation-dismiss" id="accessInvitationDismiss" type="button" aria-label="Dismiss early access invitation"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg></button>
+</aside>
+<p class="sr" id="accessInvitationStatus" role="status" aria-live="polite"></p>
 
 <!-- ================= OVERLAYS ================= -->
 <div class="overlay" id="ov-join" role="dialog" aria-modal="true" aria-labelledby="joinTitle" data-scene-root>
@@ -2446,11 +2460,8 @@ var scenes = [
 ];
 var SCENE_LEN = 7.2, DUR = SCENE_LEN * scenes.length;
 var vcard = document.getElementById('vcard'), vPlay = document.getElementById('vPlay');
-var vToggle = document.getElementById('vToggle'), vToggleIco = document.getElementById('vToggleIco');
-var vSeek = document.getElementById('vSeek'), vFill = document.getElementById('vFill');
 var vCap = document.getElementById('vCap');
-var vSpeedBtn = document.getElementById('vSpeed'), vSubs = document.getElementById('vSubs');
-var playing = false, pos = 0, speed = 1, last = 0, lastKb = -1;
+var playing = false, pos = 0, last = 0, lastKb = -1;
 function render(){
   var i = Math.min(scenes.length-1, Math.floor(pos / SCENE_LEN));
   var sc = (!playing && pos === 0) ? 'p' : String(i);
@@ -2458,13 +2469,11 @@ function render(){
   if (vCap.textContent !== scenes[i]) vCap.textContent = scenes[i];
   var kb = reduce ? 0 : ((pos % SCENE_LEN) / SCENE_LEN);
   if (Math.abs(kb - lastKb) > .004){ root.style.setProperty('--kb', kb.toFixed(3)); lastKb = kb; }
-  vFill.style.width = (pos/DUR*100) + '%';
-  vSeek.value = Math.round(pos/DUR*1000);
 }
 function loop(t){
   if (!playing) return;
   var dt = last ? (t - last)/1000 : 0; last = t;
-  pos += dt * speed;
+  pos += dt;
   if (pos >= DUR){ pos = DUR; setPlaying(false); render(); return; }
   render();
   requestAnimationFrame(loop);
@@ -2473,19 +2482,12 @@ function setPlaying(on){
   if (on && pos >= DUR) pos = 0;
   playing = on; last = 0;
   vcard.classList.toggle('playing', on);
-  vToggle.setAttribute('aria-label', on ? 'Pause' : 'Play');
-  vToggleIco.innerHTML = '<use href="#i-' + (on ? 'pause' : 'play') + '"/>';
   vPlay.setAttribute('aria-label', on ? 'Pause The Story of Home 2.0' : 'Play The Story of Home 2.0');
   vPlay.querySelector('use').setAttribute('href', on ? '#i-pause' : '#i-play');
   if (on) requestAnimationFrame(loop);
   render();
 }
 vPlay.addEventListener('click', function(){ setPlaying(!playing); });
-vToggle.addEventListener('click', function(){ setPlaying(!playing); });
-vSeek.addEventListener('input', function(){ pos = vSeek.value/1000*DUR; render(); });
-vSubs.addEventListener('click', function(){ var on = vSubs.getAttribute('aria-pressed') !== 'true'; vSubs.setAttribute('aria-pressed', on); vcard.classList.toggle('subs', on); });
-vSpeedBtn.addEventListener('click', function(){ speed = speed === 1 ? 1.5 : speed === 1.5 ? 2 : 1; vSpeedBtn.textContent = speed + '×'; });
-document.getElementById('vRestart').addEventListener('click', function(){ pos = 0; setPlaying(true); });
 document.getElementById('vFull').addEventListener('click', function(){
   if (document.fullscreenElement) document.exitFullscreen();
   else if (vcard.requestFullscreen) vcard.requestFullscreen().catch(function(){});
@@ -2583,6 +2585,75 @@ document.addEventListener('keydown', function(e){
     else if (!e.shiftKey && document.activeElement === f[f.length-1]){ f[0].focus(); e.preventDefault(); }
   }
 });
+
+/* ---------- One invitation after 5 seconds of visible browsing ---------- */
+(function(){
+  var invitation=document.getElementById('accessInvitation');
+  var announcement=document.getElementById('accessInvitationStatus');
+  var storageKey='urbanrise.accessInvitation.v1';
+  try { if(sessionStorage.getItem(storageKey))return; } catch(error){}
+  var elapsed=0, previous=performance.now(), shown=false, finished=false, busyUntil=0;
+  var timer, collapseTimer, observer;
+  function remember(value){try{sessionStorage.setItem(storageKey,value);}catch(error){}}
+  function blocked(){
+    return document.hidden || document.body.classList.contains('intro-pending') || !headerMenu.hidden || !!document.querySelector('.overlay.open');
+  }
+  function editing(){
+    var active=document.activeElement;
+    return active && (active.matches('input,select,textarea') || active.isContentEditable);
+  }
+  function finish(reason){
+    if(finished)return;
+    finished=true; remember(reason);clearInterval(timer);clearTimeout(collapseTimer);
+    if(observer)observer.disconnect();
+    invitation.hidden=true;announcement.textContent='';
+  }
+  function sync(){
+    if(finished)return;
+    if(document.getElementById('ov-join').classList.contains('open')){finish('engaged');return;}
+    if(shown){
+      var hide=blocked();
+      if(invitation.hidden!==hide)invitation.hidden=hide;
+    }
+  }
+  function show(){
+    shown=true;remember('shown');clearInterval(timer);invitation.hidden=false;
+    announcement.textContent='Your Home 2.0 preview is available. Open early access from the notification button.';
+    function settle(){
+      if(finished)return;
+      if(invitation.matches(':hover')||invitation.contains(document.activeElement)){collapseTimer=setTimeout(settle,1000);return;}
+      invitation.classList.add('is-compact');
+    }
+    collapseTimer=setTimeout(settle,6000);
+  }
+  timer=setInterval(function(){
+    var now=performance.now(), delta=now-previous;previous=now;
+    if(finished||shown)return;
+    if(!document.hidden&&!document.body.classList.contains('intro-pending'))elapsed+=delta;
+    if(elapsed>=5000&&!blocked()&&!editing()&&Date.now()>=busyUntil)show();
+  },250);
+  observer=new MutationObserver(sync);
+  observer.observe(document.body,{attributes:true,attributeFilter:['class']});
+  observer.observe(headerMenu,{attributes:true,attributeFilter:['hidden']});
+  document.querySelectorAll('.overlay').forEach(function(ov){observer.observe(ov,{attributes:true,attributeFilter:['class']});});
+  document.addEventListener('visibilitychange',function(){previous=performance.now();sync();});
+  document.addEventListener('focusin',function(event){
+    if(event.target.closest('#accessForm,#joinForm'))finish('engaged');
+  });
+  document.getElementById('quizContent').addEventListener('click',function(){busyUntil=Date.now()+8000;});
+  document.getElementById('accessInvitationOpen').addEventListener('click',function(){
+    finish('engaged');openOv('ov-join');
+    lastFocus=document.querySelector('.hero [data-open="join"]');
+  });
+  document.getElementById('accessInvitationDismiss').addEventListener('click',function(){
+    var focused=invitation.contains(document.activeElement);finish('dismissed');
+    if(focused)menuToggle.focus({preventScroll:true});
+  });
+  invitation.addEventListener('keydown',function(event){
+    if(event.key==='Escape'){event.preventDefault();finish('dismissed');menuToggle.focus({preventScroll:true});}
+  });
+  sync();
+})();
 
 /* ---------- Hero version-section navigation ---------- */
 document.getElementById('heroCheckVersion').addEventListener('click',function(){
