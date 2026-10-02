@@ -14,6 +14,9 @@ This document records the current destinations and behaviors. To change a mappin
 | Calculator | Header / menu | Carbon calculator - `#carbon-calculator` | Scrolls to the household carbon calculator. |
 | Vision | Header / menu | Home evolution — `#vision` | Scrolls to the home-evolution section. |
 | Residences | Header / menu | Residences — `#residences` | Scrolls to the residences section. |
+| What's new | Hamburger menu | Release notes - `#release` | Scrolls to release features. |
+| Version check | Hamburger menu | Home diagnostic - `#version` | Scrolls to the questionnaire. |
+| The lineup | Hamburger menu | Residence models - `#lineup` | Scrolls to the three models. |
 | Join Early Access | Header / footer | Early-access form — `#ov-join` | Opens the existing modal. The mobile arrow button uses the same destination. |
 | Open / Close menu — `#menuToggle` | Header | Compact dropdown — `#ov-menu` | Toggles the dropdown and changes the three bars into an X. Escape, an outside click, or choosing a link closes it. |
 | Check Your Version | Hero version card (`#heroCheckVersion`) | Version check (`#version`) | Scrolls to the 12-question home version check. |
