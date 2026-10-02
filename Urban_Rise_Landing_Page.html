@@ -228,7 +228,7 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- Home 2.0 release notes ---------- */
 .release{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) 0;background:#181b1c;color:#f6f3ee}
-.release > .bg .ph{background-position:55% 45%}
+.release > .bg .ph{background-image:url("assets/background/release-section-background-updated.png");background-position:55% 45%}
 .release-wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,17,19,.85),rgba(16,21,23,.52) 55%,rgba(13,17,19,.56)),linear-gradient(0deg,rgba(12,16,18,.9),transparent 60%,rgba(12,16,18,.45))}
 .release .wrap{position:relative;z-index:1}
 .release-heading{margin-bottom:clamp(32px,4vw,48px);max-width:780px}
@@ -474,27 +474,122 @@ a{color:inherit;text-decoration:none}
 @media(hover:hover) and (pointer:fine){.access-whatsapp:hover{background:rgba(119,174,139,.2)}}
 @media(prefers-reduced-motion:reduce){.access-whatsapp{transition:none}}
 
-/* ---------- Project facts ---------- */
-.project-facts{position:relative;isolation:isolate;overflow:hidden;padding:clamp(80px,8vw,120px) 0;background:#202823}
+/* ---------- Project facts: glass widget cards ---------- */
+.project-facts{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) 0;background:#19221e}
 .project-facts > .bg .ph{background-position:50% 58%}
-.project-facts-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,25,21,.92),rgba(20,30,24,.65)),linear-gradient(0deg,rgba(16,25,21,.86),transparent 60%,rgba(16,25,21,.7))}
+.project-facts-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,22,18,.85),rgba(17,27,21,.53)),linear-gradient(0deg,rgba(12,22,18,.87),transparent 55%,rgba(12,22,18,.4))}
 .project-facts .wrap{position:relative;z-index:1}
-.project-facts-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:clamp(40px,4.5vw,64px)}
+.project-facts-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:40px}
 .project-facts .eyebrow{color:#ddc7a5;letter-spacing:.23em;line-height:1.8}
 .project-facts h2{font-size:clamp(36px,4vw,56px);font-weight:350;line-height:1.12;letter-spacing:-.035em}
-.project-facts-location{display:flex;align-items:center;gap:12px;margin:0 0 4px;padding:12px 18px;border:1px solid rgba(226,220,200,.2);border-radius:999px;color:#dbe3d8;background:rgba(208,220,202,.06);font-size:12px;white-space:nowrap}
-.project-facts-location .ico{width:17px;height:17px;color:#ddc7a5}
-.project-facts-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin:0}
-.project-fact{min-width:0;margin:0;padding:30px 28px 32px;border-radius:28px;background:rgba(211,223,204,.11)}
-.project-fact > .c{display:flex;flex-direction:column;height:100%;text-shadow:none!important}
-.project-fact dt{display:contents}
-.project-fact-icon{display:grid;place-items:center;width:48px;height:48px;margin-bottom:36px;border-radius:16px;color:#e4d4b5;background:linear-gradient(145deg,rgba(224,202,164,.24),rgba(195,184,156,.06));box-shadow:inset 0 1px 0 rgba(255,245,218,.3),inset 0 0 0 1px rgba(255,245,218,.12)}
-.project-fact-icon .ico{width:24px;height:24px}
-.project-fact-label{order:2;display:block;margin-top:18px;padding-top:18px;border-top:1px solid rgba(235,237,224,.16);color:#d9e1d5;font-size:13px;line-height:1.65;min-height:62px;max-width:24ch}
-.project-fact-value{order:1;margin:0;color:#f2eddf;font-family:"Inter","Segoe UI",system-ui,sans-serif;font-size:clamp(42px,4.1vw,60px);font-weight:300;line-height:1.1;letter-spacing:-.045em;font-variant-numeric:tabular-nums;white-space:nowrap}
-.project-fact-value small{font-size:.62em;font-weight:300;vertical-align:.08em;color:#ddc7a5}
-@media(max-width:1080px){.project-facts-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.project-fact{padding:30px}.project-fact-label{max-width:none;min-height:0}.project-fact-value{font-size:54px}}
-@media(max-width:640px){.project-facts{padding:64px 0}.project-facts-heading{align-items:flex-start;flex-direction:column;gap:24px;margin-bottom:32px}.project-facts .eyebrow{font-size:10px;letter-spacing:.19em}.project-facts-location{margin:0;font-size:11px;padding:10px 15px}.project-facts-grid{grid-template-columns:1fr;gap:16px}.project-fact{padding:26px;border-radius:24px}.project-fact-icon{margin-bottom:26px;width:44px;height:44px;border-radius:14px}.project-fact-icon .ico{width:22px;height:22px}.project-fact-value{font-size:48px}.project-fact-label{margin-top:16px;padding-top:16px}}
+.project-facts-location{display:flex;align-items:center;gap:10px;padding:8px 0;margin-bottom:4px;color:#d6dfd3;font-size:12px;line-height:1.6;transition:color .2s ease}
+.project-facts-location .ico{width:16px;height:16px;color:#ddc7a5}
+.project-widget-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:22px}
+.project-widget{min-width:0;border-radius:30px;background:rgba(197,212,190,.12)}
+.project-widget > .c{display:flex;flex-direction:column;height:100%;padding:30px;text-shadow:none!important;overflow:hidden;border-radius:inherit}
+.project-widget-title{display:flex;align-items:center;gap:10px;margin:0;color:#d5ddce;font-size:10px;font-weight:500;line-height:1.6;letter-spacing:.14em;text-transform:uppercase}
+.project-widget-title .ico{width:18px;height:18px;color:#d5c3a2}
+.project-widget dl{margin:0}
+.project-fact-value{margin:0;font-family:"Inter","Segoe UI",system-ui,sans-serif;font-variant-numeric:tabular-nums;font-weight:350;letter-spacing:-.045em;line-height:1.05;white-space:nowrap}
+.project-widget-footprint{grid-column:1 / 8;grid-row:1;background:rgba(214,199,165,.13)}
+.project-widget-footprint > .c{position:relative;min-height:266px;padding:32px 36px}
+.project-footprint-number{position:relative;z-index:1;margin-top:26px!important}
+.project-footprint-number > div{display:flex;flex-direction:column-reverse;gap:10px}
+.project-footprint-number .project-fact-value{font-size:clamp(74px,7vw,100px);color:#edddbf;letter-spacing:-.065em}
+.project-footprint-number dt{font-size:18px;color:#e0d4bb;line-height:1.5}
+.project-footprint-art{position:absolute;right:20px;bottom:-18px;width:46%;height:240px;color:#e0cfaa;opacity:.42;pointer-events:none}
+.project-widget-homes{grid-column:1 / 5;grid-row:2}
+.project-widget-config{grid-column:5 / 8;grid-row:2}
+.project-widget-homes > .c,.project-widget-config > .c{min-height:310px}
+.project-widget-small-metric{margin-top:30px!important}
+.project-widget-small-metric > div{display:flex;flex-direction:column-reverse;gap:14px}
+.project-widget-small-metric .project-fact-value{font-size:clamp(42px,4.5vw,62px);color:#e4ebdc}
+.project-widget-small-metric dt{font-size:15px;line-height:1.65;color:#cbd6c5;max-width:22ch}
+.project-widget-small-metric small{font-size:.62em;color:#b9cbb1}
+.project-widget-art{display:block;flex:none;width:100%;height:120px;margin-top:auto;padding-top:18px;color:#dfcfac;opacity:.52;pointer-events:none}
+.project-widget-art .project-art-green{stroke:#b9d5a9}
+.project-config-art{height:120px;opacity:.52}
+.project-widget-phase{grid-column:8 / 13;grid-row:1 / 3;background:rgba(163,192,151,.13)}
+.project-widget-phase > .c{padding:32px;align-items:center}
+.project-widget-phase .project-widget-title{align-self:flex-start;width:100%;justify-content:space-between}
+.project-widget-phase .project-widget-title > span:first-child{display:flex;align-items:center;gap:10px}
+.project-phase-badge{font-size:8px;letter-spacing:.08em;padding:5px 8px;border-radius:8px;color:#d0e0c4;background:rgba(204,229,184,.1);box-shadow:inset 0 0 0 1px rgba(204,229,184,.15)}
+.project-release-ring{position:relative;width:clamp(210px,20vw,270px);max-width:100%;aspect-ratio:1;margin:auto 0}
+.project-release-ring > svg{width:100%;height:100%;overflow:visible;transform:rotate(-90deg)}
+.project-ring-track{fill:none;stroke:rgba(196,222,191,.12);stroke-width:12}
+.project-ring-share{fill:none;stroke:url(#projectRingGradient);stroke-width:12;stroke-linecap:round;stroke-dasharray:60.3260869565 100;filter:drop-shadow(0 0 7px rgba(178,219,151,.15))}
+.project-ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:36px}
+.project-ring-center > div{display:flex;flex-direction:column-reverse;align-items:center;gap:12px}
+.project-ring-center dt{font-size:12px;line-height:1.6;color:#cbdac4;max-width:14ch}
+.project-ring-center .project-fact-value{font-size:clamp(52px,5vw,68px);color:#d0e5c4}
+.project-phase-caption{margin:0 0 24px;color:#bdcdb4;font-size:15px;line-height:1.6;text-align:center}
+.project-count-trigger{position:relative;display:inline-block;font:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;border-radius:14px;transition:color .2s ease,text-shadow .2s ease}
+.project-count-trigger > .ico{position:absolute;right:-17px;top:3px;width:13px;height:13px;color:#bdcdb4;opacity:.75}
+.project-count-trigger:hover,.project-count-trigger[aria-expanded="true"]{color:#e1f1d6;text-shadow:0 0 22px rgba(192,226,165,.25)}
+.project-count-trigger:focus-visible{border-radius:14px;outline-offset:6px}
+.project-phase-info{position:fixed;inset:auto;width:min(260px,calc(100vw - 32px));margin:0;padding:20px 22px;border:1px solid rgba(222,239,203,.3);border-radius:22px;color:#e8efdf;background:rgba(34,47,37,.94);-webkit-backdrop-filter:blur(24px) saturate(1.4);backdrop-filter:blur(24px) saturate(1.4);box-shadow:inset 0 1px 0 rgba(244,255,232,.22),0 14px 40px rgba(0,0,0,.3);font-family:var(--sans);white-space:normal}
+.project-phase-info-title{margin:0 0 12px;color:#cdddc0;font-size:10px;line-height:1.5;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+.project-phase-info strong{display:block;color:#d9eacb;font-family:"Inter","Segoe UI",system-ui,sans-serif;font-size:30px;font-weight:350;letter-spacing:-.035em;line-height:1.2}
+.project-phase-info p:last-child{margin:10px 0 0;font-size:12px;line-height:1.7;color:#d0dcc7}
+@media(prefers-reduced-motion:reduce){.project-count-trigger{transition:none}}
+.project-phase-link{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;padding:16px 18px;border-radius:16px;color:#e0ebd7;background:rgba(220,239,202,.1);box-shadow:inset 0 1px 0 rgba(240,255,224,.18),inset 0 0 0 1px rgba(220,239,202,.12);font-size:12px;line-height:1.5;transition:background-color .2s ease}
+.project-phase-link .ico{width:17px;height:17px}
+.project-phase-link:focus-visible{border-radius:16px}
+@media(hover:hover){.project-facts-location:hover{color:#edddbf}.project-phase-link:hover{background:rgba(220,239,202,.2)}}
+@media(max-width:1080px){.project-widget-grid{gap:18px}.project-widget > .c{padding:26px}.project-widget-footprint > .c{padding:28px}.project-widget-title{font-size:9px;letter-spacing:.1em}.project-widget-phase > .c{padding:28px}.project-widget-small-metric .project-fact-value{font-size:46px}}
+@media(max-width:900px){.project-widget-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.project-widget-footprint{grid-column:1 / 3;grid-row:1}.project-widget-homes{grid-column:1;grid-row:2}.project-widget-config{grid-column:2;grid-row:2}.project-widget-phase{grid-column:1 / 3;grid-row:3}.project-widget-phase > .c{display:grid;grid-template-columns:1fr 1fr;gap:0 36px;align-items:center}.project-widget-phase .project-widget-title{grid-column:1 / 3;margin-bottom:24px}.project-release-ring{grid-column:1;grid-row:2 / 4;width:230px;margin:0 auto}.project-phase-caption{grid-column:2;margin:0 0 22px;text-align:left;align-self:end;max-width:22ch;font-size:15px;line-height:1.7}.project-phase-link{grid-column:2;align-self:start}.project-widget-small-metric .project-fact-value{font-size:54px}.project-footprint-art{right:32px;width:40%}}
+@media(max-width:640px){.project-facts{padding:64px 0}.project-facts-heading{align-items:flex-start;flex-direction:column;gap:20px;margin-bottom:28px}.project-facts .eyebrow{font-size:10px;letter-spacing:.2em}.project-facts-location{margin:0;padding:0}.project-widget-grid{gap:16px}.project-widget{border-radius:26px}.project-widget > .c{padding:22px}.project-widget-footprint > .c{min-height:236px;padding:26px}.project-footprint-number .project-fact-value{font-size:80px}.project-footprint-art{width:47%;height:180px;right:0;bottom:-10px;opacity:.3}.project-widget-title{font-size:9px;letter-spacing:.08em;gap:8px}.project-widget-title .ico{width:16px;height:16px}.project-widget-homes > .c,.project-widget-config > .c{min-height:300px}.project-widget-small-metric{margin-top:26px!important}.project-widget-small-metric .project-fact-value{font-size:42px}.project-widget-small-metric dt{font-size:13px}.project-widget-phase > .c{display:flex;gap:0;padding:26px}.project-widget-phase .project-widget-title{margin-bottom:28px}.project-release-ring{width:230px;margin:0 auto 24px}.project-phase-caption{font-size:13px;max-width:none;margin:0 0 22px;text-align:center}.project-ring-center .project-fact-value{font-size:60px}}
+@media(max-width:640px){.project-widget-homes .project-widget-title,.project-widget-config .project-widget-title{min-height:32px;align-items:flex-start}.project-widget-homes .project-widget-title .ico,.project-widget-config .project-widget-title .ico{margin-top:1px}}
+@media(max-width:380px){.project-widget > .c{padding:18px}.project-widget-small-metric .project-fact-value{font-size:36px}.project-widget-title{font-size:8px;letter-spacing:.04em;gap:6px}.project-widget-title .ico{width:14px;height:14px}.project-widget-footprint > .c{padding:24px}.project-widget-phase > .c{padding:24px}.project-release-ring{width:210px}}
+@media(prefers-reduced-motion:reduce){.project-facts-location,.project-phase-link{transition:none}}
+
+/* ---------- Urbanrise Environmental Intelligence ---------- */
+.urbanrise-ei{position:relative;isolation:isolate;overflow:hidden;padding:clamp(80px,8vw,120px) 0;background:#16231c}
+.urbanrise-ei > .bg .ph{background-position:35% 50%}
+.ei-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,24,17,.92),rgba(16,30,21,.71)),linear-gradient(0deg,rgba(11,24,17,.94),transparent 65%,rgba(11,24,17,.45))}
+.urbanrise-ei .wrap{position:relative;z-index:1}
+.ei-overview{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:clamp(40px,7vw,96px);align-items:center}
+.ei-story{max-width:570px}
+.urbanrise-ei .eyebrow{color:#dec7a5;letter-spacing:.23em;line-height:1.8}
+.urbanrise-ei h2{font-size:clamp(38px,4.4vw,62px);font-weight:350;line-height:1.12;letter-spacing:-.04em}
+.urbanrise-ei h2 span{color:#c4dbbf}
+.ei-intro{max-width:48ch;margin:26px 0 0;font-size:15px;line-height:1.85;color:#d1dccd}
+.ei-motto{display:flex;align-items:center;gap:12px;margin:28px 0 0;padding-top:24px;border-top:1px solid rgba(225,238,214,.16);color:#ddc9a7;font-size:12px;line-height:1.6;letter-spacing:.02em}
+.ei-motto .ico{width:22px;height:22px;color:#bdd7b5}
+.ei-targets{min-width:0;border-radius:32px;background:rgba(184,211,173,.12)}
+.ei-targets > .c{padding:28px 30px;text-shadow:none!important}
+.ei-targets h3{display:flex;align-items:center;gap:10px;margin:0 0 26px;color:#d1dfc7;font-size:10px;font-weight:500;letter-spacing:.14em;line-height:1.7;text-transform:uppercase}
+.ei-targets h3 .ico{width:19px;height:19px;color:#d8c49f}
+.ei-targets dl{margin:0}
+.ei-target{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:18px;align-items:start;padding:24px 0}
+.ei-target:first-child{padding-top:0}
+.ei-target + .ei-target{border-top:1px solid rgba(227,239,216,.15)}
+.ei-target:last-child{padding-bottom:0}
+.ei-target dt{display:contents}
+.ei-target-icon{display:grid;place-items:center;grid-column:1;grid-row:1 / 3;width:40px;height:40px;margin-top:4px;border-radius:13px;color:#cfdfbf;background:linear-gradient(145deg,rgba(185,215,156,.2),rgba(168,195,143,.04));box-shadow:inset 0 1px 0 rgba(235,251,215,.24),inset 0 0 0 1px rgba(217,240,191,.12)}
+.ei-target-icon .ico{width:22px;height:22px}
+.ei-target-description{grid-column:2;grid-row:2;margin-top:10px;color:#c7d6bf;font-size:12px;line-height:1.7;max-width:34ch}
+.ei-target dd{grid-column:2;grid-row:1;display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;margin:0;color:#e9e9d8;font-family:"Inter","Segoe UI",system-ui,sans-serif;font-size:clamp(32px,3.3vw,46px);font-weight:350;letter-spacing:-.045em;line-height:1.1;font-variant-numeric:tabular-nums}
+.ei-target dd span{font-family:var(--sans);font-size:14px;font-weight:400;letter-spacing:0;line-height:1.5;color:#d6d9c2}
+.ei-toolkit{margin-top:clamp(44px,5vw,64px)}
+.ei-toolkit-heading{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:22px}
+.ei-toolkit-heading h3{margin:0;color:#e3e8db;font-size:14px;font-weight:500;line-height:1.6}
+.ei-toolkit-heading p{margin:0;color:#bccbb5;font-size:11px;line-height:1.6}
+.ei-toolkit-glass{border-radius:28px;background:rgba(191,210,179,.08)}
+.ei-tools{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:28px 24px;margin:0;padding:30px;list-style:none;text-shadow:none!important}
+.ei-tools li{display:flex;align-items:flex-start;gap:12px;min-width:0;color:#d6dfce;font-size:12px;line-height:1.7}
+.ei-tools .ico{width:22px;height:22px;margin-top:1px;color:#c5d5b5}
+.ei-recognition{margin-top:36px;padding-top:28px;border-top:1px solid rgba(228,239,214,.16)}
+.ei-recognition-title{display:flex;align-items:center;gap:10px;margin:0 0 20px;color:#dbc7a6;font-size:10px;font-weight:500;letter-spacing:.15em;line-height:1.5;text-transform:uppercase}
+.ei-recognition-title .ico{width:18px;height:18px}
+.ei-awards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:0;padding:0;list-style:none}
+.ei-awards li{min-width:0;color:#d4ddcc;font-size:11px;line-height:1.8}
+.ei-awards li span{display:block;margin-top:6px;font-size:10px;color:#a9bda4}
+.ei-cities{display:flex;align-items:center;gap:8px;margin:24px 0 0;color:#a9bda4;font-size:10px;line-height:1.8}
+.ei-cities .ico{width:14px;height:14px}
+@media(max-width:1080px){.ei-overview{gap:40px}.ei-targets > .c{padding:26px}.ei-tools{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding:28px}.ei-tools li{font-size:12px}.ei-awards{gap:22px}}
+@media(max-width:760px){.urbanrise-ei{padding:64px 0}.ei-overview{grid-template-columns:1fr;gap:36px}.ei-story{max-width:none}.urbanrise-ei h2{font-size:clamp(38px,7vw,52px)}.ei-intro{font-size:14px;max-width:none;margin-top:22px}.ei-motto{margin-top:24px;padding-top:22px}.ei-targets{border-radius:28px}.ei-targets > .c{padding:26px}.ei-targets h3{margin-bottom:24px}.ei-target dd{font-size:40px}.ei-toolkit{margin-top:40px}.ei-toolkit-heading{align-items:flex-start;flex-direction:column;gap:8px}.ei-tools{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 20px;padding:26px}.ei-tools li{font-size:11px;gap:10px}.ei-tools .ico{width:20px;height:20px}.ei-toolkit-glass{border-radius:26px}.ei-recognition{margin-top:30px;padding-top:26px}.ei-awards{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
+@media(max-width:380px){.ei-targets > .c{padding:24px 20px}.ei-target{grid-template-columns:34px minmax(0,1fr);column-gap:14px}.ei-target-icon{width:34px;height:34px;border-radius:11px}.ei-target-icon .ico{width:19px;height:19px}.ei-target dd{font-size:36px}.ei-target dd span{font-size:12px}.ei-target-description{font-size:11px}.ei-tools{padding:24px 20px;gap:22px 16px}.ei-tools li{font-size:10px;gap:8px}.ei-tools .ico{width:18px;height:18px}.ei-toolkit-heading p{font-size:10px}}
 
 /* ---------- Residence model lineup ---------- */
 .lineup-section{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) 0;background:#1a211f}
@@ -956,7 +1051,7 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
 
 <!-- ================= RELEASE NOTES ================= -->
 <section class="release on-dark" id="release" aria-labelledby="releaseTitle" data-scene-root>
-  <div class="bg" aria-hidden="true"><div class="ph img-res"></div><div class="release-wash"></div></div>
+  <div class="bg" aria-hidden="true"><div class="ph"></div><div class="release-wash"></div></div>
   <div class="wrap">
     <div class="release-heading">
       <p class="eyebrow">Release notes &middot; v2.0.0</p>
@@ -1211,7 +1306,7 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
       </button>
       <button class="lineup-model lg" type="button" data-model="Home 2.0 Max" aria-pressed="false" aria-label="Select Home 2.0 Max, 4 BHK + 3T, 1,950&ndash;2,000 sq ft, for early access" data-lg='{"scale":28,"depth":22,"blur":16,"tint":0.17,"tintColor":"#c7c9bb","edge":1}'>
         <span class="c">
-          <span class="lineup-model-top"><span class="lineup-model-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><use href="#i-layers"/></svg></span><span class="lineup-selection" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span></span>
+          <span class="lineup-model-top"><span class="lineup-model-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><use href="#i-home"/><path d="m20 1 1 2.5 2.5 1-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1Z"/></svg></span><span class="lineup-selection" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span></span>
           <span class="lineup-name">Home 2.0 Max</span>
           <span class="lineup-release">Full Home 2.0 release</span>
           <span class="lineup-specs"><span><svg class="ico" aria-hidden="true"><use href="#i-layers"/></svg><span>4 BHK + 3T</span></span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3H3v6m12-6h6v6M3 15v6h6m12-6v6h-6"/><path d="m8 8 8 8m-8 0 8-8"/></svg><span>1,950&ndash;2,000 sq ft</span></span></span>
@@ -1230,37 +1325,113 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
   <div class="bg" aria-hidden="true"><div class="ph img-res"></div><div class="project-facts-shade"></div></div>
   <div class="wrap">
     <div class="project-facts-heading">
-      <div>
-        <p class="eyebrow">The Living Wave &middot; Gattahalli</p>
-        <h2 class="serif" id="projectFactsTitle">The first build.</h2>
-      </div>
-      <p class="project-facts-location"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Gattahalli, Bengaluru</span></p>
+      <div><p class="eyebrow">The Living Wave &middot; Gattahalli</p><h2 class="serif" id="projectFactsTitle">The first build.</h2></div>
+      <a class="project-facts-location" href="#location" aria-label="Explore the neighbourhood in Gattahalli, Bengaluru"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Gattahalli, Bengaluru</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
     </div>
-    <div class="project-facts-grid">
-      <dl class="project-fact lg" data-lg='{"scale":28,"depth":22,"blur":16,"tint":0.18,"tintColor":"#c7d0bf","edge":1}'>
+    <div class="project-widget-grid">
+      <article class="project-widget project-widget-footprint lg" aria-labelledby="projectFootprintTitle" data-lg='{"scale":28,"depth":22,"blur":16,"tint":0.18,"tintColor":"#d5c6a5","edge":1}'>
         <div class="c">
-          <dt><span class="project-fact-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m3 7 6-3 6 3 6-3v16l-6 3-6-3-6 3Z"/><path d="M9 4v16M15 7v16"/></svg></span><span class="project-fact-label">acres</span></dt>
-          <dd class="project-fact-value">4.20</dd>
+          <h3 class="project-widget-title" id="projectFootprintTitle"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3H3v6m12-6h6v6M3 15v6h6m12-6v6h-6"/></svg>Project footprint</h3>
+          <dl class="project-footprint-number"><div><dt class="project-fact-label">acres</dt><dd class="project-fact-value">4.20</dd></div></dl>
+          <svg class="project-footprint-art" viewBox="0 0 300 240" fill="none" aria-hidden="true"><defs><linearGradient id="projectPlotTint" x2="0" y2="1"><stop stop-color="#ddc7a5" stop-opacity=".22"/><stop offset="1" stop-color="#c4d8b7" stop-opacity=".02"/></linearGradient></defs><path d="m45 115 115-62 105 59-115 67Z" fill="url(#projectPlotTint)" stroke="currentColor" stroke-width="1.3"/><path d="m45 130 105 64 115-67M45 145l105 64 115-67M45 160l105 64 115-67" stroke="currentColor" stroke-opacity=".45"/><path d="m77 114 83-44 74 42-83 48Z" stroke="currentColor" stroke-opacity=".7"/><path d="m109 113 51-26 43 25-51 28Z" stroke="currentColor" stroke-opacity=".45"/><path d="M160 53V31m-11 10 11-10 11 10" stroke="currentColor"/><circle cx="160" cy="53" r="3" fill="currentColor"/></svg>
         </div>
-      </dl>
-      <dl class="project-fact lg" data-lg='{"scale":28,"depth":22,"blur":16,"tint":0.18,"tintColor":"#c7d0bf","edge":1}'>
+      </article>
+      <article class="project-widget project-widget-homes lg" aria-labelledby="projectHomesTitle" data-lg='{"scale":28,"depth":22,"blur":16,"tint":0.16,"tintColor":"#c4cdbb","edge":1}'>
         <div class="c">
-          <dt><span class="project-fact-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M4 21V3h11v18M15 9h5v12M2 21h20M8 7h3M8 11h3M8 15h3M8 21v-2h3v2"/></svg></span><span class="project-fact-label">apartments across the project</span></dt>
-          <dd class="project-fact-value">368</dd>
+          <h3 class="project-widget-title" id="projectHomesTitle"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V3h11v18M15 9h5v12M2 21h20M8 7h3M8 11h3M8 15h3"/></svg>The whole project</h3>
+          <dl class="project-widget-small-metric"><div><dt class="project-fact-label">apartments across the project</dt><dd class="project-fact-value">368</dd></div></dl>
+          <svg class="project-widget-art project-homes-art" viewBox="30 15 235 160" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <defs><linearGradient id="projectBuildingTint" x2="0" y2="1"><stop stop-color="#ddc7a5" stop-opacity=".18"/><stop offset="1" stop-color="#c4d8b7" stop-opacity=".02"/></linearGradient></defs>
+            <path d="m92 120 75-40 82 43-76 42Z" stroke-opacity=".3"/>
+            <path d="m113 54 59-31 58 31-59 33Z" fill="url(#projectBuildingTint)"/>
+            <path d="M113 54v63l58 32 59-32V54M171 87v62" stroke-opacity=".65"/>
+            <path d="m105 72 66 36 67-36m-133 0v7l66 36 67-36v-7M105 96l66 36 67-36m-133 0v7l66 36 67-36v-7"/>
+            <path d="m124 68 10 5m10 5 10 5m32 0 10-5m10-5 10-5M124 91l10 5m10 5 10 5m32 0 10-5m10-5 10-5" stroke-opacity=".5"/>
+            <g class="project-art-green"><path d="M149 43V29m0 9c-10 0-12-7-12-7s10-3 12 7m0-4c8 0 12-7 12-7s-10-3-12 7M215 77V65m0 8c-8 0-11-6-11-6s8-3 11 6m0-4c7 0 10-6 10-6s-8-2-10 6M128 102V91m0 7c-7 0-10-6-10-6s8-2 10 6"/><path d="M63 134v-27m0 16c-17 0-22-14-22-14s17-4 22 14m0-8c17 0 23-14 23-14s-18-3-23 14M53 140l10 5 11-6"/></g>
+          </svg>
         </div>
-      </dl>
-      <dl class="project-fact lg" data-lg='{"scale":28,"depth":22,"blur":16,"tint":0.18,"tintColor":"#c7d0bf","edge":1}'>
+      </article>
+      <article class="project-widget project-widget-config lg" aria-labelledby="projectConfigTitle" data-lg='{"scale":28,"depth":22,"blur":16,"tint":0.16,"tintColor":"#c4cdbb","edge":1}'>
         <div class="c">
-          <dt><span class="project-fact-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><use href="#i-home"/><path d="m9 13 2 2 4-4"/></svg></span><span class="project-fact-label">homes in the first release (Phase 1)</span></dt>
-          <dd class="project-fact-value">222</dd>
+          <h3 class="project-widget-title" id="projectConfigTitle"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-home"/></svg>Your home</h3>
+          <dl class="project-widget-small-metric"><div><dt class="project-fact-label">BHK configurations</dt><dd class="project-fact-value">3 <small>&amp;</small> 4</dd></div></dl>
+          <svg class="project-widget-art project-config-art" viewBox="15 25 220 145" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <defs><linearGradient id="projectHomeTint" x2="0" y2="1"><stop stop-color="#ddc7a5" stop-opacity=".18"/><stop offset="1" stop-color="#c4d8b7" stop-opacity=".02"/></linearGradient></defs>
+            <path d="m25 98 94-52 103 56-96 53Z" fill="url(#projectHomeTint)" stroke-opacity=".55"/>
+            <path d="M25 98v9l101 57 96-53v-9M126 155v9" stroke-opacity=".35"/>
+            <g class="project-home-room"><path d="m52 74 24-13 25 14-24 13Z" fill="url(#projectHomeTint)"/><path d="M52 74v13l25 14 24-13V75M77 88v13" stroke-opacity=".65"/></g>
+            <g class="project-home-room"><path d="m91 52 24-13 25 14-24 13Z" fill="url(#projectHomeTint)"/><path d="M91 52v13l25 14 24-13V53M116 66v13" stroke-opacity=".65"/></g>
+            <g class="project-home-room"><path d="m139 77 24-13 25 14-24 13Z" fill="url(#projectHomeTint)"/><path d="M139 77v13l25 14 24-13V78M164 91v13" stroke-opacity=".65"/></g>
+            <path d="m73 120 45-25 46 25-45 25Z" stroke-opacity=".5"/>
+            <path d="m166 112 26-14 23 13-26 15Z" stroke-opacity=".5"/>
+            <path d="m51 112 25-14m25-14 15-8m24 18 22 13M119 145v10" stroke-opacity=".3"/>
+          </svg>
         </div>
-      </dl>
-      <dl class="project-fact lg" data-lg='{"scale":28,"depth":22,"blur":16,"tint":0.18,"tintColor":"#c7d0bf","edge":1}'>
+      </article>
+      <article class="project-widget project-widget-phase lg" aria-labelledby="projectPhaseTitle" data-lg='{"scale":28,"depth":22,"blur":16,"tint":0.18,"tintColor":"#bfcfb2","edge":1}'>
         <div class="c">
-          <dt><span class="project-fact-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 11h18M13 3v8M9 11v10M13 7h3M5 15h4"/></svg></span><span class="project-fact-label">BHK configurations</span></dt>
-          <dd class="project-fact-value">3 <small>&amp;</small> 4</dd>
+          <h3 class="project-widget-title" id="projectPhaseTitle"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3v4m8-4v4M3 10h18"/><rect x="3" y="5" width="18" height="16" rx="3"/><path d="m8 15 3 3 5-5"/></svg>First release</span><span class="project-phase-badge">Phase 1</span></h3>
+          <div class="project-release-ring">
+            <svg viewBox="0 0 240 240" aria-hidden="true"><defs><linearGradient id="projectRingGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e4d1aa"/><stop offset=".5" stop-color="#c8dfb3"/><stop offset="1" stop-color="#8dbd96"/></linearGradient></defs><circle class="project-ring-track" cx="120" cy="120" r="104"/><circle class="project-ring-share" cx="120" cy="120" r="104" pathLength="100"/></svg>
+            <dl class="project-ring-center"><div><dt class="project-fact-label">homes in the first release</dt><dd class="project-fact-value"><button class="project-count-trigger" id="projectPhaseInfoTrigger" type="button" aria-label="About the 222 homes in Phase 1" aria-expanded="false" aria-controls="projectPhaseInfo" aria-describedby="projectPhaseInfo"><span id="projectPhaseCount" aria-hidden="true">222</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></svg></button></dd></div></dl>
+            <div class="project-phase-info" id="projectPhaseInfo" popover="manual" role="tooltip"><p class="project-phase-info-title">Phase 1 &middot; project share</p><strong>60.3%</strong><p>The first release&rsquo;s share of the full project: 222 of 368 sustainable homes!</p></div>
+          </div>
+          <p class="project-phase-caption">222 of 368 homes in Phase 1</p>
+          <a class="project-phase-link" href="#lineup"><span>Explore the three models</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
-      </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= URBANRISE / ENVIRONMENTAL INTELLIGENCE ================= -->
+<section class="urbanrise-ei on-dark" id="urbanrise" aria-labelledby="eiTitle" data-scene-root>
+  <div class="bg" aria-hidden="true"><div class="ph img-sustain"></div><div class="ei-shade"></div></div>
+  <div class="wrap">
+    <div class="ei-overview">
+      <div class="ei-story">
+        <p class="eyebrow">Shipped by Urbanrise</p>
+        <h2 class="serif" id="eiTitle">Green tech,<br><span>not green talk.</span></h2>
+        <p class="ei-intro">Home 2.0 runs on Urbanrise&rsquo;s Environmental Intelligence (EI), the company&rsquo;s proprietary technology built to deliver tangible benefits on electricity and water, for resilient living over 100 years.</p>
+        <p class="ei-motto"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-leaf"/></svg><span>Every Drop, Every Watt Matters.</span></p>
+      </div>
+      <div class="ei-targets lg" data-lg='{"scale":28,"depth":22,"blur":18,"tint":0.18,"tintColor":"#bcccac","edge":1}'>
+        <div class="c">
+          <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>Urbanrise 100-year EI targets</h3>
+          <dl>
+            <div class="ei-target"><dt><span class="ei-target-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z"/><path d="M8 15a4 4 0 0 0 4 4"/></svg></span><span class="ei-target-description">of water saved through harvesting and recycling</span></dt><dd>10.3 <span>trillion litres</span></dd></div>
+            <div class="ei-target"><dt><span class="ei-target-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z"/></svg></span><span class="ei-target-description">of clean energy generated</span></dt><dd>100 <span>billion units</span></dd></div>
+            <div class="ei-target"><dt><span class="ei-target-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><use href="#i-leaf"/></svg></span><span class="ei-target-description">of CO&#8322; reduced</span></dt><dd>92 <span>million tons</span></dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="ei-toolkit">
+      <div class="ei-toolkit-heading"><h3>The Urbanrise EI toolkit</h3><p>Environmental Intelligence, built into everyday living.</p></div>
+      <div class="ei-toolkit-glass lg" data-lg='{"scale":24,"depth":20,"blur":16,"tint":0.12,"tintColor":"#bcc8ad","edge":0.95}'>
+        <ul class="ei-tools c" aria-label="The Urbanrise EI toolkit">
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sun"/></svg><span>Solar power</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z"/><path d="M8 15a4 4 0 0 0 4 4"/></svg><span>Rainwater harvesting</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M6 9h12M8 13h8M10 17h4M12 3v16m-3-3 3 3 3-3M3 22h18"/></svg><span>Bhungroo wells</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9a8 8 0 0 1 13-5l3 3M20 3v4h-4M20 15a8 8 0 0 1-13 5l-3-3M4 21v-4h4"/><path d="M12 7s-3 4-3 6a3 3 0 0 0 6 0c0-2-3-6-3-6Z"/></svg><span>Water recycling</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 3-4 6h2l-3 5h4v7m11-18-4 6h2l-3 5h8l-3-5h2l-4-6Zm0 11v7M4 21h16"/></svg><span>Miyawaki forests</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2v5m6-5v5M6 7h12v4a6 6 0 0 1-12 0V7Zm6 10v5m0-12-2 3h4"/></svg><span>EV charging</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sprout"/><path d="M4 17h4m8 0h4M5 17l1 5h12l1-5"/></svg><span>Organic waste composters</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="7" rx="2"/><path d="M6 7h12m-6 6s-3 4-3 6a3 3 0 0 0 6 0c0-2-3-6-3-6Z"/></svg><span>AC condensate recovery</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="m12 7 1.3 2.6 2.9.4-2.1 2 .5 2.9-2.6-1.4-2.6 1.4.5-2.9-2.1-2 2.9-.4Z"/></svg><span>BEE 4-star+ appliances</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8 4-6 4 6m-7-2-1 2 3 1M17 11l4 7h-8m6-3 2 3-2 2M9 18H3l4-7m-3 5-1 2 2 2"/></svg><span>Recycling stations</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ei-recognition">
+      <h3 class="ei-recognition-title"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8v6a4 4 0 0 1-8 0V3Zm0 2H4v3a4 4 0 0 0 4 4m8-7h4v3a4 4 0 0 1-4 4M12 13v5M8 21h8M9 18h6v3"/></svg>Recognition for Urbanrise</h3>
+      <ul class="ei-awards">
+        <li>Best Brands 2025<span>ET Now</span></li>
+        <li>#1 Brand in South India<span>Times Group</span></li>
+        <li>Fastest Growing Real Estate Brand 2024<span>Hurun Grohe</span></li>
+        <li>Asia&rsquo;s Best &amp; Fastest Growing Real Estate Brand<span>WCRC</span></li>
+      </ul>
+      <p class="ei-cities"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>Bengaluru &middot; Hyderabad &middot; Chennai</p>
     </div>
   </div>
 </section>
@@ -1814,6 +1985,90 @@ var releaseMobile = window.matchMedia('(max-width:760px)');
 function orientReleaseTabs(){ releaseTablist.setAttribute('aria-orientation', releaseMobile.matches ? 'horizontal' : 'vertical'); }
 releaseMobile.addEventListener('change', orientReleaseTabs);
 orientReleaseTabs();
+
+/* ---------- First-release information on hover, focus or tap ---------- */
+(function(){
+  var trigger = document.getElementById('projectPhaseInfoTrigger');
+  var info = document.getElementById('projectPhaseInfo');
+  if (!trigger || !info || !info.showPopover) return;
+  var pinned = false;
+  var timer;
+  function position(){
+    var anchor = trigger.getBoundingClientRect();
+    var rect = info.getBoundingClientRect();
+    info.style.left = Math.max(16, Math.min(innerWidth - rect.width - 16, anchor.left + anchor.width / 2 - rect.width / 2)) + 'px';
+    var top = anchor.top - rect.height - 14;
+    if (top < 16) top = anchor.bottom + 14;
+    info.style.top = Math.max(16, Math.min(innerHeight - rect.height - 16, top)) + 'px';
+  }
+  function show(){
+    clearTimeout(timer);
+    if (!info.matches(':popover-open')) info.showPopover();
+    trigger.setAttribute('aria-expanded', 'true');
+    position();
+  }
+  function hide(){
+    clearTimeout(timer);
+    pinned = false;
+    if (info.matches(':popover-open')) info.hidePopover();
+    trigger.setAttribute('aria-expanded', 'false');
+  }
+  function leave(){
+    timer = setTimeout(function(){ if (!pinned && !trigger.matches(':focus-visible') && !info.matches(':hover')) hide(); }, 160);
+  }
+  trigger.addEventListener('pointerenter', function(event){ if (event.pointerType === 'mouse') show(); });
+  trigger.addEventListener('pointerleave', leave);
+  trigger.addEventListener('focus', function(){ if (trigger.matches(':focus-visible')) show(); });
+  trigger.addEventListener('blur', leave);
+  trigger.addEventListener('click', function(){ if (pinned) hide(); else { pinned = true; show(); } });
+  info.addEventListener('pointerenter', function(){ clearTimeout(timer); });
+  info.addEventListener('pointerleave', leave);
+  document.addEventListener('pointerdown', function(event){ if (!trigger.contains(event.target) && !info.contains(event.target)) hide(); });
+  document.addEventListener('keydown', function(event){ if (event.key === 'Escape' && info.matches(':popover-open')) { event.preventDefault(); hide(); } });
+  window.addEventListener('scroll', function(){ if (info.matches(':popover-open')) position(); }, {passive:true});
+  window.addEventListener('resize', function(){ if (info.matches(':popover-open')) position(); });
+})();
+
+/* ---------- First-release count on entering view ---------- */
+(function(){
+  var count = document.getElementById('projectPhaseCount');
+  var ring = document.querySelector('.project-ring-share');
+  var target = 222;
+  var total = 368;
+  var motion = matchMedia('(prefers-reduced-motion: reduce)');
+  if (!count || !ring || motion.matches || !('IntersectionObserver' in window)) return;
+  var frame = 0;
+  var started = false;
+  var observer;
+  function render(value){
+    count.textContent = String(Math.round(value));
+    ring.style.strokeDasharray = (value / total * 100) + ' 100';
+  }
+  function finish(){
+    cancelAnimationFrame(frame);
+    render(target);
+    observer.disconnect();
+    motion.removeEventListener('change', onMotionChange);
+  }
+  function onMotionChange(event){ if (event.matches) finish(); }
+  render(0);
+  observer = new IntersectionObserver(function(entries){
+    if (started || !entries.some(function(entry){ return entry.isIntersecting && entry.intersectionRatio >= .4; })) return;
+    started = true;
+    observer.disconnect();
+    var start;
+    function tick(time){
+      if (start === undefined) start = time;
+      var progress = Math.min((time - start) / 2400, 1);
+      render(target * progress);
+      if (progress < 1) frame = requestAnimationFrame(tick);
+      else finish();
+    }
+    frame = requestAnimationFrame(tick);
+  }, {threshold:.4});
+  observer.observe(count.closest('.project-release-ring'));
+  motion.addEventListener('change', onMotionChange);
+})();
 
 /* ---------- Benchmark version switch ---------- */
 var benchmarkSwitch = document.getElementById('vswitch');
