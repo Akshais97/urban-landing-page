@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#26231e">
+  <meta name="description" content="Discover Home 2.0 by Urbanrise. The Living Wave, Gattahalli, Bengaluru — a new standard of living, with 3 and 4 BHK residences.">
+  <title>Home 2.0 — The Living Wave by Urbanrise</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/towers.webp" as="image">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v11h-7v-7h-4v7H3Zm0 0v-1"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 17C1 8 10 5 20 3c0 11-3 19-11 17M4 22 16 9m-8 9v-6"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></symbol>
+  <symbol id="i-water" viewBox="0 0 24 24"><path d="M12 2C9 7 5 10 5 15a7 7 0 0 0 14 0c0-5-4-8-7-13Z"/><path d="M8 15a4 4 0 0 0 4 4"/></symbol>
+  <symbol id="i-air" viewBox="0 0 24 24"><path d="M2 8h14c5 0 5-7 1-7M2 12h18c5 0 5 7 0 7M2 16h9c5 0 5 7 0 7"/></symbol>
+  <symbol id="i-charge" viewBox="0 0 24 24"><path d="m13 2-8 12h6l-1 8 9-13h-7Z"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-3a7 7 0 0 1 14 0v3Zm15-18a4 4 0 0 1 0 8m2 3a6 6 0 0 1 3 5v2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5m6 0h5v5M4 15v5h5m6 0h5v-5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L20 5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m5 5 14 14M5 19 19 5"/></symbol>
+</svg>
+
+<header class="site-header" id="header">
+  <a class="wordmark" href="#home" aria-label="Urbanrise home">urbanrise<span class="brand-strokes" aria-hidden="true">≡</span><small>THE LIVING WAVE</small></a>
+  <nav class="desktop-nav glass" aria-label="Primary navigation">
+    <a class="active" href="#home">Home</a><a href="#vision">Vision</a><a href="#residences">Residences</a><a href="#location">Location</a><a href="#release">What's new</a>
+  </nav>
+  <div class="header-actions"><a class="button glass nav-cta" href="#access">Join early access <svg class="icon"><use href="#i-arrow"/></svg></a><button class="circle glass menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span><span></span></button></div>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="More navigation" hidden><a href="#vision">The vision</a><a href="#residences">The residences</a><a href="#release">What's new in Home 2.0</a><a href="#benchmarks">Compare versions</a><a href="#version">Check your home version</a><a href="#location">Gattahalli, Bengaluru</a><a href="#access">Join early access <span>↗</span></a></nav>
+</header>
+
+<main id="main">
+  <section class="hero" id="home" aria-labelledby="hero-title">
+    <img class="hero-image" src="assets/towers.webp" width="1672" height="941" alt="Concept view of landscaped high-rise residences with bronze façades in warm sunset light" fetchpriority="high">
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <p class="eyebrow">A new standard of living</p>
+      <h1 id="hero-title">Home 2.0</h1>
+      <p class="hero-tagline">A higher way of living.</p>
+      <p class="hero-description">Introducing The Living Wave by Urbanrise.<br>Intelligent homes. A more meaningful life.</p>
+      <button class="button glass reveal-trigger" data-story><span class="round-play"><svg class="icon"><use href="#i-play"/></svg></span>Discover Home 2.0<svg class="icon"><use href="#i-chevron"/></svg></button>
+    </div>
+    <button class="hero-notice glass" id="hero-notice" data-update aria-label="Explore the Home 2.0 update">
+      <span class="icon-tile"><svg class="icon"><use href="#i-home"/></svg></span><span><span class="notice-heading">A smarter way to live <small>2.0</small></span><span class="notice-body">Architecture, nature and intelligence.<br>In perfect harmony.</span></span>
+    </button>
+    <div class="hero-bottom">
+      <div class="project-summary glass"><div><strong>3 &amp; 4</strong><span>BHK residences</span></div><div><strong>222</strong><span>The first release</span></div><div><strong>Gattahalli</strong><span>Bengaluru</span></div></div>
+      <a class="button glass scroll-cue" href="#vision"><span class="wave-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Scroll to discover<svg class="icon"><use href="#i-chevron"/></svg></a>
+    </div>
+    <span class="image-note hero-note">Architectural concept · indicative visual</span>
+  </section>
+
+  <section class="vision section-light" id="vision" aria-labelledby="vision-title">
+    <div class="section-copy reveal"><p class="eyebrow">A higher standard</p><h2 id="vision-title">The home<br>category<br>has evolved.</h2><p>Your phone evolved. Your car evolved.<br>Now, your home can too.</p><p>Home 2.0 brings architectural beauty, intelligent systems and a deeper connection to nature into everyday living.</p><button class="button button-light" data-story>Discover the vision<svg class="icon"><use href="#i-arrow"/></svg></button></div>
+    <button class="story-frame reveal" data-story aria-label="Open the story of Home 2.0">
+      <img src="assets/towers.webp" alt="Warmly illuminated high-rise architecture and planted terraces" width="1672" height="941" loading="lazy">
+      <span class="frame-gradient"></span><span class="frame-top"><span class="glass mini-pill">The first build</span><span class="glass circle"><svg class="icon"><use href="#i-expand"/></svg></span></span>
+      <span class="play-large glass"><svg class="icon"><use href="#i-play"/></svg></span><span class="frame-caption"><small>THE VISION</small><strong>The story of Home 2.0</strong><span class="frame-rule"><i></i></span><span class="frame-footer">Architecture. Intelligence. Nature.<svg class="icon"><use href="#i-arrow"/></svg></span></span>
+    </button>
+  </section>
+
+  <section class="introducing photo-section" aria-labelledby="intro-title">
+    <img class="section-background" src="assets/interior.webp" alt="Concept of an elevated living room with natural materials and a planted balcony" width="1672" height="941" loading="lazy"><div class="photo-shade"></div>
+    <div class="introducing-copy reveal"><p class="eyebrow">Introducing</p><h2 id="intro-title">Home 2.0</h2><p>Architecture. Intelligence. Nature. In perfect balance.</p></div>
+    <div class="meaningful-day glass" aria-hidden="true"><span class="wave-mark"><i></i><i></i><i></i><i></i><i></i></span><span>A more meaningful day<br>begins at home.</span></div>
+    <div class="feature-links reveal">
+      <a class="feature-link glass" href="#release" data-feature="2"><span class="icon-tile"><svg class="icon"><use href="#i-home"/></svg></span><span><strong>Intelligent living</strong><small>Thoughtful systems.<br>Everyday ease.</small></span><svg class="icon small-arrow"><use href="#i-chevron"/></svg></a>
+      <a class="feature-link glass" href="#sustainability"><span class="icon-tile"><svg class="icon"><use href="#i-leaf"/></svg></span><span><strong>Sustainable by design</strong><small>A better tomorrow.<br>Built in.</small></span><svg class="icon small-arrow"><use href="#i-chevron"/></svg></a>
+      <a class="feature-link glass" href="#release" data-feature="4"><span class="icon-tile"><svg class="icon"><use href="#i-sun"/></svg></span><span><strong>Nature, every day</strong><small>Green that belongs<br>in your life.</small></span><svg class="icon small-arrow"><use href="#i-chevron"/></svg></a>
+      <a class="feature-link glass" href="#release" data-feature="5"><span class="icon-tile"><svg class="icon"><use href="#i-people"/></svg></span><span><strong>Human-centred spaces</strong><small>Designed for how<br>you really live.</small></span><svg class="icon small-arrow"><use href="#i-chevron"/></svg></a>
+    </div>
+  </section>
+
+  <section class="residences section-light" id="residences" aria-labelledby="residences-title">
+    <div class="section-copy reveal"><p class="eyebrow">The residences</p><h2 id="residences-title">Spaces<br>that inspire.</h2><p>Light, space and considered detail.<br>A new perspective on everyday living.</p><a class="text-link" href="#lineup">Explore the residences<svg class="icon"><use href="#i-arrow"/></svg></a></div>
+    <div class="residence-frame reveal"><img src="assets/interior.webp" alt="Indicative luxury residence interior with warm wood, ivory furnishings and a skyline outlook" width="1672" height="941" loading="lazy"><button class="gallery-control glass" data-gallery aria-label="Open architectural concept gallery"><svg class="icon"><use href="#i-expand"/></svg><span>Explore the spaces</span><span>01 / 02</span></button><div class="material-tags"><span class="glass"><svg class="icon"><use href="#i-sun"/></svg>Light-filled spaces</span><span class="glass"><svg class="icon"><use href="#i-leaf"/></svg>Natural inspiration</span></div><span class="image-note">Interior concept · indicative visual</span></div>
+  </section>
+
+  <section class="sustainability photo-section" id="sustainability" aria-labelledby="sustain-title">
+    <img class="section-background" src="assets/interior.webp" alt="Warm timber and natural finishes in a conceptual living space" width="1672" height="941" loading="lazy"><div class="sustain-shade"></div>
+    <div class="sustain-heading reveal"><p class="eyebrow">Crafted for a brighter tomorrow</p><h2 id="sustain-title">Sustainable<br>from the ground up.</h2><p>Every drop. Every watt. Every day.</p></div>
+    <a class="sustain-card glass reveal" href="#urbanrise"><span class="icon-tile"><svg class="icon"><use href="#i-leaf"/></svg></span><span>Thoughtful systems.<br>Lower impact.<br>A lasting perspective.<strong>Our approach <svg class="icon"><use href="#i-arrow"/></svg></strong></span></a>
+    <ol class="sustain-list reveal"><li><span>01</span>Energy that looks ahead</li><li><span>02</span>A considered approach to water</li><li><span>03</span>Nature within the architecture</li></ol>
+  </section>
+
+  <section class="release section-light section-spacious" id="release" aria-labelledby="release-title">
+    <div class="section-heading reveal"><div><p class="eyebrow">Release notes · v2.0</p><h2 id="release-title">A home. With more possibility.</h2></div><p>Six capabilities. One considered standard.<br>Discover what's new in Home 2.0.</p></div>
+    <div class="feature-tabs reveal" id="feature-tabs" role="tablist" aria-label="Home 2.0 capabilities"></div>
+    <div class="release-panel reveal" id="feature-panel" role="tabpanel" tabindex="0"></div>
+    <p class="detail-note">Capability descriptions follow the supplied campaign brief. Final systems and specifications are subject to project confirmation.</p>
+  </section>
+
+  <section class="benchmarks section-light" id="benchmarks" aria-labelledby="benchmark-title">
+    <div class="section-heading reveal"><div><p class="eyebrow">The next version of living</p><h2 id="benchmark-title">One switch.<br>A different perspective.</h2></div><div class="version-switch-row"><span id="benchmark-version">Home v1.0</span><button class="version-switch" id="version-switch" role="switch" aria-checked="false" aria-label="Show Home 2.0 capabilities"><span></span></button><span class="switch-hint">Explore the upgrade</span></div></div>
+    <div class="benchmark-grid reveal" id="benchmark-grid" aria-live="polite"></div><p class="detail-note">An illustrative campaign comparison with conventional living, not a measured performance guarantee.</p>
+  </section>
+
+  <section class="version-section section-spacious" id="version" aria-labelledby="version-title">
+    <div class="version-intro reveal"><p class="eyebrow">Your home, reconsidered</p><h2 id="version-title">Everything else updated.<br>How about home?</h2><p>Twelve small questions about the way you live.<br>Discover where a different standard could begin.</p><span class="quiet-label">12 questions · About 90 seconds</span><p class="detail-note">A reflection on your home, inspired by the campaign.<br>This is not a technical property assessment.</p></div>
+    <div class="quiz-mount reveal" id="quiz-mount"></div>
+  </section>
+
+  <section class="lineup section-light section-spacious" id="lineup" aria-labelledby="lineup-title">
+    <div class="section-heading reveal"><div><p class="eyebrow">The lineup</p><h2 id="lineup-title">Find your next chapter.</h2></div><p>Three configurations.<br>The same Home 2.0 philosophy.</p></div><div class="model-grid reveal" id="model-grid"></div><p class="detail-note">Areas and configurations follow the supplied brief and require final project confirmation. Pricing available upon enquiry.</p>
+  </section>
+
+  <section class="location photo-section" id="location" aria-labelledby="location-title"><img class="section-background" src="assets/towers.webp" alt="Conceptual high-rise setting surrounded by urban greenery" width="1672" height="941" loading="lazy"><div class="photo-shade"></div><div class="location-copy reveal"><p class="eyebrow">The first build · The Living Wave</p><h2 id="location-title">Rooted in Gattahalli.<br>Ready for what's next.</h2><p>A new standard of home, in Bengaluru.</p><a class="button glass" href="https://www.google.com/maps/search/?api=1&amp;query=Gattahalli%2C%20Bengaluru" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-pin"/></svg>Explore the neighbourhood<svg class="icon"><use href="#i-arrow"/></svg></a><p class="detail-note">Opens an area map of Gattahalli, rather than an exact project pin.</p></div><div class="location-facts glass reveal"><div><strong>4.20</strong><span>Acres in the project</span></div><div><strong>368</strong><span>Apartments in the brief</span></div><div><strong>222</strong><span>Homes in the first release</span></div></div><span class="image-note">Architectural concept · indicative visual</span></section>
+
+  <section class="ei-section section-light" id="urbanrise" aria-labelledby="ei-title"><div class="ei-mark reveal"><svg class="icon"><use href="#i-leaf"/></svg><span>Urbanrise<br>Environmental Intelligence</span></div><div class="ei-content reveal"><p class="eyebrow">The thinking behind the upgrade</p><h2 id="ei-title">Every drop.<br>Every watt matters.</h2><p>Urbanrise's Environmental Intelligence approach considers how communities generate energy, conserve water and make room for nature. Home 2.0 brings that thinking into the conversation about better living.</p><details><summary>Explore the Environmental Intelligence toolkit <svg class="icon"><use href="#i-arrow"/></svg></summary><div class="toolkit"><span>Solar power</span><span>Rainwater harvesting</span><span>Bhungroo wells</span><span>Water recycling</span><span>Miyawaki forests</span><span>EV charging</span><span>Organic waste composting</span><span>AC condensate recovery</span><span>Efficient appliances</span><span>Recycling stations</span></div><p class="detail-note">This is Urbanrise's broader toolkit from the campaign brief. Systems specific to The Living Wave require confirmation.</p></details></div></section>
+
+  <section class="access section-spacious" id="access" aria-labelledby="access-title"><div class="access-copy reveal"><p class="eyebrow">Early access · Founding 222</p><h2 id="access-title">Be first<br>to live what's next.</h2><p>Meet The Living Wave. Explore Home 2.0.<br>Begin with a private preview.</p><ul class="access-benefits"><li><svg class="icon"><use href="#i-check"/></svg>First choice of home, floor and view</li><li><svg class="icon"><use href="#i-check"/></svg>A private Home 2.0 site preview</li><li><svg class="icon"><use href="#i-check"/></svg>Priority access at launch</li></ul><p class="access-signoff">A new version of home is available.</p></div>
+    <div class="form-container reveal"><form id="access-form" novalidate><p class="form-eyebrow">YOUR NEXT CHAPTER STARTS HERE</p><h3>Let's find your Home 2.0.</h3><div class="form-field"><label for="enquiry-name">Your name</label><input id="enquiry-name" name="name" autocomplete="name" required placeholder="Full name" maxlength="100"></div><div class="form-field"><label for="enquiry-phone">Mobile number</label><div class="phone-field"><span>+91</span><input id="enquiry-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" required placeholder="10-digit mobile number" maxlength="16" aria-describedby="phone-help"></div><small id="phone-help">Use a 10-digit Indian mobile number.</small></div><div class="form-columns"><div class="form-field"><label for="enquiry-model">Your residence</label><select id="enquiry-model" name="model"><option value="Home 2.0">Home 2.0 · 3 BHK + 2T</option><option value="Home 2.0 Plus">Home 2.0 Plus · 3 BHK + 3T</option><option value="Home 2.0 Max">Home 2.0 Max · 4 BHK + 3T</option></select></div><div class="form-field"><label for="enquiry-timeline">Looking to move</label><select id="enquiry-timeline" name="timeline"><option>Just exploring</option><option>Within 0–3 months</option><option>Within 3–6 months</option></select></div></div><label class="consent-label"><input type="checkbox" id="enquiry-consent" required><span>I agree to include these details in my enquiry preview.</span></label><p class="form-error" id="form-error" role="alert"></p><button class="button button-champagne form-submit" type="submit">Request early access<svg class="icon"><use href="#i-arrow"/></svg></button><p class="preview-disclosure">Interactive preview. Details stay in this browser; enquiries are not sent to Urbanrise.</p></form><div class="form-success" id="form-success" hidden tabindex="-1"><span class="success-symbol"><svg class="icon"><use href="#i-check"/></svg></span><p class="eyebrow">Your next chapter</p><h3 id="success-title">Your enquiry preview is ready.</h3><p id="success-copy"></p><p class="preview-disclosure">This preview has not been submitted. Download your details to keep a copy.</p><button class="button button-champagne" id="download-enquiry">Download my enquiry<svg class="icon"><use href="#i-arrow"/></svg></button><button class="text-link" id="edit-enquiry">Edit my details</button></div></div>
+  </section>
+</main>
+
+<footer class="footer"><div class="footer-top"><a class="wordmark" href="#home">urbanrise<span class="brand-strokes" aria-hidden="true">≡</span><small>HOME, UPDATED.</small></a><p>The Living Wave<br>Gattahalli, Bengaluru</p><a href="#access" class="text-link">Discover your next home<svg class="icon"><use href="#i-arrow"/></svg></a></div><div class="footer-bottom"><p>Home 2.0 · A campaign landing-page concept</p><p>Architectural and interior visuals are indicative concepts. Project details, availability and statutory disclosures, including RERA registration, must be confirmed before public launch.</p><span>© <span id="copyright-year">2026</span> Urbanrise concept</span></div></footer>
+
+<dialog id="story-dialog" class="story-dialog" aria-labelledby="story-title"><button class="circle glass dialog-close" data-close aria-label="Close story"><svg class="icon"><use href="#i-close"/></svg></button><div class="story-image-wrap"><img id="story-image" src="assets/towers.webp" alt="Conceptual high-rise residences at sunset"><span class="image-note">Indicative architectural concept</span></div><div class="story-content"><p class="eyebrow" id="story-eyebrow">A new standard of living</p><h2 id="story-title">A new perspective on home.</h2><p id="story-copy">The Living Wave is Urbanrise's first Home 2.0 chapter in Gattahalli, Bengaluru. Energy, Water, Air, Mobility, Nature and Community come together in a more considered idea of residential living.</p><div class="story-controls"><button class="text-link" id="story-prev" aria-label="Previous concept image">← Previous</button><span id="story-index">01 / 02</span><button class="text-link" id="story-next" aria-label="Next concept image">Next <svg class="icon"><use href="#i-arrow"/></svg></button></div><a href="#release" class="button button-light" id="story-explore">Explore what's new<svg class="icon"><use href="#i-arrow"/></svg></a></div></dialog>
+<dialog id="update-dialog" class="update-dialog" aria-labelledby="update-title"><button class="circle dialog-close" data-close aria-label="Close update"><svg class="icon"><use href="#i-close"/></svg></button><span class="update-icon"><svg class="icon"><use href="#i-home"/></svg></span><p class="eyebrow">Home v1.0 → Home 2.0</p><h2 id="update-title">A new way<br>of living is available.</h2><p>Discover the next standard of home.<br>The Living Wave · Gattahalli, Bengaluru.</p><div class="update-actions" id="update-actions"><button class="button button-light" id="update-later">Explore later</button><button class="button button-champagne" id="update-start">Explore the update<svg class="icon"><use href="#i-arrow"/></svg></button></div><div id="update-progress" hidden><div class="progress-track"><span id="update-bar"></span></div><p id="update-step" role="status"></p></div></dialog>
+<div class="toast glass" id="toast" role="status"><svg class="icon"><use href="#i-check"/></svg><span id="toast-copy"></span></div>
+<script src="glass.js" defer></script>
+</body>
+</html>
