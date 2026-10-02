@@ -48,6 +48,8 @@ a{color:inherit;text-decoration:none}
 .serif{font-family:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;font-weight:380;letter-spacing:-.025em;line-height:.92;margin:0}
 .ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
 
+.img-hero-banner{background-image:url("Hero_Banner.png")}
+
 /* ---------- Scene backgrounds ---------- */
 .bg{position:absolute;inset:0;overflow:hidden;z-index:0}
 .bg .ph{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat}
@@ -96,7 +98,7 @@ a{color:inherit;text-decoration:none}
 .iconbtn .c{display:grid;place-items:center}
 
 .hero-body{position:relative;z-index:3;flex:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:40px;padding-top:clamp(40px,7vh,90px);padding-bottom:clamp(30px,5vh,60px)}
-.hero h1{white-space:nowrap;font-size:clamp(64px,11.6vw,176px);line-height:.86;letter-spacing:-.025em}
+.hero h1{white-space:nowrap;font-size:clamp(40px,7.2vw,112px);line-height:.86;letter-spacing:-.025em}
 .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
 .hero h1 .ln > span{display:block;animation:rise 1.4s cubic-bezier(.2,.8,.1,1) both .15s}
 @keyframes rise{from{transform:translateY(105%)}to{transform:none}}
@@ -107,7 +109,7 @@ a{color:inherit;text-decoration:none}
 .stats .c{display:flex}
 .stat{padding:0 26px;border-left:1px solid rgba(255,255,255,.2)}
 .stat:first-child{border-left:0}
-.stat b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(34px,3vw,44px);line-height:1;letter-spacing:-.02em}
+.stat b{display:block;font-family:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;font-weight:400;font-size:clamp(34px,3vw,44px);line-height:1;letter-spacing:0}
 .stat span{display:block;font-size:12px;color:var(--on-dark-soft);margin-top:8px;white-space:nowrap}
 .hero-side{position:relative;align-self:stretch;min-height:420px}
 .notice{position:absolute;top:0;left:0;width:min(330px,90%);border-radius:24px;padding:16px 18px;display:flex;align-items:center}
@@ -323,6 +325,7 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
   .sustain .grid > :first-child{grid-column:1/-1}
 }
 @media (max-width:640px){
+  .bg-hero .ph{background-position:74% 50%}
   .join-label{display:none}
   .join{padding:0;width:46px;justify-content:center}
   .stats{display:flex;padding:18px 0}
@@ -414,7 +417,7 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
 
 <!-- ================= HERO ================= -->
 <header class="hero on-dark" data-scene-root id="home">
-  <div class="bg bg-hero"><div class="ph img-hero"></div><div class="night"></div><div class="shade"></div></div>
+  <div class="bg bg-hero"><div class="ph img-hero-banner"></div><div class="night"></div><div class="shade"></div></div>
   <div class="wrap topbar">
     <a class="logo" href="#home" aria-label="UrbanRise home"><span class="logo-art"><img src="assets/logo-02.png" alt="Urbanrise — The Living Wave, Home 2.0" width="2363" height="2363"></span></a>
     <nav class="navpill lg" aria-label="Primary" data-lg='{"scale":22,"blur":6,"tint":0.06}'>
