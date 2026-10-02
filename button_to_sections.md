@@ -34,6 +34,7 @@ This document records the current destinations and behaviors. To change a mappin
 | Update to Home 2.0 | Inline Early Access (`#accessForm`) | Validates name and mobile number, then shows a local selection preview. No data is sent. |
 | Edit my details | Inline Early Access (`#accessEdit`) | Reopens the form with the entered details and preferences retained. |
 | Or chat on WhatsApp | Inline Early Access | Opens `https://wa.me/918943214897` in a new tab (user-provided number: `00918943214897`). |
+| Home 2.0 / Home 2.0 Plus / Home 2.0 Max residence cards | Lineup (`#models`) | Selects the model, fills `#accessModel`, reopens the inline form if needed and scrolls to `#access`. Changing the form model updates the selected card. |
 | Discover the Vision | Home evolution — `#vision` | Scrolls to Experience — `#experience`. |
 | Explore in 3D | Home evolution — `#vision` | Opens the residence view in `#ov-view`. |
 | Intelligent Living | Experience — `#experience` | Expands its description; no section navigation. |
