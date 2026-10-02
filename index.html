@@ -223,6 +223,58 @@ a{color:inherit;text-decoration:none}
   .version-card-actions button{min-height:44px;border-radius:18px}
 }
 
+/* ---------- Home 2.0 release notes ---------- */
+.release{--release-accent:#36685f;padding:clamp(72px,8vw,112px) 0;background:var(--paper)}
+.release > .bg .ph{background-position:55% 45%}
+.release-wash{position:absolute;inset:0;background:linear-gradient(105deg,color-mix(in srgb,var(--paper) 97%,transparent),color-mix(in srgb,var(--paper) 80%,transparent)),linear-gradient(0deg,var(--paper),transparent 50%,var(--paper))}
+.release .wrap{position:relative;z-index:1}
+.release-heading{margin-bottom:clamp(36px,4vw,56px)}
+.release-heading .eyebrow{color:var(--ink-soft);letter-spacing:.24em}
+.release-heading h2{font-size:clamp(32px,3.7vw,52px);font-weight:350;line-height:1.15;letter-spacing:-.03em;text-wrap:balance}
+.release-heading > p:last-child{margin:20px 0 0;font-size:16px;line-height:1.65;color:var(--ink-soft);max-width:58ch}
+.release-layout{display:grid;grid-template-columns:minmax(260px,.7fr) minmax(0,2fr);gap:28px;align-items:start}
+.release-tabs{padding:12px;border-radius:28px}
+.release-tabs > .c{display:grid;gap:4px}
+.release-tab{display:flex;align-items:center;gap:14px;width:100%;padding:17px 14px;border-radius:19px;text-align:left;transition:background-color .2s ease,box-shadow .2s ease;color:var(--ink)}
+.release-tab:focus-visible{border-radius:19px}
+.release-tab-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;flex:none;color:var(--ink-soft);background:color-mix(in srgb,var(--ink) 5%,transparent)}
+.release-tab-icon .ico{width:21px;height:21px}
+.release-tab-copy{min-width:0;flex:1}
+.release-tab-copy strong{display:block;font-size:15px;font-weight:500}
+.release-tab-copy small{display:block;margin-top:5px;font-size:11px;line-height:1.4;color:var(--ink-soft)}
+.release-tab-number{font-size:10px;color:var(--ink-soft)}
+.release-tab[aria-selected="true"]{background:linear-gradient(120deg,rgba(145,184,176,.2),rgba(198,214,201,.15));box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(109,151,142,.25)}
+.release-tab[aria-selected="true"] .release-tab-icon{color:var(--release-accent);background:rgba(145,184,176,.24)}
+.release-panel{padding:clamp(28px,3vw,42px);border-radius:32px;min-width:0}
+.release-panel[hidden]{display:none}
+.release-panel-top{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.release-feature-icon{display:grid;place-items:center;width:54px;height:54px;flex:none;border-radius:18px;color:var(--release-accent);background:linear-gradient(145deg,rgba(187,211,199,.5),rgba(210,223,215,.25));box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 0 0 1px rgba(106,148,130,.2)}
+.release-feature-icon .ico{width:27px;height:27px}
+.release-new{font-size:11px;font-weight:500;letter-spacing:.05em;color:var(--ink-soft)}
+.release-count{margin-left:auto;font-size:10px;letter-spacing:.08em;color:var(--ink-soft)}
+.release-panel h3{margin:0;max-width:25ch;font-family:"Inter","Segoe UI",system-ui,sans-serif;font-size:clamp(28px,2.7vw,38px);font-weight:350;line-height:1.18;letter-spacing:-.035em;text-wrap:balance}
+.release-description{max-width:60ch;margin:18px 0 32px;font-size:15px;line-height:1.7;color:var(--ink-soft)}
+.release-how{margin:0 0 22px;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.15em;color:var(--ink-soft)}
+.release-steps{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:0;padding:0}
+.release-steps li{border-top:1px solid var(--line-light);padding-top:20px}
+.release-step-number{font-size:11px;color:var(--ink-soft)}
+.release-steps h4{margin:12px 0 8px;font-size:15px;line-height:1.4;font-weight:500}
+.release-steps p{margin:0;font-size:13px;line-height:1.65;color:var(--ink-soft)}
+.release-compare{display:grid;grid-template-columns:1fr 20px 1fr;align-items:center;gap:18px;margin-top:32px;padding:20px 22px;border-radius:20px;background:color-mix(in srgb,var(--paper) 72%,transparent);box-shadow:inset 0 0 0 1px var(--line-light)}
+.release-compare > .ico{color:var(--ink-soft);width:18px;height:18px}
+.release-compare span{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft)}
+.release-compare p{margin:6px 0 0;font-size:13px;line-height:1.4}
+.release-compare > div:last-child p{color:var(--release-accent);font-weight:500}
+.release-panel.release-swap > .c{animation:release-swap .25s ease-out}
+@keyframes release-swap{from{opacity:.45;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(hover:hover) and (pointer:fine){.release-tab:hover{background:color-mix(in srgb,var(--ink) 5%,transparent)}}
+@media(max-width:1080px){.release-layout{grid-template-columns:250px minmax(0,1fr);gap:20px}.release-tab{gap:10px;padding:15px 10px}.release-tab-number{display:none}.release-steps{gap:18px}.release-compare{padding:18px;gap:12px}}
+@media(max-width:900px) and (min-width:761px){.release-steps{grid-template-columns:1fr}.release-steps li{display:grid;grid-template-columns:24px minmax(0,1fr);column-gap:12px;padding-top:14px}.release-steps h4{margin:0 0 6px}.release-steps p{grid-column:2}.release-step-number{padding-top:3px}}
+@media(max-width:760px){.release{padding:64px 0}.release-layout{grid-template-columns:1fr;gap:20px}.release-tabs{padding:8px;border-radius:24px}.release-tabs > .c{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.release-tab{flex-direction:column;gap:8px;padding:14px 8px;text-align:center;border-radius:17px}.release-tab-copy strong{font-size:13px}.release-tab-copy small{display:none}.release-tab-icon{width:34px;height:34px}.release-tab-icon .ico{width:20px;height:20px}.release-panel{padding:26px;border-radius:28px}.release-panel h3{font-size:30px}.release-panel-top{margin-bottom:22px}.release-description{margin-bottom:28px}.release-steps{grid-template-columns:1fr;gap:18px}.release-steps li{display:grid;grid-template-columns:24px minmax(0,1fr);column-gap:12px;padding-top:16px}.release-steps h4{margin:0 0 6px}.release-steps p{grid-column:2}.release-step-number{padding-top:3px}.release-compare{margin-top:28px;padding:18px 14px;gap:10px}.release-compare p{font-size:12px}.release-how{line-height:1.6;font-size:9px}}
+@media(prefers-reduced-motion:reduce){.release-panel.release-swap > .c{animation:none}}
+:root[data-theme="dark"] .release{--release-accent:#b4d8cb}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .release{--release-accent:#b4d8cb}}
+
 /* ---------- Light sections ---------- */
 .light{position:relative;overflow:hidden;color:var(--ink)}
 .light .eyebrow{color:var(--ink-soft)}
@@ -454,6 +506,7 @@ body.intro-pending{overflow-x:hidden;overflow-y:auto}
 body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){visibility:visible}
 #intro,#introToast{display:none!important}
 </style></noscript>
+<noscript><style>.release-tabs{display:none}.release-panel[hidden]{display:block}.release-panels{display:grid;gap:24px}</style></noscript>
 </head>
 <body class="intro-pending">
 <!-- ================= HOME UPDATE INTRO ================= -->
@@ -639,6 +692,128 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
           <span class="why-version">Unsupported</span>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RELEASE NOTES ================= -->
+<section class="release light" id="release" aria-labelledby="releaseTitle" data-scene-root>
+  <div class="bg" aria-hidden="true"><div class="ph img-res"></div><div class="release-wash"></div></div>
+  <div class="wrap">
+    <div class="release-heading">
+      <p class="eyebrow">Release notes &middot; v2.0.0</p>
+      <h2 class="serif" id="releaseTitle">What's new in Home 2.0</h2>
+      <p>Six features. One release. Tap one to see how The Living Wave does it.</p>
+    </div>
+    <div class="release-layout">
+      <div class="release-tabs lg lg-lightbg" role="tablist" aria-label="Home 2.0 features" aria-orientation="vertical" data-lg='{"scale":22,"depth":18,"blur":16,"tint":0.68,"tintColor":"--glass-light","edge":0.9}'>
+        <div class="c">
+        <button class="release-tab" type="button" role="tab" id="release-tab-energy" aria-controls="release-panel-energy" aria-selected="false" tabindex="-1">
+          <span class="release-tab-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z"/></svg></span><span class="release-tab-copy"><strong>Energy</strong><small>A home that generates</small></span><span class="release-tab-number" aria-hidden="true">01</span>
+        </button>
+        <button class="release-tab" type="button" role="tab" id="release-tab-water" aria-controls="release-panel-water" aria-selected="true" tabindex="0">
+          <span class="release-tab-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z"/><path d="M8 15a4 4 0 0 0 4 4"/></svg></span><span class="release-tab-copy"><strong>Water</strong><small>Designed for water security</small></span><span class="release-tab-number" aria-hidden="true">02</span>
+        </button>
+        <button class="release-tab" type="button" role="tab" id="release-tab-air" aria-controls="release-panel-air" aria-selected="false" tabindex="-1">
+          <span class="release-tab-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h12a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h5a3 3 0 1 1-3 3"/></svg></span><span class="release-tab-copy"><strong>Air</strong><small>Air quality you can measure</small></span><span class="release-tab-number" aria-hidden="true">03</span>
+        </button>
+        <button class="release-tab" type="button" role="tab" id="release-tab-mobility" aria-controls="release-panel-mobility" aria-selected="false" tabindex="-1">
+          <span class="release-tab-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2v5m6-5v5M6 7h12v4a6 6 0 0 1-12 0V7Zm6 10v5m0-12-2 3h4"/></svg></span><span class="release-tab-copy"><strong>Mobility</strong><small>EV-ready from day one</small></span><span class="release-tab-number" aria-hidden="true">04</span>
+        </button>
+        <button class="release-tab" type="button" role="tab" id="release-tab-nature" aria-controls="release-panel-nature" aria-selected="false" tabindex="-1">
+          <span class="release-tab-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-leaf"/></svg></span><span class="release-tab-copy"><strong>Nature</strong><small>Green, every single day</small></span><span class="release-tab-number" aria-hidden="true">05</span>
+        </button>
+        <button class="release-tab" type="button" role="tab" id="release-tab-community" aria-controls="release-panel-community" aria-selected="false" tabindex="-1">
+          <span class="release-tab-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 21v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v2"/></svg></span><span class="release-tab-copy"><strong>Community</strong><small>Living beyond four walls</small></span><span class="release-tab-number" aria-hidden="true">06</span>
+        </button>
+        </div>
+      </div>
+      <div class="release-panels">
+      <div class="release-panel lg lg-lightbg" role="tabpanel" id="release-panel-energy" aria-labelledby="release-tab-energy" tabindex="0" hidden data-lg='{"scale":28,"depth":22,"blur":18,"tint":0.72,"tintColor":"--glass-light","edge":0.95}'>
+        <div class="c">
+          <div class="release-panel-top"><span class="release-feature-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z"/></svg></span><span class="release-new">New &middot; Energy</span><span class="release-count">01 / 06</span></div>
+          <h3>Your home now generates.</h3>
+          <p class="release-description">Windmills and solar produce green energy right here on site, with energy infrastructure built for the future.</p>
+          <p class="release-how">How we do it at The Living Wave</p>
+          <ol class="release-steps">
+            <li><span class="release-step-number">01</span><h4>Generate</h4><p>Solar panels and windmills on the project produce green energy.</p></li>
+            <li><span class="release-step-number">02</span><h4>Power</h4><p>That energy goes to work for the community.</p></li>
+            <li><span class="release-step-number">03</span><h4>Future-ready</h4><p>Energy infrastructure designed for the next era, not the last one.</p></li>
+          </ol>
+          <div class="release-compare"><div><span>Home v1.0</span><p>consumes</p></div><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg><div><span>Home 2.0</span><p>generates</p></div></div>
+        </div>
+      </div>
+      <div class="release-panel lg lg-lightbg" role="tabpanel" id="release-panel-water" aria-labelledby="release-tab-water" tabindex="0" data-lg='{"scale":28,"depth":22,"blur":18,"tint":0.72,"tintColor":"--glass-light","edge":0.95}'>
+        <div class="c">
+          <div class="release-panel-top"><span class="release-feature-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z"/><path d="M8 15a4 4 0 0 0 4 4"/></svg></span><span class="release-new">New &middot; Water</span><span class="release-count">02 / 06</span></div>
+          <h3>Your home now conserves water.</h3>
+          <p class="release-description">A water-conserving community: rainwater is captured, and every drop is used smarter, for long-term water security.</p>
+          <p class="release-how">How we do it at The Living Wave</p>
+          <ol class="release-steps">
+            <li><span class="release-step-number">01</span><h4>Capture</h4><p>Rainwater is harvested from rooftops and landscaped areas.</p></li>
+            <li><span class="release-step-number">02</span><h4>Store and recharge</h4><p>Collected water is stored and recharged on site.</p></li>
+            <li><span class="release-step-number">03</span><h4>Use smarter</h4><p>Design and fittings that make every litre go further.</p></li>
+          </ol>
+          <div class="release-compare"><div><span>Home v1.0</span><p>depends on supply</p></div><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg><div><span>Home 2.0</span><p>conserves and secures</p></div></div>
+        </div>
+      </div>
+      <div class="release-panel lg lg-lightbg" role="tabpanel" id="release-panel-air" aria-labelledby="release-tab-air" tabindex="0" hidden data-lg='{"scale":28,"depth":22,"blur":18,"tint":0.72,"tintColor":"--glass-light","edge":0.95}'>
+        <div class="c">
+          <div class="release-panel-top"><span class="release-feature-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h12a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h5a3 3 0 1 1-3 3"/></svg></span><span class="release-new">New &middot; Air</span><span class="release-count">03 / 06</span></div>
+          <h3>Air you can measure.</h3>
+          <p class="release-description">Outdoor and in-home purification, with air quality made measurable and visible, so you never have to guess.</p>
+          <p class="release-how">How we do it at The Living Wave</p>
+          <ol class="release-steps">
+            <li><span class="release-step-number">01</span><h4>Outdoors</h4><p>Purification across the community’s outdoor spaces.</p></li>
+            <li><span class="release-step-number">02</span><h4>In your home</h4><p>In-home purification for the air your family breathes.</p></li>
+            <li><span class="release-step-number">03</span><h4>Visible</h4><p>Air quality shown inside and out, in real time.</p></li>
+          </ol>
+          <div class="release-compare"><div><span>Home v1.0</span><p>unmeasured</p></div><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg><div><span>Home 2.0</span><p>purified and measured</p></div></div>
+        </div>
+      </div>
+      <div class="release-panel lg lg-lightbg" role="tabpanel" id="release-panel-mobility" aria-labelledby="release-tab-mobility" tabindex="0" hidden data-lg='{"scale":28,"depth":22,"blur":18,"tint":0.72,"tintColor":"--glass-light","edge":0.95}'>
+        <div class="c">
+          <div class="release-panel-top"><span class="release-feature-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2v5m6-5v5M6 7h12v4a6 6 0 0 1-12 0V7Zm6 10v5m0-12-2 3h4"/></svg></span><span class="release-new">New &middot; Mobility</span><span class="release-count">04 / 06</span></div>
+          <h3>EV-ready from day one.</h3>
+          <p class="release-description">An EV charger in every private parking. Your next car is already welcome.</p>
+          <p class="release-how">How we do it at The Living Wave</p>
+          <ol class="release-steps">
+            <li><span class="release-step-number">01</span><h4>At your spot</h4><p>A charger at your own private parking, not a shared queue.</p></li>
+            <li><span class="release-step-number">02</span><h4>From handover</h4><p>Ready the day you move in. No cable from the balcony.</p></li>
+            <li><span class="release-step-number">03</span><h4>Next era</h4><p>Built for where mobility is heading.</p></li>
+          </ol>
+          <div class="release-compare"><div><span>Home v1.0</span><p>not supported</p></div><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg><div><span>Home 2.0</span><p>every private parking</p></div></div>
+        </div>
+      </div>
+      <div class="release-panel lg lg-lightbg" role="tabpanel" id="release-panel-nature" aria-labelledby="release-tab-nature" tabindex="0" hidden data-lg='{"scale":28,"depth":22,"blur":18,"tint":0.72,"tintColor":"--glass-light","edge":0.95}'>
+        <div class="c">
+          <div class="release-panel-top"><span class="release-feature-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-leaf"/></svg></span><span class="release-new">New &middot; Nature</span><span class="release-count">05 / 06</span></div>
+          <h3>Your home now grows.</h3>
+          <p class="release-description">Biophilic design and vertical gardens bring nature into everyday architecture.</p>
+          <p class="release-how">How we do it at The Living Wave</p>
+          <ol class="release-steps">
+            <li><span class="release-step-number">01</span><h4>Biophilic design</h4><p>Spaces shaped around light, green and natural materials.</p></li>
+            <li><span class="release-step-number">02</span><h4>Vertical gardens</h4><p>Green that climbs the building, not just the ground floor.</p></li>
+            <li><span class="release-step-number">03</span><h4>Every day</h4><p>Nature you live with daily, not visit on weekends.</p></li>
+          </ol>
+          <div class="release-compare"><div><span>Home v1.0</span><p>downstairs, if at all</p></div><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg><div><span>Home 2.0</span><p>built into the architecture</p></div></div>
+        </div>
+      </div>
+      <div class="release-panel lg lg-lightbg" role="tabpanel" id="release-panel-community" aria-labelledby="release-tab-community" tabindex="0" hidden data-lg='{"scale":28,"depth":22,"blur":18,"tint":0.72,"tintColor":"--glass-light","edge":0.95}'>
+        <div class="c">
+          <div class="release-panel-top"><span class="release-feature-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 21v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v2"/></svg></span><span class="release-new">New &middot; Community</span><span class="release-count">06 / 06</span></div>
+          <h3>Beyond four walls.</h3>
+          <p class="release-description">Multiple clubhouses and entertainment spaces. Living that carries on past your front door.</p>
+          <p class="release-how">How we do it at The Living Wave</p>
+          <ol class="release-steps">
+            <li><span class="release-step-number">01</span><h4>Clubhouses</h4><p>More than one place to gather, play and unwind.</p></li>
+            <li><span class="release-step-number">02</span><h4>Entertainment</h4><p>Spaces built for evenings, weekends and celebrations.</p></li>
+            <li><span class="release-step-number">03</span><h4>Neighbours</h4><p>Designed so people actually meet, not just pass by.</p></li>
+          </ol>
+          <div class="release-compare"><div><span>Home v1.0</span><p>ends at the door</p></div><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg><div><span>Home 2.0</span><p>multiple clubhouses</p></div></div>
+        </div>
+      </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1092,6 +1267,43 @@ function mapHero(){
   requestAnimationFrame(resyncAll);
 }
 window.addEventListener('resize', function(){ requestAnimationFrame(mapHero); });
+
+/* ---------- Release notes feature tabs ---------- */
+var releaseTablist = document.querySelector('.release-tabs');
+var releaseTabs = Array.from(releaseTablist.querySelectorAll('[role="tab"]'));
+var releasePanels = releaseTabs.map(function(tab){ return document.getElementById(tab.getAttribute('aria-controls')); });
+function selectReleaseFeature(index, focus){
+  releaseTabs.forEach(function(tab, i){
+    var active = i === index;
+    tab.setAttribute('aria-selected', String(active));
+    tab.tabIndex = active ? 0 : -1;
+    releasePanels[i].hidden = !active;
+  });
+  var panel = releasePanels[index];
+  panel.classList.remove('release-swap');
+  void panel.offsetWidth;
+  panel.classList.add('release-swap');
+  attach(panel);
+  requestAnimationFrame(resyncAll);
+  if (focus) releaseTabs[index].focus({preventScroll:true});
+}
+releaseTabs.forEach(function(tab, index){
+  tab.addEventListener('click', function(){ selectReleaseFeature(index, false); });
+  tab.addEventListener('keydown', function(event){
+    var next;
+    if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = (index + 1) % releaseTabs.length;
+    else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = (index - 1 + releaseTabs.length) % releaseTabs.length;
+    else if (event.key === 'Home') next = 0;
+    else if (event.key === 'End') next = releaseTabs.length - 1;
+    else return;
+    event.preventDefault();
+    selectReleaseFeature(next, true);
+  });
+});
+var releaseMobile = window.matchMedia('(max-width:760px)');
+function orientReleaseTabs(){ releaseTablist.setAttribute('aria-orientation', releaseMobile.matches ? 'horizontal' : 'vertical'); }
+releaseMobile.addEventListener('change', orientReleaseTabs);
+orientReleaseTabs();
 
 /* ---------- The film (video card) ---------- */
 var scenes = [

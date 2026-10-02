@@ -24,6 +24,7 @@ This document records the current destinations and behaviors. To change a mappin
 
 | Button | Location | Destination / action |
 | --- | --- | --- |
+| Energy / Water / Air / Mobility / Nature / Community | Release notes ? `#release` | Selects the corresponding `#release-panel-*` within the section. Arrow keys, Home and End also change the selected feature. |
 | Discover the Vision | Home evolution — `#vision` | Scrolls to Experience — `#experience`. |
 | Explore in 3D | Home evolution — `#vision` | Opens the residence view in `#ov-view`. |
 | Intelligent Living | Experience — `#experience` | Expands its description; no section navigation. |
