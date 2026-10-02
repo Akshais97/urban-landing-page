@@ -10,10 +10,10 @@ This document records the current destinations and behaviors. To change a mappin
 | --- | --- | --- | --- |
 | Urbanrise logo | Header | Home — `#home` | Returns to the hero. |
 | Home | Header / menu | Home — `#home` | Scrolls to the hero. |
+| Benchmarks | Header / menu | Home comparison - `#benchmarks` | Scrolls to the Home v1.0 / Home 2.0 comparison. |
+| Calculator | Header / menu | Carbon calculator - `#carbon-calculator` | Scrolls to the household carbon calculator. |
 | Vision | Header / menu | Home evolution — `#vision` | Scrolls to the home-evolution section. |
 | Residences | Header / menu | Residences — `#residences` | Scrolls to the residences section. |
-| Location | Header / menu | Location feature — `#location`, within `#experience` | Scrolls to the location feature card. |
-| Experience | Header / menu | Experience — `#experience` | Scrolls to the experience section. |
 | Join Early Access | Header / footer | Early-access form — `#ov-join` | Opens the existing modal. The mobile arrow button uses the same destination. |
 | Open / Close menu — `#menuToggle` | Header | Compact dropdown — `#ov-menu` | Toggles the dropdown and changes the three bars into an X. Escape, an outside click, or choosing a link closes it. |
 | Check Your Version | Hero version card (`#heroCheckVersion`) | Version check (`#version`) | Scrolls to the 12-question home version check. |
@@ -39,20 +39,13 @@ This document records the current destinations and behaviors. To change a mappin
 | Edit my details | Inline Early Access (`#accessEdit`) | Reopens the form with the entered details and preferences retained. |
 | Or chat on WhatsApp | Inline Early Access | Opens `https://wa.me/918943214897` in a new tab (user-provided number: `00918943214897`). |
 | Home 2.0 / Home 2.0 Plus / Home 2.0 Max residence cards | Lineup (`#models`) | Selects the model, fills `#accessModel`, reopens the inline form if needed and scrolls to `#access`. Changing the form model updates the selected card. |
-| Gattahalli, Bengaluru | Project summary (`#project-facts`) | Scrolls to the location feature card (`#location`) within Experience. |
 | Explore the three models | First-release card (`#project-facts`) | Scrolls to the residence lineup (`#lineup`). |
 | 222 / information icon | First-release ring (`#project-facts`) | Hover or keyboard focus opens the glass explanation of Phase 1's 60.3% project share. Click/tap toggles it; Escape or an outside click closes it. |
-| Discover the Vision | Home evolution — `#vision` | Scrolls to Experience — `#experience`. |
-| Explore in 3D | Home evolution — `#vision` | Opens the residence view in `#ov-view`. |
-| Intelligent Living | Experience — `#experience` | Expands its description; no section navigation. |
-| Sustainable by Design | Experience — `#experience` | Expands its description; no section navigation. |
-| Unmatched Locations | Experience — `#experience`, card `#location` | Expands its description; no section navigation. |
-| Human-Centric Spaces | Experience — `#experience` | Expands its description; no section navigation. |
+| Explore Residences | Home evolution — `#vision` | Scrolls to Residences — `#residences`. |
 | Explore Residences | Residences — `#residences` | Opens the residence view in `#ov-view`. |
 | Floor-to-Ceiling Views | Residences gallery | Changes the gallery view; no section navigation. |
 | Natural Materials | Residences gallery | Changes the gallery view; no section navigation. |
 | Indoor-Outdoor Living | Residences gallery | Changes the gallery view; no section navigation. |
-| Our Approach | Sustainability section | Opens the approach modal — `#ov-approach`. |
 
 ## Intro, film, and modal controls
 

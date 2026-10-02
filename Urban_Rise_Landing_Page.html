@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Home 2.0 — UrbanRise</title>
+<title>Home 2.0 · UrbanRise</title>
 <meta name="description" content="Home 2.0 by UrbanRise. Intelligent homes for a more meaningful life.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -226,8 +226,8 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- Home 2.0 release notes ---------- */
 .release{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) 0;background:#181b1c;color:#f6f3ee}
-.release > .bg .ph{background-image:url("assets/background/release-section-background-updated.png");background-position:55% 45%}
-@media(max-width:640px){.release > .bg .ph{background-image:url("assets/background/release-section-background-updated_mobile_banner.png")}}
+.release .img-release-banner{background-image:url("assets/background/release-section-background-updated.png");background-position:55% 45%}
+@media(max-width:640px){.release .img-release-banner{background-image:url("assets/background/release-section-background-updated_mobile_banner.png")}}
 .release-wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,17,19,.85),rgba(16,21,23,.52) 55%,rgba(13,17,19,.56)),linear-gradient(0deg,rgba(12,16,18,.9),transparent 60%,rgba(12,16,18,.45))}
 .release .wrap{position:relative;z-index:1}
 .release-heading{margin-bottom:clamp(32px,4vw,48px);max-width:780px}
@@ -236,14 +236,14 @@ a{color:inherit;text-decoration:none}
 .release-heading > p:last-child{margin:18px 0 0;font-size:16px;line-height:1.65;color:#d0d1ce;max-width:58ch}
 .release-window{border-radius:34px;background:rgba(212,221,220,.13);box-shadow:inset 0 1px 1px rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.26),0 30px 80px rgba(0,0,0,.32)}
 .release-window > .c{border-radius:inherit;overflow:hidden;text-shadow:none!important}
-.release-toolbar{display:flex;align-items:center;gap:12px;padding:20px 26px;border-bottom:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.035)}
+.release-toolbar{display:flex;align-items:center;gap:12px;padding:20px 26px;border-bottom:1px solid rgba(239,227,207,.2);background:linear-gradient(120deg,rgba(221,205,178,.12),rgba(173,164,145,.08))}
 .release-app-icon{display:grid;place-items:center;width:38px;height:38px;flex:none;border-radius:12px;color:#fae1bb;background:linear-gradient(145deg,rgba(214,184,137,.45),rgba(112,87,51,.35));box-shadow:inset 0 1px 0 rgba(255,241,213,.4),0 4px 10px rgba(0,0,0,.12)}
 .release-toolbar strong{display:block;font-family:"Inter","Segoe UI",system-ui,sans-serif;font-size:14px;font-weight:500;letter-spacing:-.02em}
 .release-toolbar > div > span{display:block;margin-top:4px;font-size:10px;color:#c3c8c6}
 .release-version-pill{display:flex;align-items:center;gap:8px;margin-left:auto;padding:7px 11px;border-radius:999px;color:#e8dbc6;background:rgba(234,211,177,.09);box-shadow:inset 0 0 0 1px rgba(238,218,190,.22);font-size:10px;letter-spacing:.04em}
 .release-version-pill .ico{width:12px;height:12px;color:#c4dfd2}
-.release-layout{display:grid;grid-template-columns:280px minmax(0,1fr);align-items:stretch;min-height:560px}
-.release-sidebar{padding:24px 16px;background:rgba(16,23,25,.14);border-right:1px solid rgba(255,255,255,.14)}
+.release-layout{display:grid;grid-template-columns:280px minmax(0,1fr);align-items:stretch;min-height:560px;background:linear-gradient(135deg,rgba(157,142,116,.04),rgba(101,105,91,.06))}
+.release-sidebar{padding:24px 16px;background:rgba(68,62,51,.2);border-right:1px solid rgba(255,255,255,.14)}
 .release-search{display:flex;align-items:center;gap:8px;margin:0 6px 22px;padding:10px 12px;border-radius:12px;background:rgba(0,0,0,.17);box-shadow:inset 0 1px 2px rgba(0,0,0,.12),inset 0 0 0 1px rgba(255,255,255,.12)}
 .release-search > .ico{width:15px;height:15px;color:#c3c8c6;flex:none}
 .release-search input{width:100%;min-width:0;background:none;border:0;outline:none;padding:0;color:#f6f3ee;font-size:12px;line-height:1.5;appearance:auto}
@@ -293,7 +293,7 @@ a{color:inherit;text-decoration:none}
 @keyframes release-swap{from{opacity:.5;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 @media(hover:hover) and (pointer:fine){.release-tab:hover{background:rgba(255,255,255,.1)}}
 @media(max-width:1080px){.release-layout{grid-template-columns:245px minmax(0,1fr)}.release-sidebar{padding:22px 12px}.release-tab{gap:10px;padding:12px 8px}.release-panel{padding:28px 26px}.release-tab-copy small{font-size:9px}}
-@media(max-width:760px){.release{padding:64px 0}.release-heading h2{font-size:clamp(33px,7vw,44px)}.release-heading > p:last-child{font-size:15px}.release-window{border-radius:28px}.release-toolbar{padding:18px 20px}.release-layout{grid-template-columns:1fr;min-height:0}.release-sidebar{padding:20px 16px 16px;border-right:0;border-bottom:1px solid rgba(255,255,255,.14);background:rgba(16,23,25,.1)}.release-search{margin:0 4px 16px}.release-tabs > .c{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.release-tab{flex-direction:column;gap:9px;padding:12px 5px;text-align:center;border-radius:16px}.release-tab-copy strong{font-size:12px}.release-tab-copy small,.release-tab-chevron{display:none}.release-tab-icon{width:40px;height:40px;border-radius:13px}.release-tab-icon .ico{width:23px;height:23px}.release-panel{padding:26px 22px 24px}.release-panel-top{margin-bottom:22px;gap:12px}.release-panel h3{font-size:28px}.release-feature-icon{width:48px;height:48px;border-radius:16px}.release-feature-icon .ico{width:25px;height:25px}.release-description{font-size:13px;margin-bottom:24px}.release-steps{padding:0 16px}.release-steps li{column-gap:10px}.release-steps h4{font-size:13px}.release-steps p{font-size:12px}.release-compare{gap:10px;padding:16px 14px}.release-compare p{font-size:12px}}
+@media(max-width:760px){.release{padding:64px 0}.release-heading h2{font-size:clamp(33px,7vw,44px)}.release-heading > p:last-child{font-size:15px}.release-window{border-radius:28px}.release-toolbar{padding:18px 20px}.release-layout{grid-template-columns:1fr;min-height:0}.release-sidebar{padding:20px 16px 16px;border-right:0;border-bottom:1px solid rgba(255,255,255,.14);background:rgba(68,62,51,.2)}.release-search{margin:0 4px 16px}.release-tabs > .c{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.release-tab{flex-direction:column;gap:9px;padding:12px 5px;text-align:center;border-radius:16px}.release-tab-copy strong{font-size:12px}.release-tab-copy small,.release-tab-chevron{display:none}.release-tab-icon{width:40px;height:40px;border-radius:13px}.release-tab-icon .ico{width:23px;height:23px}.release-panel{padding:26px 22px 24px}.release-panel-top{margin-bottom:22px;gap:12px}.release-panel h3{font-size:28px}.release-feature-icon{width:48px;height:48px;border-radius:16px}.release-feature-icon .ico{width:25px;height:25px}.release-description{font-size:13px;margin-bottom:24px}.release-steps{padding:0 16px}.release-steps li{column-gap:10px}.release-steps h4{font-size:13px}.release-steps p{font-size:12px}.release-compare{gap:10px;padding:16px 14px}.release-compare p{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.release-panel.release-swap > .c{animation:none}}
 
 /* ---------- Version benchmarks ---------- */
@@ -349,7 +349,8 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- Home version diagnostic ---------- */
 .version-diagnostic{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) 0;background:#171d1c}
-.version-diagnostic > .bg .ph{background-position:55% 50%}
+.version-diagnostic .img-version-banner{background-image:url("assets/background/version_section_desktop_banner.png");background-position:55% 50%}
+@media(max-width:640px){.version-diagnostic .img-version-banner{background-image:url("assets/background/version_section_mobile_banner.png");background-position:50% 50%}}
 .version-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,18,19,.91),rgba(18,24,24,.67) 55%,rgba(18,24,24,.6)),linear-gradient(0deg,rgba(12,18,19,.84),transparent 65%)}
 .version-layout{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(40px,6vw,88px);align-items:center}
 .version-diagnostic .eyebrow{color:#dfc9a8;letter-spacing:.23em}
@@ -419,7 +420,8 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- Founding early access ---------- */
 .access-section{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) 0;background:#1b211f}
-.access-section > .bg .ph{background-position:58% 50%}
+.access-section .img-access-banner{background-image:url("assets/background/early-access-desktop-banner.png");background-position:58% 50%}
+@media(max-width:640px){.access-section .img-access-banner{background-image:url("assets/background/early-access-mobile-banner.png");background-position:50% 50%}}
 .access-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,20,18,.9),rgba(19,26,23,.67) 55%,rgba(19,26,23,.55)),linear-gradient(0deg,rgba(13,20,18,.85),transparent 65%)}
 .access-layout{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,6vw,88px);align-items:center}
 .access-section .eyebrow{color:#dfc9a8;letter-spacing:.23em}
@@ -475,7 +477,8 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- Project facts: glass widget cards ---------- */
 .project-facts{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) 0;background:#19221e}
-.project-facts > .bg .ph{background-position:50% 58%}
+.project-facts > .bg .ph{background-image:url("assets/background/project_facts_desktop_banner.jpeg");background-position:50% 58%}
+@media(max-width:640px){.project-facts > .bg .ph{background-image:url("assets/background/project_facts_mobile_banner.png");background-position:50% 50%}}
 .project-facts-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,22,18,.85),rgba(17,27,21,.53)),linear-gradient(0deg,rgba(12,22,18,.87),transparent 55%,rgba(12,22,18,.4))}
 .project-facts .wrap{position:relative;z-index:1}
 .project-facts-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:40px}
@@ -688,7 +691,8 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- Residence model lineup ---------- */
 .lineup-section{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,112px) 0;background:#1a211f}
-.lineup-section > .bg .ph{background-position:55% 50%}
+.lineup-section > .bg .ph{background-image:url("assets/background/lineup_desktop_banner.png");background-position:55% 50%}
+@media(max-width:640px){.lineup-section > .bg .ph{background-image:url("assets/background/lineup_mobile_banner.png");background-position:50% 50%}}
 .lineup-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,20,17,.9),rgba(17,24,21,.6) 55%,rgba(17,24,21,.72)),linear-gradient(0deg,rgba(12,20,17,.88),transparent 70%,rgba(12,20,17,.3))}
 .lineup-section .wrap{position:relative;z-index:1}
 .lineup-heading{max-width:720px;margin-bottom:clamp(36px,4vw,52px)}
@@ -728,14 +732,15 @@ a{color:inherit;text-decoration:none}
 .light .eyebrow{color:var(--ink-soft)}
 .evolve{padding:clamp(70px,9vw,120px) 0}
 .evolve .grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(32px,5vw,72px);align-items:center}
-.evolve h2,.spaces h2{font-size:clamp(49px,5.8vw,86px)}
+.evolve h2,.spaces h2{font-size:clamp(34px,3.7vw,52px);font-weight:350;line-height:1.15;letter-spacing:-.035em;text-wrap:balance}
+@media(max-width:760px){.evolve h2,.spaces h2{font-size:clamp(34px,7vw,46px)}}
 .lead{font-size:16.5px;line-height:1.65;color:var(--ink-soft);max-width:44ch;margin:28px 0 34px}
 .row{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .btn-light{min-height:52px;padding:0 26px;color:var(--ink);font-size:15px}
-.ghost3d{display:inline-flex;align-items:center;gap:12px;font-size:13.5px;color:var(--ink)}
-.ghost3d .iconbtn{width:46px;height:46px}
 
 /* Video card */
+.img-video-thumbnail{background-image:url("assets/background/video_thumbnail.png")}
+.img-spaces{background-image:url("assets/background/spaces_section.png")}
 .vcard{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:16/9.1;background:#111;color:#fff;box-shadow:0 30px 60px rgba(20,18,15,.22)}
 .vcard:fullscreen{border-radius:0;aspect-ratio:auto}
 .vstage .vframe{position:absolute;inset:-2%;background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease;transform:scale(calc(1.02 + var(--kb) * .08))}
@@ -754,12 +759,8 @@ html[data-scene="4"] .vstage .vframe[data-i="4"]{opacity:1}
 .vplay .ico{width:30px;height:30px}
 .vcard.playing .vplay{opacity:0;pointer-events:none}
 .vcard.playing:hover .vplay{opacity:1;pointer-events:auto}
-.vmeta{position:absolute;left:24px;bottom:66px;z-index:3;text-shadow:0 1px 12px rgba(0,0,0,.5)}
-.vmeta .t{font-size:12.5px;opacity:.85;font-variant-numeric:tabular-nums}
-.vmeta .n{font-size:15px;font-weight:500;margin-top:2px}
 .vcap{position:absolute;left:50%;bottom:76px;transform:translateX(-50%);z-index:3;font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);text-align:center;width:80%;opacity:0;transition:opacity .5s;text-shadow:0 2px 18px rgba(0,0,0,.6)}
 .vcard.playing.subs .vcap{opacity:1}
-.vcard.playing .vmeta .n{opacity:0}
 .vbar{position:absolute;left:12px;right:12px;bottom:12px;z-index:3;border-radius:18px;min-height:46px;padding:0 8px}
 .vbar .c{display:flex;align-items:center;gap:6px;height:46px}
 .vbar .iconbtn{width:36px;height:36px}
@@ -771,34 +772,6 @@ html[data-scene="4"] .vstage .vframe[data-i="4"]{opacity:1}
 .txtbtn{font-size:12px;padding:0 10px;height:36px;border-radius:12px;opacity:.75}
 .txtbtn[aria-pressed="true"]{opacity:1;text-decoration:underline;text-underline-offset:4px}
 .speed{font-size:11.5px;font-weight:600;width:36px;height:36px;border-radius:12px}
-
-/* ---------- Intro (dark) ---------- */
-.intro{position:relative;color:var(--on-dark);min-height:clamp(560px,48vw,700px);display:flex;flex-direction:column;justify-content:space-between;padding:clamp(60px,7vw,96px) 0 clamp(28px,3vw,40px);overflow:hidden}
-.intro .bg{background:#15110d}
-.intro .top{position:relative;z-index:2;display:flex;justify-content:space-between;gap:30px;align-items:flex-start}
-.intro h2{font-size:clamp(58px,6.7vw,101px)}
-.intro .sub{font-size:clamp(16px,1.4vw,19px);font-weight:300;margin-top:22px;color:var(--on-dark-soft)}
-.voice{width:min(260px,40vw);border-radius:28px;padding:20px}
-.voice .c{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
-.orb{width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0,#cfe0ff 18%,#6e8dff 45%,#a46bff 70%,#2a2e62 100%);display:grid;place-items:center;box-shadow:0 0 30px rgba(140,150,255,.55)}
-.orb i{display:flex;gap:2px;align-items:center;height:20px}
-.orb i b{width:2px;background:#fff;border-radius:2px;animation:eq 1.1s ease-in-out infinite}
-.orb i b:nth-child(1){height:6px;animation-delay:-.2s}.orb i b:nth-child(2){height:14px;animation-delay:-.5s}.orb i b:nth-child(3){height:20px}.orb i b:nth-child(4){height:12px;animation-delay:-.7s}.orb i b:nth-child(5){height:7px;animation-delay:-.35s}
-@keyframes eq{50%{transform:scaleY(.4)}}
-.voice p{margin:0;font-size:14px;line-height:1.45}
-.voice .wave{grid-column:1/-1;height:18px}
-.voice .wave path{fill:none;stroke-width:1.6;stroke-linecap:round}
-.feats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:48px}
-.feat{border-radius:24px;padding:16px;text-align:left;width:100%;display:block}
-.feat .c{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center}
-.feat .tile{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
-.feat .tile .ico{width:24px;height:24px}
-.feat .h{display:block;margin:0 0 4px;font-size:14px;font-weight:500}
-.feat .p{display:block;margin:0;font-size:12px;line-height:1.4;color:var(--on-dark-soft)}
-.feat .chev{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3);transition:transform .35s}
-.feat .more{grid-column:1/-1;font-size:13px;line-height:1.55;color:var(--on-dark);max-height:0;overflow:hidden;transition:max-height .45s ease,opacity .35s;opacity:0;margin:0}
-.feat[aria-expanded="true"] .more{max-height:140px;opacity:.9}
-.feat[aria-expanded="true"] .chev{transform:rotate(90deg)}
 
 /* ---------- Spaces (light) ---------- */
 .spaces{padding:clamp(60px,7vw,100px) 0}
@@ -813,24 +786,6 @@ html[data-scene="4"] .vstage .vframe[data-i="4"]{opacity:1}
 .chip[aria-pressed="true"] .c{font-weight:600}
 .chip[aria-pressed="true"]{outline:1px solid rgba(255,255,255,.65);outline-offset:2px}
 .chip .ico{width:18px;height:18px}
-
-/* ---------- Sustain (dark) ---------- */
-.sustain{position:relative;color:var(--on-dark);padding:clamp(56px,6vw,84px) 0;overflow:hidden}
-.sustain .bg{background:#0f0f10}
-.sustain .grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.95fr) minmax(0,.85fr);gap:clamp(20px,3vw,44px);align-items:center}
-.sustain h2{font-size:clamp(42px,4.3vw,65px);line-height:.98}
-.approach{border-radius:26px;padding:22px}
-.approach .c{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
-.approach .tile{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
-.approach .tile .ico{width:28px;height:28px}
-.approach p{margin:0 0 14px;font-size:14px;line-height:1.6;color:var(--on-dark-soft)}
-.approach p b{color:#fff;font-weight:500}
-.approach .link{border-bottom-color:rgba(255,255,255,.5)}
-.ollist{border-radius:22px;padding:8px 22px}
-.ollist ol{list-style:none;margin:0;padding:0}
-.ollist li{display:flex;gap:18px;padding:13px 0;font-size:13.5px;border-top:1px solid rgba(255,255,255,.12)}
-.ollist li:first-child{border-top:0}
-.ollist li span{font-variant-numeric:tabular-nums;color:var(--on-dark-soft);font-size:12px;padding-top:1px}
 
 footer{position:relative;background:var(--night);color:var(--on-dark-soft);padding:36px 0;font-size:13px}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
@@ -911,9 +866,6 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
   .hero-body{grid-template-columns:1fr}
   .hero-side{min-height:300px}
   .evolve .grid,.spaces .grid{grid-template-columns:1fr}
-  .feats{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .sustain .grid{grid-template-columns:1fr 1fr}
-  .sustain .grid > :first-child{grid-column:1/-1}
 }
 @media (max-width:640px){
   .img-hero-banner{background-image:url("assets/banners/mobile_banner.png")}
@@ -942,16 +894,10 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
   .tod .track input{transform:none;width:104px;height:32px}
   .tod .knob{top:4px;left:calc(var(--tod-position,.72) * (100% - 24px))}
   .tod .knob .c{justify-content:center}
-  .vmeta .n{display:none}
   .resframe{min-height:0}
-  .feats{grid-template-columns:1fr}
-  .intro .top{flex-direction:column}
-  .voice{width:100%}
-  .sustain .grid{grid-template-columns:1fr}
   .chips{right:12px;gap:8px}
   .chip{min-height:44px;padding:0 12px 0 10px;font-size:11.5px}
   .resframe{aspect-ratio:auto;height:360px}
-  .vmeta{bottom:64px;left:16px}
   .txtbtn{display:none}
 }
 @media (prefers-reduced-motion:reduce){
@@ -1027,15 +973,15 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
 <header class="hero on-dark" data-scene-root id="home">
   <div class="bg bg-hero"><div class="ph img-hero-banner"></div><div class="night"></div><div class="shade"></div></div>
   <div class="wrap topbar">
-    <a class="logo" href="#home" aria-label="UrbanRise home"><span class="logo-art"><img src="assets/logo-02.png" alt="Urbanrise — The Living Wave, Home 2.0" width="2363" height="2363"></span></a>
+    <a class="logo" href="#home" aria-label="UrbanRise home"><span class="logo-art"><img src="assets/logo-02.png" alt="Urbanrise, The Living Wave, Home 2.0" width="2363" height="2363"></span></a>
     <nav class="navpill lg" aria-label="Primary" data-lg='{"scale":22,"blur":6,"tint":0.06}'>
       <span class="navthumb lg" aria-hidden="true" data-lg='{"scale":26,"depth":16,"blur":0,"tint":0.12,"chroma":0.18,"edge":0.95}'></span>
       <div class="c">
         <a href="#home" aria-current="true">Home</a>
+        <a href="#benchmarks">Benchmarks</a>
+        <a href="#carbon-calculator">Calculator</a>
         <a href="#vision">Vision</a>
         <a href="#residences">Residences</a>
-        <a href="#location">Location</a>
-        <a href="#experience">Experience</a>
       </div>
     </nav>
     <div class="actions">
@@ -1045,10 +991,10 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
     <nav class="header-menu lg" id="ov-menu" aria-label="More navigation" hidden data-lg='{"scale":22,"blur":14,"tint":0.88,"tintColor":"#29251f","edge":0.9}'>
       <div class="c">
         <a href="#home">Home</a>
+        <a href="#benchmarks">Benchmarks</a>
+        <a href="#carbon-calculator">Calculator</a>
         <a href="#vision">The vision</a>
         <a href="#residences">The residences</a>
-        <a href="#location">Location</a>
-        <a href="#experience">Experience</a>
         <button class="menu-access" type="button" data-open="join">Join early access<svg class="ico"><use href="#i-arrow"/></svg></button>
       </div>
     </nav>
@@ -1155,14 +1101,14 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
 
 <!-- ================= RELEASE NOTES ================= -->
 <section class="release on-dark" id="release" aria-labelledby="releaseTitle" data-scene-root>
-  <div class="bg" aria-hidden="true"><div class="ph"></div><div class="release-wash"></div></div>
+  <div class="bg" aria-hidden="true"><div class="ph img-release-banner"></div><div class="release-wash"></div></div>
   <div class="wrap">
     <div class="release-heading">
       <p class="eyebrow">Release notes &middot; v2.0.0</p>
       <h2 class="serif" id="releaseTitle">What's new in Home 2.0</h2>
       <p>Six features. One release. Tap one to see how The Living Wave does it.</p>
     </div>
-    <div class="release-window lg" data-lg='{"scale":30,"depth":24,"blur":18,"tint":0.2,"tintColor":"#343536","edge":1}'>
+    <div class="release-window lg" data-lg='{"scale":30,"depth":24,"blur":12,"tint":0.1,"tintColor":"#d6c8ae","edge":1}'>
       <div class="c">
         <div class="release-toolbar">
           <span class="release-app-icon" aria-hidden="true"><svg class="ico"><use href="#i-home"/></svg></span>
@@ -1430,7 +1376,7 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
 
 <!-- ================= VERSION CHECK ================= -->
 <section class="version-diagnostic on-dark" id="version" aria-labelledby="versionTitle" data-scene-root>
-  <div class="bg" aria-hidden="true"><div class="ph img-intro"></div><div class="version-shade"></div></div>
+  <div class="bg" aria-hidden="true"><div class="ph img-version-banner"></div><div class="version-shade"></div></div>
   <div class="wrap version-layout">
     <div class="version-story">
       <p class="eyebrow">Version check &middot; 90 seconds</p>
@@ -1445,7 +1391,7 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
         <li data-pillar="Community"><span class="version-pillar-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 21v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v2"/></svg></span><span>Community</span><span class="sr version-pillar-status">Not started</span></li>
       </ol>
     </div>
-    <div class="version-card lg" id="quizMount" data-lg='{"scale":30,"depth":24,"blur":18,"tint":0.2,"tintColor":"#414744","edge":1}'>
+    <div class="version-card lg" id="quizMount" data-lg='{"scale":30,"depth":24,"blur":12,"tint":0.12,"tintColor":"#414744","edge":1}'>
       <div class="c">
         <div class="version-card-toolbar"><span class="version-home-icon" aria-hidden="true"><svg class="ico"><use href="#i-home"/></svg></span><div><strong>Home diagnostic</strong><span>The Living Wave &middot; Home 2.0</span></div><span class="version-duration">90 sec</span></div>
         <div id="quizContent"></div>
@@ -1457,7 +1403,7 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
 
 <!-- ================= RESIDENCE LINEUP ================= -->
 <section class="lineup-section on-dark" id="lineup" aria-labelledby="lineupTitle" data-scene-root>
-  <div class="bg" aria-hidden="true"><div class="ph img-hero"></div><div class="lineup-shade"></div></div>
+  <div class="bg" aria-hidden="true"><div class="ph"></div><div class="lineup-shade"></div></div>
   <div class="wrap">
     <div class="lineup-heading">
       <p class="eyebrow">The lineup</p>
@@ -1501,11 +1447,11 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
 
 <!-- ================= PROJECT FACTS ================= -->
 <section class="project-facts on-dark" id="project-facts" aria-labelledby="projectFactsTitle" data-scene-root>
-  <div class="bg" aria-hidden="true"><div class="ph img-res"></div><div class="project-facts-shade"></div></div>
+  <div class="bg" aria-hidden="true"><div class="ph"></div><div class="project-facts-shade"></div></div>
   <div class="wrap">
     <div class="project-facts-heading">
       <div><p class="eyebrow">The Living Wave &middot; Gattahalli</p><h2 class="serif" id="projectFactsTitle">The first build.</h2></div>
-      <a class="project-facts-location" href="#location" aria-label="Explore the neighbourhood in Gattahalli, Bengaluru"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Gattahalli, Bengaluru</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      <span class="project-facts-location"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Gattahalli, Bengaluru</span></span>
     </div>
     <div class="project-widget-grid">
       <article class="project-widget project-widget-footprint lg" aria-labelledby="projectFootprintTitle" data-lg='{"scale":28,"depth":22,"blur":16,"tint":0.18,"tintColor":"#d5c6a5","edge":1}'>
@@ -1616,15 +1562,14 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
     <div>
       <p class="eyebrow">A higher standard</p>
       <h2 class="serif">The home category has evolved.</h2>
-      <p class="lead">Home 2.0 brings together architectural beauty, intelligent technology and a deeper connection to nature — reimagining what it means to live well.</p>
+      <p class="lead">Home 2.0 brings together architectural beauty, intelligent technology and a deeper connection to nature, reimagining what it means to live well.</p>
       <div class="row">
-        <a class="btn lg lg-lightbg btn-light" href="#experience" data-lg='{"scale":18,"blur":2,"tint":0.55,"tintColor":"--glass-light","edge":0.9}'><span class="c">Discover the Vision<svg class="ico"><use href="#i-chev"/></svg></span></a>
-        <button class="ghost3d" data-open="view3d"><span class="iconbtn lg lg-lightbg" data-lg='{"scale":14,"blur":2,"tint":0.6,"tintColor":"--glass-light","edge":0.9}'><span class="c"><svg class="ico"><use href="#i-cube"/></svg></span></span>Explore in 3D</button>
+        <a class="btn lg lg-lightbg btn-light" href="#residences" data-lg='{"scale":18,"blur":2,"tint":0.55,"tintColor":"--glass-light","edge":0.9}'><span class="c">Explore Residences<svg class="ico"><use href="#i-chev"/></svg></span></a>
       </div>
     </div>
     <div class="vcard subs" id="vcard" data-scene-root>
       <div class="bg vstage">
-        <div class="vframe img-video" data-i="p"></div>
+        <div class="vframe img-video-thumbnail" data-i="p"></div>
         <div class="vframe img-hero" data-i="0" style="background-size:190% auto;background-position:60% 100%"></div>
         <div class="vframe img-video" data-i="1" style="background-size:230% auto;background-position:100% 55%"></div>
         <div class="vframe img-intro" data-i="2" style="background-size:300% auto;background-position:55% 0%"></div>
@@ -1638,7 +1583,6 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
       </div>
       <button class="vplay lg" id="vPlay" aria-label="Play The Story of Home 2.0" data-lg='{"scale":36,"depth":30,"blur":2,"chroma":0.2,"tint":0.06}'><span class="c"><svg class="ico"><use href="#i-play"/></svg></span></button>
       <div class="vcap" id="vCap" aria-live="polite"></div>
-      <div class="vmeta"><div class="t" id="vTime">0:36</div><div class="n">The Story of Home 2.0</div></div>
       <div class="vbar lg" data-lg='{"scale":22,"depth":18,"blur":12,"tint":0.12,"tintColor":"#15161b"}'>
         <div class="c">
           <button class="iconbtn" id="vToggle" aria-label="Play"><svg class="ico" id="vToggleIco"><use href="#i-play"/></svg></button>
@@ -1652,57 +1596,9 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
   </div>
 </section>
 
-<!-- ================= INTRO ================= -->
-<section class="intro on-dark" id="experience" data-scene-root>
-  <div class="bg bg-intro"><div class="ph img-intro"></div><div class="shade"></div></div>
-  <div class="wrap top">
-    <div>
-      <p class="eyebrow">Introducing</p>
-      <h2 class="serif">Home 2.0</h2>
-      <p class="sub">Architecture. Intelligence. Nature. In perfect balance.</p>
-    </div>
-    <div class="voice lg" data-lg='{"scale":30,"depth":24,"blur":10,"tint":0.1,"tintColor":"#2b2724"}'>
-      <div class="c">
-        <span class="orb" aria-hidden="true"><i><b></b><b></b><b></b><b></b><b></b></i></span>
-        <p>A more meaningful day begins at home.</p>
-        <svg class="wave" viewBox="0 0 200 18" aria-hidden="true">
-          <defs><linearGradient id="wg" x1="0" x2="1"><stop offset="0" stop-color="#9fb3ff" stop-opacity="0"/><stop offset=".5" stop-color="#cfd9ff"/><stop offset="1" stop-color="#c49bff" stop-opacity="0"/></linearGradient></defs>
-          <path id="wavePath" stroke="url(#wg)" d="M0 9 Q 25 2 50 9 T 100 9 T 150 9 T 200 9"/>
-        </svg>
-      </div>
-    </div>
-  </div>
-  <div class="wrap feats">
-    <button class="feat lg" aria-expanded="false" data-lg='{"scale":30,"depth":22,"blur":12,"tint":0.1,"tintColor":"#26221f"}'><span class="c">
-      <span class="tile"><svg class="ico"><use href="#i-home"/></svg></span>
-      <span><span class="h">Intelligent Living</span><span class="p">Homes that learn, adapt and simplify.</span></span>
-      <span class="chev"><svg class="ico" style="width:14px;height:14px"><use href="#i-chev"/></svg></span>
-      <span class="more">Lighting, climate and security that respond to your routine — controlled from one place, or simply by voice.</span>
-    </span></button>
-    <button class="feat lg" aria-expanded="false" data-lg='{"scale":30,"depth":22,"blur":12,"tint":0.1,"tintColor":"#26221f"}'><span class="c">
-      <span class="tile"><svg class="ico"><use href="#i-leaf"/></svg></span>
-      <span><span class="h">Sustainable by Design</span><span class="p">A cleaner future. Built in.</span></span>
-      <span class="chev"><svg class="ico" style="width:14px;height:14px"><use href="#i-chev"/></svg></span>
-      <span class="more">Responsible materials, passive cooling and energy-positive systems are part of the plan from the first drawing.</span>
-    </span></button>
-    <button class="feat lg" id="location" aria-expanded="false" data-lg='{"scale":30,"depth":22,"blur":12,"tint":0.1,"tintColor":"#26221f"}'><span class="c">
-      <span class="tile"><svg class="ico"><use href="#i-pin"/></svg></span>
-      <span><span class="h">Unmatched Locations</span><span class="p">Extraordinary settings. Rarely available.</span></span>
-      <span class="chev"><svg class="ico" style="width:14px;height:14px"><use href="#i-chev"/></svg></span>
-      <span class="more">Sites chosen for light, views and calm — with the city still close at hand.</span>
-    </span></button>
-    <button class="feat lg" aria-expanded="false" data-lg='{"scale":30,"depth":22,"blur":12,"tint":0.1,"tintColor":"#26221f"}'><span class="c">
-      <span class="tile"><svg class="ico"><use href="#i-user"/></svg></span>
-      <span><span class="h">Human-Centric Spaces</span><span class="p">Designed for how you really live.</span></span>
-      <span class="chev"><svg class="ico" style="width:14px;height:14px"><use href="#i-chev"/></svg></span>
-      <span class="more">Plans built around daylight, quiet corners and rooms that move easily between work, family and rest.</span>
-    </span></button>
-  </div>
-</section>
-
 <!-- ================= EARLY ACCESS ================= -->
 <section class="access-section on-dark" id="access" aria-labelledby="accessTitle" data-scene-root>
-  <div class="bg" aria-hidden="true"><div class="ph img-res"></div><div class="access-shade"></div></div>
+  <div class="bg" aria-hidden="true"><div class="ph img-access-banner"></div><div class="access-shade"></div></div>
   <div class="wrap access-layout">
     <div class="access-story">
       <p class="eyebrow">Early access &middot; Founding 222</p>
@@ -1715,7 +1611,7 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
       </ul>
       <a class="access-whatsapp" href="https://wa.me/918943214897" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp at 00918943214897"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a9 9 0 0 1-9 9 10 10 0 0 1-4-.9L3 21l1.4-4.6A9 9 0 1 1 21 11.5Z"/><path d="M8 7.5c.4 4 3 6.6 7 7l1.5-2-2.6-1.2-1 1c-1.4-.5-2.6-1.6-3.1-3l1-1L9.6 6Z"/></svg><span>Or chat on WhatsApp</span><svg class="ico access-external" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
     </div>
-    <div class="access-card lg" data-lg='{"scale":30,"depth":24,"blur":18,"tint":0.2,"tintColor":"#3d433f","edge":1}'>
+    <div class="access-card lg" data-lg='{"scale":30,"depth":24,"blur":12,"tint":0.09,"tintColor":"#d6c8ae","edge":1}'>
       <div class="c">
         <div class="access-toolbar"><span class="access-home-icon" aria-hidden="true"><svg class="ico"><use href="#i-home"/></svg></span><div><strong>Your next home</strong><span>The Living Wave &middot; Home 2.0</span></div><span class="access-founding">Founding 222</span></div>
         <form class="access-form" id="accessForm" novalidate>
@@ -1751,11 +1647,11 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
     <div>
       <p class="eyebrow">Residences</p>
       <h2 class="serif">Spaces that inspire.</h2>
-      <p class="lead">Each residence is a masterclass in light, space and detail — designed to elevate everyday living.</p>
+      <p class="lead">Each residence is a masterclass in light, space and detail, designed to elevate everyday living.</p>
       <button class="link" data-open="view3d">Explore Residences<svg class="ico" style="width:16px;height:16px"><use href="#i-arrow"/></svg></button>
     </div>
     <div class="resframe" data-scene-root>
-      <div class="bg"><div class="ph img-res"></div></div>
+      <div class="bg"><div class="ph img-spaces"></div></div>
       <div class="chips" role="group" aria-label="Highlight a feature">
         <button class="btn chip lg" aria-pressed="false" data-res="views" data-lg='{"scale":18,"depth":14,"blur":10,"tint":0.12,"tintColor":"#2a2622"}'><span class="c"><svg class="ico"><use href="#i-window"/></svg>Floor-to-Ceiling Views</span></button>
         <button class="btn chip lg" aria-pressed="false" data-res="materials" data-lg='{"scale":18,"depth":14,"blur":10,"tint":0.12,"tintColor":"#2a2622"}'><span class="c"><svg class="ico"><use href="#i-leaf"/></svg>Natural Materials</span></button>
@@ -1765,32 +1661,6 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
   </div>
 </section>
 
-<!-- ================= SUSTAIN ================= -->
-<section class="sustain on-dark" data-scene-root>
-  <div class="bg bg-sustain"><div class="ph img-sustain"></div><div class="shade"></div></div>
-  <div class="wrap grid">
-    <div>
-      <p class="eyebrow">Crafted for a brighter tomorrow</p>
-      <h2 class="serif">Sustainable from the ground up.</h2>
-    </div>
-    <div class="approach lg" data-lg='{"scale":30,"depth":24,"blur":10,"tint":0.1,"tintColor":"#1e1e21"}'>
-      <div class="c">
-        <span class="tile"><svg class="ico"><use href="#i-sprout"/></svg></span>
-        <div>
-          <p><b>Premium materials.</b><br>Lower impact.<br>A lasting legacy.</p>
-          <button class="link" data-open="approach">Our Approach<svg class="ico" style="width:16px;height:16px"><use href="#i-arrow"/></svg></button>
-        </div>
-      </div>
-    </div>
-    <div class="ollist lg" data-lg='{"scale":24,"depth":20,"blur":10,"tint":0.1,"tintColor":"#1e1e21"}'>
-      <ol class="c">
-        <li><span>01</span>Responsible Materials</li>
-        <li><span>02</span>Energy Positive Design</li>
-        <li><span>03</span>Harmonious with Nature</li>
-      </ol>
-    </div>
-  </div>
-</section>
 </main>
 
 <footer>
@@ -1805,7 +1675,7 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
       </ul>
       <p class="ei-cities"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>Bengaluru &middot; Hyderabad &middot; Chennai</p>
     </div>
-    <span class="logo"><span class="logo-art"><img src="assets/logo-02.png" alt="Urbanrise — The Living Wave, Home 2.0" width="2363" height="2363"></span></span>
+    <span class="logo"><span class="logo-art"><img src="assets/logo-02.png" alt="Urbanrise, The Living Wave, Home 2.0" width="2363" height="2363"></span></span>
     <span>Home 2.0 · © 2026 UrbanRise</span>
     <button class="link" data-open="join" style="color:var(--on-dark)">Join Early Access<svg class="ico" style="width:16px;height:16px"><use href="#i-arrow"/></svg></button>
   </div>
@@ -1830,20 +1700,6 @@ body.intro-pending > :not(#intro):not(#introToast):not(script):not(noscript){vis
           <h2 class="serif">You're on the list</h2>
           <p class="hint" id="joinDoneMsg"></p>
         </div>
-      </div>
-    </div>
-  </div>
-  <button class="iconbtn lg closebtn" data-close aria-label="Close" data-lg='{"scale":14,"blur":6,"tint":0.08}'><span class="c"><svg class="ico"><use href="#i-x"/></svg></span></button>
-</div>
-
-<div class="overlay" id="ov-approach" role="dialog" aria-modal="true" aria-labelledby="apTitle" data-scene-root>
-  <div class="bg"><div class="ph img-sustain"></div><div class="scrim"></div></div>
-  <div class="center">
-    <div class="panel lg" data-lg='{"scale":40,"depth":34,"blur":14,"tint":0.1,"tintColor":"#1e1e21"}'>
-      <div class="c">
-        <h2 class="serif" id="apTitle">Our approach</h2>
-        <p class="hint">We start with the site — its light, its wind, its views — and build only what the land can carry well.</p>
-        <ol class="ollist" style="padding:0;margin:0"><li><span>01</span>Responsible materials, sourced for longevity and lower embodied carbon.</li><li><span>02</span>Energy-positive design: solar, efficient systems and passive cooling working together.</li><li><span>03</span>Landscapes that keep native planting and let nature stay part of daily life.</li></ol>
       </div>
     </div>
   </div>
@@ -2264,14 +2120,14 @@ function render(){
 
   $("rows").innerHTML = P.map(p=>{
     const t=r.today[p.id], l=r.lw[p.id], s=t-l;
-    return `<tr><td>${p.name}</td><td>${fmtN(t)}</td><td>${fmtN(l)}</td><td class="${s>0?'cc-save':''}">${s>0?'−'+fmtN(s):'—'}</td></tr>`;
+    return `<tr><td>${p.name}</td><td>${fmtN(t)}</td><td>${fmtN(l)}</td><td class="${s>0?'cc-save':''}">${s>0?'−'+fmtN(s):'0'}</td></tr>`;
   }).join("") + `<tr><td><b>Total (kg)</b></td><td><b>${fmtN(r.tToday)}</b></td><td><b>${fmtN(r.tLw)}</b></td><td class="cc-save"><b>−${fmtN(saved)}</b></td></tr>`;
 
   $("e-kg").textContent = fmtN(saved);
   $("e-trees").textContent = fmtN(saved/a.tree);
   $("e-10").textContent = (saved*10/1000).toFixed(0);
 
-  const msg = `My household’s estimated footprint is ${fmtT(r.tToday)} t of CO₂ a year. The Living Wave scenario estimates ${fmtT(r.tLw)} t — ${pct}% less, equivalent to ${fmtN(saved/a.tree)} mature trees’ yearly absorption. Indicative estimate based on planning assumptions.`;
+  const msg = `My household’s estimated footprint is ${fmtT(r.tToday)} t of CO₂ a year. The Living Wave scenario estimates ${fmtT(r.tLw)} t, ${pct}% less, equivalent to ${fmtN(saved/a.tree)} mature trees’ yearly absorption. Indicative estimate based on planning assumptions.`;
   $("wa").href = "https://wa.me/?text="+encodeURIComponent(msg);
   $("copy").dataset.msg = msg;
 }
@@ -2589,10 +2445,9 @@ var SCENE_LEN = 7.2, DUR = SCENE_LEN * scenes.length;
 var vcard = document.getElementById('vcard'), vPlay = document.getElementById('vPlay');
 var vToggle = document.getElementById('vToggle'), vToggleIco = document.getElementById('vToggleIco');
 var vSeek = document.getElementById('vSeek'), vFill = document.getElementById('vFill');
-var vTime = document.getElementById('vTime'), vCap = document.getElementById('vCap');
+var vCap = document.getElementById('vCap');
 var vSpeedBtn = document.getElementById('vSpeed'), vSubs = document.getElementById('vSubs');
 var playing = false, pos = 0, speed = 1, last = 0, lastKb = -1;
-function mmss(s){ s = Math.max(0, Math.floor(s)); return Math.floor(s/60) + ':' + ('0' + s%60).slice(-2); }
 function render(){
   var i = Math.min(scenes.length-1, Math.floor(pos / SCENE_LEN));
   var sc = (!playing && pos === 0) ? 'p' : String(i);
@@ -2602,7 +2457,6 @@ function render(){
   if (Math.abs(kb - lastKb) > .004){ root.style.setProperty('--kb', kb.toFixed(3)); lastKb = kb; }
   vFill.style.width = (pos/DUR*100) + '%';
   vSeek.value = Math.round(pos/DUR*1000);
-  vTime.textContent = playing || pos > 0 ? mmss(pos) + ' / ' + mmss(DUR) : mmss(DUR);
 }
 function loop(t){
   if (!playing) return;
@@ -2636,15 +2490,6 @@ document.getElementById('vFull').addEventListener('click', function(){
 document.addEventListener('fullscreenchange', function(){ setTimeout(resyncAll, 60); });
 
 render();
-
-/* ---------- Feature cards ---------- */
-document.querySelectorAll('.feat').forEach(function(b){
-  b.addEventListener('click', function(){
-    var open = b.getAttribute('aria-expanded') === 'true';
-    document.querySelectorAll('.feat').forEach(function(x){ x.setAttribute('aria-expanded','false'); });
-    b.setAttribute('aria-expanded', String(!open));
-  });
-});
 
 /* ---------- Residence chips (move the image; clones follow via CSS vars) ---------- */
 var resStates = { views:['6%','1.06'], materials:['-9%','1.22'], outdoor:['-3%','1.12'] };
@@ -2711,8 +2556,8 @@ document.addEventListener('click', function(e){
   if (o){
     var k = o.dataset.open;
     if (k === 'pano' || k === 'view3d'){
-      viewImg.className = 'ph ' + (k === 'pano' ? 'img-video' : 'img-res');
-      document.getElementById('viewLabel').textContent = (k === 'pano' ? 'Live panorama' : 'Residence interior') + ' — drag or use arrow keys to look around';
+      viewImg.className = 'ph ' + (k === 'pano' ? 'img-video' : 'img-spaces');
+      document.getElementById('viewLabel').textContent = (k === 'pano' ? 'Live panorama' : 'Residence interior') + ': drag or use arrow keys to look around';
       root.style.setProperty('--pan', '50%'); pan = 50;
       openOv('ov-view');
     } else openOv('ov-' + k);
@@ -2772,20 +2617,7 @@ form.addEventListener('submit', function(e){
   document.getElementById('joinDone').hidden = false;
 });
 
-/* Voice card waveform */
-if (!reduce){
-  var wp = document.getElementById('wavePath'), ph = 0;
-  (function wave(){
-    ph += .06;
-    var d = 'M0 9';
-    for (var x = 0; x <= 200; x += 8){
-      var env = Math.sin(x/200*Math.PI);
-      d += ' L' + x + ' ' + (9 + Math.sin(x/14 + ph) * 6 * env * (0.6 + 0.4*Math.sin(ph*.7))).toFixed(2);
-    }
-    wp.setAttribute('d', d);
-    requestAnimationFrame(wave);
-  })();
-}
+
 })();
 </script>
 </body>
