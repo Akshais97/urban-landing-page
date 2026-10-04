@@ -18,7 +18,7 @@ This document records the current destinations and behaviors. To change a mappin
 | Version check | Hamburger menu | Home diagnostic - `#version` | Scrolls to the questionnaire. |
 | The lineup | Hamburger menu | Residence models - `#lineup` | Scrolls to the three models. |
 | Join Early Access | Header / footer | Early-access form — `#ov-join` | Opens the existing modal. The mobile arrow button uses the same destination. |
-| Early-access notification (`#accessInvitationOpen`) | Fixed top-right, below header | Existing lead form - `#ov-join` | Appears once per tab session after 5 seconds of visible browsing, then becomes a compact bell. Clicking opens the form. Dismiss or Escape removes the invitation. |
+| Early-access notification (`#accessInvitationOpen`) | Fixed top-right, below header | Existing lead form - `#ov-join` | Appears on each page load, including refreshes, after 25 seconds of visible browsing, then becomes a compact bell. Clicking opens the form. Dismiss or Escape removes the invitation. |
 | Open / Close menu — `#menuToggle` | Header | Compact dropdown — `#ov-menu` | Toggles the dropdown and changes the three bars into an X. Escape, an outside click, or choosing a link closes it. |
 | Check Your Version | Hero version card (`#heroCheckVersion`) | Version check (`#version`) | Scrolls to the 12-question home version check. |
 | Remind Me Later | Hero version card — `#heroRemindLater` | Bottom message — `#introToast` | Uses the same messages and shake effect as the intro's Remind me later button. Repeated clicks advance the messages. Each message disappears after 3.2 seconds; another click restarts that timer. |

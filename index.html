@@ -2,7 +2,23 @@
 <html lang="en" data-scene="p">
 <head>
 <meta charset="utf-8">
+<link rel="icon" type="image/png" href="assets/logo.png">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+/* Demo reloads start at the hero; fresh section links still work. */
+(function(){
+  var navigation=performance.getEntriesByType('navigation')[0];
+  if(!navigation || navigation.type!=='reload')return;
+  if('scrollRestoration' in history)history.scrollRestoration='manual';
+  if(location.hash){
+    var url=new URL(location.href);url.hash='';
+    history.replaceState(history.state,'',url.href);
+  }
+  function startAtHero(){window.scrollTo({top:0,left:0,behavior:'instant'});}
+  startAtHero();
+  window.addEventListener('pageshow',function(){startAtHero();requestAnimationFrame(startAtHero);},{once:true});
+})();
+</script>
 <title>Home 2.0 · UrbanRise</title>
 <meta name="description" content="Home 2.0 by UrbanRise. Intelligent homes for a more meaningful life.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2586,12 +2602,12 @@ document.addEventListener('keydown', function(e){
   }
 });
 
-/* ---------- One invitation after 5 seconds of visible browsing ---------- */
+/* ---------- One invitation after 25 seconds of visible browsing ---------- */
 (function(){
   var invitation=document.getElementById('accessInvitation');
   var announcement=document.getElementById('accessInvitationStatus');
   var storageKey='urbanrise.accessInvitation.v1';
-  try { if(sessionStorage.getItem(storageKey))return; } catch(error){}
+  /* Demo page: each load gets a new invitation, including refreshes. */
   var elapsed=0, previous=performance.now(), shown=false, finished=false, busyUntil=0;
   var timer, collapseTimer, observer;
   function remember(value){try{sessionStorage.setItem(storageKey,value);}catch(error){}}
@@ -2630,7 +2646,7 @@ document.addEventListener('keydown', function(e){
     var now=performance.now(), delta=now-previous;previous=now;
     if(finished||shown)return;
     if(!document.hidden&&!document.body.classList.contains('intro-pending'))elapsed+=delta;
-    if(elapsed>=5000&&!blocked()&&!editing()&&Date.now()>=busyUntil)show();
+    if(elapsed>=25000&&!blocked()&&!editing()&&Date.now()>=busyUntil)show();
   },250);
   observer=new MutationObserver(sync);
   observer.observe(document.body,{attributes:true,attributeFilter:['class']});
